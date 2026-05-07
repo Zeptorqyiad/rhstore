@@ -1,0 +1,41 @@
+.promotions {
+    @include spacing(padding-top, 20px, 20px, 0);
+    @include spacing(padding-bottom, 60px, 60px, 0);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 40px, 40px, 24px);
+    }
+
+    &__title {
+        @include h1;
+        color: var(--Gray-Black);
+        @include spacing(max-width, 580px, 580px);
+
+        @include Mobile {
+            max-width: 100%;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        @include spacing(column-gap, 20px);
+        @include spacing(row-gap, 60px);
+
+        @include Mobile {
+            display: flex;
+            flex-direction: column;
+            gap: vwm(40px);
+        }
+    }
+
+    &__item {
+        @include spacing(width, 340px, 304px);
+
+        @include Mobile {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,119 @@
+.slider-buttons {
+  display: flex;
+  gap: vw(11px);
+
+  @include HD {
+    gap: vwh(11px);
+  }
+
+  @include Mobile {
+    gap: vwm(11px);
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: vw(48px);
+    height: vw(48px);
+    border-radius: vw(8px);
+    box-shadow: 0 0 vw(15px) 0 rgba(0, 0, 0, 0.10);
+    background: #ffffff;
+    transition: all 0.2s ease;
+    user-select: none;
+
+    @include HD {
+      width: vwh(48px);
+      height: vwh(48px);
+      border-radius: vwh(8px);
+      box-shadow: 0 0 vwh(15px) 0 rgba(0, 0, 0, 0.10);
+    }
+
+    @include Mobile {
+      width: vwm(48px);
+      height: vwm(48px);
+      border-radius: vwm(8px);
+      box-shadow: 0 0 vwm(15px) 0 rgba(0, 0, 0, 0.10);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: #F2F2F2;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &:active {
+      transition: all 0.1s ease;
+      background: #CCCCCC;
+    }
+
+    svg {
+      width: vw(24px);
+      height: vw(24px);
+
+      @include HD {
+        width: vwh(24px);
+        height: vwh(24px);
+      }
+
+      @include Mobile {
+        width: vwm(24px);
+        height: vwm(24px);
+      }
+    }
+
+    svg path {
+      transition: all 0.2s ease;
+    }
+  }
+
+  &_secondary {
+    gap: vw(8px);
+
+    @include HD {
+      gap: vwh(8px);
+    }
+
+    @include Mobile {
+      gap: vwm(8px);
+    }
+
+    .slider-buttons__button {
+      width: vw(40px);
+      height: vw(40px);
+      box-shadow: none;
+      background: #F2F2F2;
+      border-radius: vw(12px);
+
+      @include HD {
+        width: vwh(40px);
+        height: vwh(40px);
+        border-radius: vwh(12px);
+      }
+
+      @include Mobile {
+        width: vwm(40px);
+        height: vwm(40px);
+        border-radius: vwm(12px);
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          background: #CCCCCC;
+          box-shadow: none;
+        }
+      }
+
+      &:active {
+        transition: all 0.1s ease;
+        background: #666666;
+
+        svg path {
+          transition: all 0.1s ease;
+          stroke: #FFFFFF;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,168 @@
+.btn-review {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: vw(5.5px) vw(8px);
+    gap: vw(8px);
+    border-radius: vw(20px);
+
+    @media screen and (max-width: $hd-width) {
+        padding: vwh(5.5px) vwh(8px);
+        gap: vwh(8px);
+        border-radius: vwh(20px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        padding: vwt(5.5px) vwt(8px);
+        gap: vwt(8px);
+        border-radius: vwt(20px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        padding: vwm(5.5px) vwm(8px);
+        gap: vwm(8px);
+        border-radius: vwm(20px);
+    }
+
+    &_style-page {
+        transition: transform 200ms;
+        background-color: $GrayLighter;
+        padding: vw(9.5px) vw(16px);
+
+        .btn-review__value, .btn-review__rating {
+         color: $GrayDarker;
+        }
+
+        .btn-review__icon_review svg {
+            stroke: $GrayDarker;
+        }
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(9.5px) vwh(16px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(9.5px) vwt(16px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(9.5px) vwm(16px);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background-color: $Color2Lighter;
+            }
+        }
+
+        &:active {
+            transform: scale(0.86);
+                background-color: $Color2Lighter;
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            .btn-review__rating, .btn-review__value {
+                color: $GrayDarker;
+            }
+
+            .btn-review__icon_review {
+                stroke: $GrayDarker;
+            }
+        }
+    }
+
+    &:active {
+        .btn-review__rating, .btn-review__value {
+            color: $GrayBlack;
+        }
+
+        .btn-review__icon_review {
+            stroke: $GrayBlack;
+        }
+    }
+
+    // .btn-review__link
+    &__link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    // .btn-review__icon
+    &__icon {
+        width: vw(20px);
+        height: vw(20px);
+
+        @media screen and (max-width: $hd-width) {
+            width: vwh(20px);
+            height: vwh(20px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            width: vwt(20px);
+            height: vwt(20px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            width: vwm(20px);
+            height: vwm(20px);
+        }
+
+        // .btn-review__icon_star
+        &_star {
+            fill: #F2D230;
+            stroke: #F2D230;
+        }
+
+        // .btn-review__icon_review
+        &_review {
+            stroke: $GrayLight;
+            fill: none;
+        }
+    }
+
+    // .btn-review__divider
+    &__divider {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+
+        margin: vw(4px);
+        gap: vw(10px);
+        width: vw(2px);
+        height: vw(13px);
+        background-color: $GrayLight;
+
+        @media screen and (max-width: $hd-width) {
+            margin: vwh(4px);
+            gap: vwh(10px);
+            width: vwh(2px);
+            height: vwh(13px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            margin: vwt(4px);
+            gap: vwt(10px);
+            width: vwt(2px);
+            height: vwt(13px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            margin: vwm(4px);
+            gap: vwm(10px);
+            width: vwm(2px);
+            height: vwm(13px);
+        }
+    }
+
+    // .btn-review__rating
+    &__rating {
+        @include T4_B;
+        color: $GrayLight;
+    }
+
+    // .btn-review__value
+    &__value {
+        @include T4_B;
+        color: $GrayLight;
+    }
+}

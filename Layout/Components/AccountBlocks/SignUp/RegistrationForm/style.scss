@@ -1,0 +1,181 @@
+.registration-form {
+    background-color: #FFFFFF;
+    width: vw(420px);
+    padding: vw(32px);
+    box-shadow: 0 0 vw(30px) 0 rgba(0, 0, 0, 0.04);
+    border-radius: vw(32px);
+
+    @include HD {
+        width: vwh(420px);
+        padding: vwh(32px);
+        box-shadow: 0 0 vwh(30px) 0 rgba(0, 0, 0, 0.04);
+        border-radius: vwh(32px);
+    }
+
+    @include Mobile {
+        width: 100%;
+        padding: vwm(12px) 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    &__form {
+        display: grid;
+    }
+
+    &__title {
+        margin-bottom: vw(32px);
+        justify-self: center;
+
+        @include HD {
+            margin-bottom: vwh(32px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(32px);
+            @include h2;
+        }
+    }
+
+    &__inputs {
+        display: grid;
+        gap: vw(16px);
+        margin-bottom: vw(12px);
+
+        @include HD {
+            gap: vwh(16px);
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            gap: vwm(20px);
+            margin-bottom: vwm(20px);
+        }
+    }
+
+    &__input {
+        input {
+            width: 100%;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        justify-content: center;
+        padding: vw(10.5px) vw(24px);
+        border-radius: vw(12px);
+        margin-bottom: vw(8px);
+
+        @include HD {
+            padding: vwh(10.5px) vwh(24px);
+            border-radius: vwh(12px);
+            margin-bottom: vwh(8px);
+        }
+
+        @include Mobile {
+            padding: vwm(10.5px) vwm(24px);
+            border-radius: vwm(12px);
+            margin-bottom: vwm(8px);
+        }
+
+        span {
+            @include button-m;
+        }
+    }
+
+    &__checkbox-box {
+        padding-bottom: vw(24px);
+
+        @include HD {
+            padding-bottom: vwh(24px);
+        }
+
+        @include Mobile {
+            padding-bottom: vwm(32px);
+        }
+    }
+
+    &__checkbox.checkbox {
+        .checkbox__text {
+            line-height: 160%;
+        }
+    }
+
+    &__bottom {
+        display: grid;
+        justify-content: center;
+        gap: vw(16px);
+        padding-top: vw(12px);
+
+        @include HD {
+            gap: vwh(16px);
+            padding-top: vwh(12px);
+        }
+
+        @include Mobile {
+            gap: vwm(16px);
+            padding-top: vwm(12px);
+        }
+    }
+
+    &__bottom-text {
+        @include t3l;
+        color: #404040;
+    }
+
+    &__auth {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: max(#{vw(2px), 2px}) solid #F2F2F2;
+
+        @include HD {
+            padding-bottom: vwh(12px);
+            border-bottom: max(#{vwh(2px), 2px}) solid #F2F2F2;
+        }
+
+        @include Mobile {
+            padding-bottom: vwm(12px);
+            border-bottom: max(#{vwm(2px), 2px}) solid #F2F2F2;
+        }
+    }
+
+    &__first-link {
+        @include button-vs;
+        text-align: center;
+        padding: vw(10px) vw(12px);
+        @include transition-primary;
+        @include border-r-s;
+
+        @include HD {
+            padding: vwh(10px) vwh(12px);
+        }
+
+        @include Mobile {
+            width: 100%;
+            padding: vwm(10px) vwm(12px);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--red);
+
+                @include Mobile {
+                    background: var(--Gray-Lighter);
+                }
+            }
+        }
+
+        &:active {
+            color: var(--red-dark);
+
+            @include Mobile {
+                background: var(--Gray-Lighter);
+            }
+        }
+
+        &__first-link_modal {
+            display: none;
+        }
+    }
+}

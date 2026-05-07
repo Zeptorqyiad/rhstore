@@ -1,0 +1,403 @@
+html {
+    height: 100%;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-synthesis: none;
+    font-weight: 400;
+    font-size: vw(16px);
+    font-style: normal;
+    line-height: 150%;
+    color: var(--Gray-Dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    accent-color: var(--red);
+
+    @include HD {
+        font-size: vwh(16px);
+    }
+
+    @include Mobile {
+        font-size: vwm(16px);
+    }
+}
+
+::selection {
+    color: var(--Gray-White);
+    background: var(--red);
+}
+
+html,
+body {
+    // scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+body.scroll-lock {
+    overflow: hidden;
+}
+
+h1 {
+    @include h1;
+}
+
+h2 {
+    @include h2;
+}
+
+h3 {
+    @include h3;
+}
+
+h4 {
+    @include h4;
+}
+
+.wrapper {
+    margin: 0 vw(250px);
+
+    @include HD {
+        margin: 0 vwh(45px);
+    }
+
+    @include Mobile {
+        margin: 0 vwm(12px);
+    }
+}
+
+.content {
+    @include spacing(max-width, 700px, 700px);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    @include Mobile {
+        max-width: unset;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        text-align: left;
+        @include spacing(margin-bottom, 40px);
+        @include spacing(border-spacing, 2px);
+
+        @include Mobile {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        th {
+            @include t3;
+            color: var(--gray-black);
+            background-color: var(--gray-darker);
+
+            &:first-child {
+                @include spacing(border-top-left-radius, 8px);
+            }
+
+            &:last-child {
+                @include spacing(border-top-right-radius, 8px);
+            }
+        }
+
+        tr {
+            &:last-child td {
+                border: none !important;
+            }
+        }
+
+        th,
+        td {
+            padding: vw(8px) vw(12px);
+            border-bottom: vw(2px) solid var(--gray-lighter);
+
+            & > p {
+                width: auto !important;
+            }
+
+            @include HD {
+                padding: vwh(8px) vwh(12px);
+                border-width: vwh(2px);
+            }
+            @include Mobile {
+                padding: vwm(8px) vwm(12px);
+                border-width: vwm(2px);
+            }
+        }
+
+        td {
+            @include t3;
+            background-color: var(--gray-white);
+            color: var(--Gray-Dark);
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @include spacing(margin-block, 20px);
+        color: var(--gray-darker);
+
+        span {
+            color: var(--gray-darker);
+        }
+    }
+
+    h1 {
+        @include h1;
+
+        span {
+            @include h1;
+        }
+    }
+
+    h2 {
+        @include h2;
+
+        span {
+            @include h2;
+        }
+    }
+
+    h3 {
+        @include h3;
+        font-family: var(--font-family-body);
+
+        span {
+            @include h3;
+        }
+    }
+
+    h4 {
+        @include h4;
+
+        span {
+            @include h4;
+        }
+    }
+
+    p,
+    span, div {
+        @include t2;
+        color: var(--gray-dark);
+    }
+
+    a {
+        @include t2;
+        color: var(--color1-main);
+        transition: color 0.3s ease;
+        text-decoration: none;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--color1-dark);
+            }
+        }
+
+        &:active {
+            transition: color 0.1s ease;
+            color: var(--color1-darker);
+        }
+
+        span {
+            @include t2;
+            color: var(--color1-main);
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--color1-dark);
+            }
+        }
+
+        &:active {
+            transition: color 0.1s ease;
+            color: var(--color1-darker);
+        }
+    }
+    li {
+        @include t2;
+        color: var(--gray-dark);
+        list-style: disc;
+        @include spacing(margin-left, 20px);
+
+        &:last-child{
+            @include spacing(padding-bottom, 20px, 20px, 12px);
+        }
+    }
+
+    ul {
+        list-style-position: inside;
+
+        li {
+            list-style: disc;
+        }
+    }
+
+    ol {
+        list-style-position: inside;
+        @include spacing(padding-bottom, 20px);
+
+        li {
+            list-style: decimal;
+            line-height: 165%;
+        }
+    }
+
+    img,
+    video,
+    iframe {
+        width: 100%;
+        object-fit: cover;
+        user-select: none;
+        @include spacing(border-radius, 24px);
+        z-index: 10;
+    }
+
+    p {
+        text-align: left !important;
+        @include spacing(padding-bottom, 20px, 20px, 12px);
+    }
+
+    iframe {
+        height: vw(400px);
+
+        @include HD {
+            height: vwh(356px);
+        }
+        @include Mobile {
+            height: vwm(194px);
+        }
+    }
+}
+
+.modal {
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.open-modal {
+    user-select: auto;
+    pointer-events: all;
+    opacity: 1;
+}
+
+.mobile-modal {
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    bottom: -100%;
+    transition: bottom 0.4s ease, opacity 0.3s ease;
+}
+
+.mobile-backdrop {
+    @include Mobile {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: calc(100% - #{vwm(56px)});
+        z-index: 3;
+        user-select: none;
+        pointer-events: none;
+        opacity: 0;
+    }
+}
+
+.mobile-modal ~ .mobile-backdrop {
+    transition: opacity 0.3s ease, background 1s ease;
+}
+
+.open-mobile-modal {
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    bottom: 0;
+
+    @include HD {
+        user-select: none;
+        pointer-events: none;
+        opacity: 0;
+        bottom: 0;
+    }
+
+    @include Mobile {
+        user-select: auto;
+        pointer-events: all;
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+.open-mobile-modal ~ .mobile-backdrop {
+    user-select: auto;
+    pointer-events: all;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+dialog[open] {
+    display: block;
+    translate: 0 0;
+    transform: scale(1);
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0;
+        translate: 0 25vh;
+    }
+}
+
+dialog {
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+// scroll-lock для dialog
+body:has(dialog[open]:not(
+.cookie,
+)) {
+    overflow: hidden;
+}
+
+// scroll-lock для остальных модальных окон
+body:has(
+.open-modal:not(.modal-city),
+.modal-search-main_active,
+.open-mobile-modal,
+.filter-menu_active,
+) {
+    overflow: hidden;
+}
+
+:target {
+    scroll-margin-top: vw(93px);
+
+    @include HD {
+        scroll-margin-top: vwh(93px);
+    }
+}
+
+.js--cart-sum {
+    transition: .1s ease-in-out;
+}

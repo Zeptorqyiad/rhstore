@@ -1,0 +1,95 @@
+.modal-feedback {
+    display: none;
+    z-index: 100;
+    translate: 0 25vh;
+    transition-property: overlay, display, opacity;
+    transition-behavior: allow-discrete;
+    @include transition-primary;
+
+    &__container {
+        background: var(--Gray-White);
+        @include border-r;
+        padding: vw(40px);
+        width: vw(420px);
+
+        @include HD {
+            width: vwh(420px);
+            padding: vwh(40px);
+        }
+        @include Mobile {
+            width: auto;
+            padding: vwm(20px);
+        }
+    }
+
+    &__top {
+    }
+
+    &__title {
+        @include h3;
+        color: var(--Gray-Black);
+    }
+
+    &__desc {
+        @include t2;
+        margin-top: vw(14px);
+        color: var(--Gray-Dark-Medium);
+
+        @include HD {
+            margin-top: vwh(14px);
+        }
+        @include Mobile {
+            margin-top: vwm(14px);
+        }
+    }
+
+    &__form {
+
+    }
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        gap: vw(16px);
+
+        @include HD {
+            gap: vwh(16px);
+        }
+        @include Mobile {
+            gap: vwm(16px);
+        }
+    }
+
+    &__input {
+
+    }
+
+    &__button {
+        width: 100%;
+        justify-content: center;
+        padding: vw(10px) vw(24px);
+        @include border-r-m;
+        margin-top: vw(32px);
+        margin-bottom: vw(20px);
+
+        @include HD {
+            padding: vwh(10px) vwh(24px);
+            margin-top: vwh(32px);
+            margin-bottom: vwh(20px)
+        }
+
+        @include Mobile {
+            padding: vwm(8px) vwm(24px);
+            margin-top: vwm(8px);
+            margin-bottom: vwm(20px)
+        }
+
+        span {
+            @include button-m;
+
+            @include Mobile {
+                @include button-s;
+            }
+        }
+    }
+}

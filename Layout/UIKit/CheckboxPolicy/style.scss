@@ -1,0 +1,101 @@
+.checkbox-policy {
+    display: inline-flex;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    gap: vw(10px);
+
+    @include HD {
+        gap: vwh(10px);
+    }
+
+    @include Mobile {
+        gap: vwm(10px);
+    }
+
+    &__custom-checkbox {
+        user-select: none;
+        opacity: 0;
+        position: absolute;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    &__checkmark {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        width: vw(20px);
+        height: vw(20px);
+        background-color: #FFF;
+        border-radius: vw(4px);
+        transition: all 0.2s ease;
+        border: max(#{vw(2px), 2px}) solid #CCCCCC;
+
+        @include HD {
+            width: vwh(20px);
+            height: vwh(20px);
+            border: max(#{vwh(2px), 2px}) solid #CCCCCC;
+            border-radius: vwh(4px);
+        }
+
+        @include Mobile {
+            width: vwm(20px);
+            height: vwm(20px);
+            border: max(#{vwm(2px), 2px}) solid #CCCCCC;
+            border-radius: vwm(4px);
+        }
+    }
+
+    &__checkmark svg {
+        width: vw(12px);
+        height: vw(8px);
+
+        @include HD {
+            width: vwh(12px);
+            height: vwh(8px);
+        }
+
+        @include Mobile {
+            width: vwm(12px);
+            height: vwm(8px);
+        }
+
+        path {
+            transition: all 0.2s ease;
+            stroke: #ffffff;
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &__custom-checkbox:hover ~ &__checkmark svg {
+            path {
+                stroke: #CCCCCC;
+            }
+        }
+    }
+
+    &__custom-checkbox:checked ~ &__checkmark {
+        background-color: var(--red);
+        border-color: var(--red);
+    }
+
+    &__custom-checkbox:checked ~ &__checkmark svg {
+        path {
+            stroke: #FFFFFF;
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &__custom-checkbox:checked:hover ~ &__checkmark {
+            background-color: #D93030;
+            border-color: #D93030;
+        }
+    }
+
+    &__text {
+        @include t3l;
+        color: #404040;
+    }
+}

@@ -1,0 +1,48 @@
+.promo-faq {
+    @include spacing(padding-block, 60px, 60px, 40px);
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @include Mobile {
+            justify-content: unset;
+            flex-direction: column;
+            gap: vwm(24px);
+        }
+
+        &-ls {
+            @include spacing(width, 460px, 460px);
+            flex-shrink: 0;
+            @include spacing(padding-right, 20px, 20px, 0);
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 24px, 24px, 12px);
+
+            @include Mobile {
+                width: 100%;
+            }
+        }
+        &-rs {
+            flex-shrink: 0;
+            @include spacing(flex-basis, 700px, 700px);
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 12px);
+
+            @include Mobile {
+                flex-basis: unset;
+                width: 100%;
+            }
+        }
+    }
+    &__title {
+        @include h2;
+        color: var(--Gray-Black);
+    }
+    &__text {
+        @include t2;
+        color: var(--Gray-Dark);
+    }
+}

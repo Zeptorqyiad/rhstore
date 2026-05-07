@@ -1,0 +1,252 @@
+.submit-disabled {
+    background: var(--Gray-Light) !important;
+    color: var(--Gray-White) !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    box-shadow: none !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden;
+    opacity: 0;
+ }
+
+.underline {
+    border-bottom: max(#{vw(1px)}, 1px) dashed;
+    @include transition-primary;
+    color: inherit;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            border-width: max(#{vw(1px)}, 1px);
+            color: var(--red);
+
+            @include HD {
+                border-width: max(#{vwh(1px)}, 1px);
+            }
+            @include Mobile {
+                border-width: max(#{vwm(1px)}, 1px);
+            }
+        }
+    }
+
+    &:active {
+        border-width: max(#{vw(1px)}, 1px);
+        color: var(--red-dark);
+
+        @include HD {
+            border-width: max(#{vwh(1px)}, 1px);
+        }
+        @include Mobile {
+            border-width: max(#{vwm(1px)}, 1px);
+        }
+    }
+}
+
+.lazy-image {
+    opacity: 0;
+    @include transition-primary;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+.sign-in {
+    flex-grow: 1;
+    background-color: #F7F7F7;
+
+    @include Mobile {
+        background-color: #FFFFFF;
+    }
+
+    &-breadcrumbs {
+        margin: vw(12px) 0 vw(28px);
+
+        @include HD {
+            margin: vwh(12px) 0 vwh(28px);
+        }
+
+        @include Mobile {
+            margin: vwm(12px) 0;
+        }
+    }
+
+    &__content {
+        display: grid;
+        justify-items: center;
+    }
+
+    &__steps {
+        margin-bottom: vw(44px);
+
+        @include HD {
+            margin-bottom: vwh(44px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(44px);
+        }
+    }
+
+    &__card {
+        margin-bottom: vw(162px);
+
+        @include HD {
+            margin-bottom: vwh(162px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(66px);
+        }
+    }
+}
+
+.sign-up {
+    flex-grow: 1;
+    background-color: #F7F7F7;
+
+    @include Mobile {
+        background-color: #FFFFFF;
+    }
+
+    &-breadcrumbs {
+        margin: vw(12px) 0 vw(28px);
+
+        @include HD {
+            margin: vwh(12px) 0 vwh(28px);
+        }
+
+        @include Mobile {
+            margin: vwm(12px) 0;
+        }
+    }
+
+    &__content {
+        display: grid;
+        justify-items: center;
+    }
+
+    &__steps {
+        margin-bottom: vw(44px);
+
+        @include HD {
+            margin-bottom: vwh(44px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(44px);
+        }
+    }
+
+    &__card {
+        margin-bottom: vw(162px);
+
+        @include HD {
+            margin-bottom: vwh(162px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(66px);
+        }
+
+        .registration-form__first-link_modal {
+            display: none;
+        }
+    }
+}
+
+@mixin scrollbar {
+    &::-webkit-scrollbar {
+        width: vw(8px);
+
+        @include HD {
+            width: vwh(8px);
+        }
+        @include Mobile {
+            width: vwm(8px);
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--Gray-Light);
+        @include border-r-s;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: var(--Gray-Medium);
+            }
+        }
+
+        &:active {
+            background: var(--Gray-Medium);
+        }
+    }
+}
+
+@mixin scrollbar-sm {
+    &::-webkit-scrollbar {
+        width: vw(2px);
+
+        @include HD {
+            width: vwh(2px);
+        }
+        @include Mobile {
+            width: vwm(2px);
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--Gray-Light);
+        @include border-r-s;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: var(--Gray-Light);
+            }
+        }
+
+        &:active {
+            background: var(--Gray-Light);
+        }
+    }
+}
+
+@mixin scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        display: none;
+    }
+}
+
+//================ ITI inputs ==================//
+
+.iti__selected-dial-code {
+    @include spacing(padding-top, 2px, 2px, 0);
+    @include t2;
+}
+.iti {
+    min-width: 100% !important;
+}
+.iti__search-input {
+    padding-block: vw(8px) !important;
+    padding-inline: vw(12px) !important;
+    border-radius: vw(12px) !important;
+    height: vw(40px) !important;
+    font-style: vw(24px) !important;
+    font-weight: 600 !important;
+    color: var(--Gray-Darker) !important;
+}
+.iti--inline-dropdown .iti__dropdown-content {
+    border-radius: vw(12px) !important;
+    border: max(#{vw(2px), 2px}) solid var(--Gray-Medium) !important;
+}

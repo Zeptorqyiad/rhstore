@@ -1,0 +1,172 @@
+.accordion {
+
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+
+    cursor: pointer;
+
+    background-color: $GrayLighter;
+    overflow: hidden;
+
+    padding: vw(18px) vw(22px);
+    border-radius: vw(24px);
+    border: max(#{vw(2px)}, 2px) solid transparent;
+
+    @media screen and (max-width: $hd-width) {
+        padding: vwh(18px) vwh(22px);
+        border-radius: vwh(24px);
+        border-width: max(#{vwh(2px)}, 2px);
+    }
+
+    @media screen and (max-width: $tablet-width) {
+        padding: vwt(18px) vwt(22px);
+        border-radius: vwt(24px);
+        border-width: max(#{vwt(2px)}, 2px);
+    }
+
+    @media screen and (max-width: $mobile-width) {
+        padding: vwm(18px) vwm(22px);
+        border-radius: vwm(24px);
+        border-width: max(#{vwm(2px)}, 2px);
+    }
+
+    &:hover {
+        @media (hover: hover) and (pointer: fine) {
+            border-color: $Color2Lighter;
+        }
+    }
+
+    &:active {
+        border-color: $Color2Lighter;
+        background-color: $Color2Lighter;
+    }
+
+    //
+    //transition: border-color $defaultTransition,
+    //background-color $defaultTransition;
+
+    &_active {
+        .accordion__body {
+            margin-top: vw(12px);
+            overflow: visible;
+            opacity: 1;
+
+            @media screen and (max-width: $hd-width) {
+                margin-top: vwh(12px);
+            }
+
+            @media screen and (max-width: $tablet-width) {
+                margin-top: vwt(12px);
+            }
+
+            @media screen and (max-width: $mobile-width) {
+                margin-top: vwm(12px);
+            }
+        }
+
+        .accordion__toggle {
+            transform: rotate(90deg);
+        }
+    }
+
+    // .accordion__top
+
+    &__top {
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-self: stretch;
+
+        gap: vw(16px);
+
+        @media screen and (max-width: $hd-width) {
+            gap: vwh(16px);
+        }
+
+        @media screen and (max-width: $tablet-width) {
+            gap: vwt(16px);
+        }
+
+        @media screen and (max-width: $mobile-width) {
+            gap: vwm(16px);
+        }
+    }
+
+    // .accordion__title
+
+    &__title {
+        @include H4;
+
+        color: $GrayDarker;
+
+        font-size: vw(16px);
+        @media screen and (max-width: $hd-width) {
+            font-size: vwh(16px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            font-size: vwt(16px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            font-size: vwm(16px);
+        }
+
+    }
+
+    // .accordion__toggle
+
+    &__toggle {
+        cursor: pointer;
+
+        stroke: $GrayDarker;
+        fill: transparent;
+
+        transition: transform 200ms;
+
+        transform: rotate(-90deg);
+
+        width: vw(24px);
+        height: vw(24px);
+
+        @media screen and (max-width: $hd-width) {
+            width: vwh(24px);
+            height: vwh(24px);
+
+        }
+
+        @media screen and (max-width: $tablet-width) {
+            width: vwt(24px);
+            height: vwt(24px);
+
+        }
+
+        @media screen and (max-width: $mobile-width) {
+            width: vwm(24px);
+            height: vwm(24px);
+
+        }
+    }
+
+    // .accordion__body
+
+    &__body {
+
+        max-height: 0px;
+        overflow: hidden;
+        margin-top: 0;
+        opacity: 0;
+
+        transition: max-height 200ms, margin-top 200ms, opacity 200ms;
+
+        ul {
+            list-style: inside;
+        }
+
+        @include t3;
+
+        color: $GrayDark;
+    }
+}

@@ -1,0 +1,277 @@
+.modal-catalog-menu {
+    display: none;
+    position: absolute;
+    top: vw(56px);
+    left: 0;
+
+    @include HD {
+        top: vwh(56px);
+    }
+    @include Mobile {
+        display: none !important;
+    }
+
+    &_active {
+        display: block;
+    }
+
+    &__overlay {
+        position: fixed;
+        background: rgba(0, 0, 0, .4);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        cursor: default;
+    }
+
+    &__wrapper {
+        position: absolute;
+        //top: vw(120px);
+        //left: vw(60px);
+        background: var(--Gray-White);
+        padding: vw(12px);
+        left: 0;
+        @include border-r-xm;
+
+        @include HD {
+            padding: vwh(12px);
+        }
+        @include Mobile {
+            padding: vwm(12px);
+        }
+    }
+
+    &_active {
+
+    }
+
+    &__categories {
+        display: flex;
+        flex-direction: column;
+        max-height: 60dvh;
+        overflow: auto;
+        @include scrollbar-none;
+    }
+
+    &__category {
+        display: flex;
+        width: 100%;
+        max-width: vw(290px);
+
+        @include HD {
+            max-width: vwh(290px);
+        }
+        @include Mobile {
+            max-width: vwm(290px);
+        }
+
+        &-link {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: vw(8px) vw(12px);
+            gap: vw(24px);
+            width: 100%;
+            @include border-r-s;
+            @include transition-primary;
+
+            @include HD {
+                padding: vwh(8px) vwh(12px);
+                gap: vwh(24px);
+            }
+            @include Mobile {
+                padding: vwm(8px) vwm(12px);
+                gap: vwm(24px);
+            }
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    background: var(--Gray-Lighter);
+                    padding-left: vw(20px);
+
+                    @include HD {
+                        padding-left: vwh(20px);
+                    }
+                    @include Mobile {
+                        padding-left: vwm(20px);
+                    }
+                }
+            }
+
+            &:active {
+                background: var(--Gray-Light);
+                padding-left: vw(20px);
+
+                @include HD {
+                    padding-left: vwh(20px);
+                }
+                @include Mobile {
+                    padding-left: vwm(20px);
+                }
+            }
+
+            &:hover > .modal-catalog-menu__subcategories {
+                display: flex;
+            }
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: vw(8px);
+
+            @include HD {
+                gap: vwh(8px);
+            }
+            @include Mobile {
+                gap: vwm(8px);
+            }
+        }
+
+        &-name {
+            color: var(--Gray-Darker);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 20ch;
+            @include button-s;
+        }
+
+        &-icon {
+            height: vw(24px);
+            width: vw(24px);
+            flex-shrink: 0;
+
+            @include HD {
+                height: vwh(24px);
+                width: vwh(24px);
+            }
+            @include Mobile {
+                height: vwm(24px);
+                width: vwm(24px);
+            }
+        }
+
+        &:hover > .modal-catalog-menu__subcategories {
+            display: flex;
+        }
+    }
+
+    &__subcategories {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: calc(100% - #{vw(12px)});
+        background: var(--Gray-White);
+        padding: vw(12px) vw(12px) vw(12px) vw(24px);
+        width: calc(100% + #{vw(1px)});
+        height: 100%;
+        border-radius: 0 vw(12px) vw(12px) 0;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: vw(12px);
+            top: 0;
+            bottom: 0;
+            width: vw(2px);
+            background-color: var(--Gray-Lighter);
+
+            @include HD {
+                width: vwh(2px);
+                left: vwh(12px);
+            }
+
+            @include Mobile {
+                width: vwm(2px);
+                left: vwm(12px);
+            }
+        }
+
+        @include HD {
+            left: calc(100% - #{vwh(12px)});
+            padding: vwh(12px) vwh(12px) vwh(12px) vwh(24px);
+            width: calc(100% + #{vwh(1px)});
+            border-top-right-radius: vwh(12px);
+            border-bottom-right-radius: vwh(12px);
+        }
+        @include Mobile {
+            left: calc(100% - #{vwm(12px)});
+            padding: vwm(12px) vwm(12px) vwm(12px) vwm(24px);
+            width: calc(100% + #{vwm(1px)});
+            border-top-right-radius: vwm(12px);
+            border-bottom-right-radius: vwm(12px);
+        }
+    }
+
+    .modal-catalog-menu__category:hover & {
+        display: flex;
+    }
+
+    &__subcategory {
+        display: flex;
+        width: 100%;
+        position: relative;
+
+        &:hover > .modal-catalog-menu__subcategories {
+            display: flex;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    &__button-all {
+        display: inline-flex;
+        height: vw(40px);
+        padding: 0 vw(12px);
+        align-items: center;
+        justify-content: flex-start;
+        color: var(--Gray-Medium);
+        width: vw(290px);
+        text-align: left;
+        @include button-s;
+        @include border-r-s;
+        @include transition-primary;
+
+        @include HD {
+            width: vwh(290px);
+            padding: 0 vwh(12px);
+            height: vwh(40px);
+        }
+        @include Mobile {
+            width: vwm(290px);
+            padding: 0 vwm(12px);
+            height: vwm(40px);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: var(--Gray-Lighter);
+                padding-left: vw(20px);
+
+                @include HD {
+                    padding-left: vwh(20px);
+                }
+                @include Mobile {
+                    padding-left: vwm(20px);
+                }
+            }
+        }
+
+        &:active {
+            background: var(--Gray-Light);
+            padding-left: vw(20px);
+
+            @include HD {
+                padding-left: vwh(20px);
+            }
+            @include Mobile {
+                padding-left: vwm(20px);
+            }
+        }
+    }
+}

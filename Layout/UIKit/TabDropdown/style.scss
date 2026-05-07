@@ -1,0 +1,57 @@
+.tab-dropdown {
+  width: 100%;
+  border-radius: vw(12px);
+
+  @media screen and (max-width: $hd-width) {
+    border-radius: vwh(12px);
+  }
+  @media screen and (max-width: $tablet-width) {
+    border-radius: vwt(12px);
+  }
+  @media screen and (max-width: $mobile-width) {
+    border-radius: vwm(12px);
+  }
+
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $GrayLighter;
+    }
+  }
+
+  &:active {
+    background-color: $Color2Lighter;
+  }
+
+  transition: background-color $defaultTransition;
+
+  &__text {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    
+    align-self: stretch;
+    @include T4_B;
+    color: $GrayDark;
+    text-decoration: none;
+    -webkit-text-decoration: none;
+
+    transition: color $defaultTransition;
+    
+    padding: vw(9.5px) vw(16px);
+    gap: vw(8px);
+
+    @media screen and (max-width: $hd-width) {
+      padding: vwh(9.5px) vwh(16px);
+      gap: vwh(8px);
+    }
+    @media screen and (max-width: $tablet-width) {
+      padding: vwt(9.5px) vwt(16px);
+      gap: vwt(8px);
+    }
+    @media screen and (max-width: $mobile-width) {
+      padding: vwm(9.5px) vwm(16px);
+      gap: vwm(8px);
+    }
+  }
+}

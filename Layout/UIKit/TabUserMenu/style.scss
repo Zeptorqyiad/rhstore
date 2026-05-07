@@ -1,0 +1,110 @@
+.tab-u-menu {
+    display: flex;
+    align-items: center;
+    background-color: $GrayWhite;
+    align-self: stretch;
+
+    width: 100%;
+
+    padding: vw(12px) vw(16px);
+    gap: vw(8px);
+
+    @media screen and (max-width: $hd-width) {
+        padding: vwh(12px) vwh(16px);
+        gap: vwh(8px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        padding: vwt(12px) vwt(16px);
+        gap: vwt(8px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        padding: vwm(12px) vwm(16px);
+        gap: vwm(8px);
+    }
+
+    &:active {
+        background-color: $Color2Lighter;
+    }
+
+    text-decoration: none;
+    -webkit-text-decoration: none;
+
+    // .tab-u-menu__icon
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: vw(20px);
+            height: vw(20px);
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(20px);
+                height: vwh(20px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(20px);
+                height: vwt(20px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+
+        // .tab-u-menu__icon_custom
+        &_custom {
+            margin-right: vw(4px);
+
+            @media screen and (max-width: $hd-width) {
+                margin-right: vwh(4px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                margin-right: vwt(4px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                margin-right: vwm(4px);
+            }
+
+            fill: none;
+            stroke: $GrayDarker;
+        }
+
+        // .tab-u-menu__icon_chevron
+        &_chevron {
+            fill: none;
+            stroke: $GrayDarker;
+
+            transform: rotate(180deg);
+        }
+    }
+
+    // .tab-u-menu__text
+    &__text {
+        @include T3_B;
+        flex: 1 0 0;
+        color: $GrayDarker;
+    }
+
+    // .tab-u-menu__dot
+    &__dot {
+        border-radius: 50%;
+        background-color: $Color1Main;
+        width: vw(8px);
+        height: vw(8px);
+
+        @media screen and (max-width: $hd-width) {
+            width: vwh(8px);
+            height: vwh(8px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            width: vwt(8px);
+            height: vwt(8px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            width: vwm(8px);
+            height: vwm(8px);
+        }
+    }
+}

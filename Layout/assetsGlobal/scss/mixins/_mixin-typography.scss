@@ -1,0 +1,352 @@
+/* Headline */
+@mixin h1 {
+    font-size: vw(40px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(40px);
+    }
+
+    @include Mobile {
+        font-size: vwm(28px);
+    }
+}
+
+@mixin h2 {
+    font-size: vw(32px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(32px);
+    }
+
+    @include Mobile {
+        font-size: vwm(24px);
+    }
+}
+
+@mixin h3 {
+    font-size: vw(24px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(24px);
+    }
+
+    @include Mobile {
+        font-size: vwm(20px);
+        line-height: 106%;
+    }
+}
+
+@mixin h4 {
+    font-size: vw(20px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(20px);
+    }
+
+    @include Mobile {
+        font-size: vwm(20px);
+    }
+}
+
+/* Body */
+@mixin t1 {
+    font-size: vw(20px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(20px);
+    }
+
+    @include Mobile {
+        font-size: vwm(20px);
+    }
+}
+
+@mixin t1b {
+    @include t1;
+    font-weight: 700;
+}
+
+@mixin t2 {
+    font-size: vw(16px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(16px);
+    }
+
+    @include Mobile {
+        font-size: vwm(16px);
+    }
+}
+
+@mixin t2b {
+    @include t2;
+    font-weight: 700;
+}
+
+@mixin t3 {
+    font-size: vw(14px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(14px);
+    }
+
+    @include Mobile {
+        font-size: vwm(14px);
+    }
+}
+
+@mixin t3b {
+    @include t3;
+    font-weight: 700;
+}
+
+@mixin t3l {
+    @include t3;
+    font-weight: 400;
+}
+
+@mixin t4 {
+    font-size: vw(12wpx);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(12px);
+    }
+
+    @include Mobile {
+        font-size: vwm(12px);
+    }
+}
+
+@mixin t5 {
+    font-size: vw(10px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(10px);
+    }
+
+    @include Mobile {
+        font-size: vwm(10px);
+    }
+}
+
+/* Button */
+@mixin button-vs {
+    font-size: vw(14px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(14px);
+    }
+
+    @include Mobile {
+        font-size: vwm(14px);
+    }
+}
+
+@mixin button-s {
+    font-size: vw(16px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(16px);
+    }
+
+    @include Mobile {
+        font-size: vwm(16px);
+    }
+}
+
+@mixin button-sl {
+    font-size: vw(16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(16px);
+    }
+
+    @include Mobile {
+        font-size: vwm(16px);
+    }
+}
+
+@mixin button-m {
+    font-size: vw(18px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(18px);
+    }
+
+    @include Mobile {
+        font-size: vwm(18px);
+    }
+}
+
+@mixin button-mb {
+    font-size: vw(20px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(20px);
+    }
+
+    @include Mobile {
+        font-size: vwm(20px);
+    }
+}
+
+@mixin button-l {
+    font-size: vw(20px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(20px);
+    }
+
+    @include Mobile {
+        font-size: vwm(20px);
+    }
+}
+
+@mixin t-placeholder {
+    font-size: vw(12px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(12px);
+    }
+
+    @include Mobile {
+        font-size: vwm(12px);
+    }
+}
+
+//
+
+@mixin T4 {
+    @include t3;
+}
+
+@mixin T5 {
+    font-size: vw(10px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'ss09' on;
+
+    @include HD {
+        font-size: vwh(10px);
+    }
+
+    @include Mobile {
+        font-size: vwm(10px);
+    }
+}
+
+@mixin T3 {
+    @include t3;
+}
+
+@mixin T3_B {
+    @include t3;
+    font-weight: 400;
+}
+
+@mixin T4_B {
+    @include t3;
+    font-weight: 400;
+}
+
+@mixin T5_B {
+    @include t5;
+    font-weight: 700;
+}
+
+@mixin Hero {
+    font-size: vw(52px);
+    font-weight: 700;
+    line-height: 100%;
+    font-style: normal;
+    font-family: Raleway;
+
+    @include HD {
+        font-size: vwh(52px);
+    }
+    @include Mobile {
+        font-size: vwm(32px);
+    }
+}

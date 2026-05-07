@@ -1,0 +1,35 @@
+.link-footer {
+    display: inline-flex;
+    align-items: flex-start;
+
+    text-decoration: none;
+    -webkit-text-decoration: none;
+    @include T4_B;
+    color: $GrayDark;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            color: $Color1Main;
+        }
+    }
+
+    &:active {
+        color: $Color1Light;
+    }
+
+    padding: vw(9.5px) 0;
+    gap: vw(10px);
+
+    @media screen and (max-width: $hd-width) {
+        padding: vwh(9.5px) 0;
+        gap: vwh(10px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        padding: vwt(9.5px) 0;
+        gap: vwt(10px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        padding: vwm(9.5px) 0;
+        gap: vwm(10px);
+    }
+}

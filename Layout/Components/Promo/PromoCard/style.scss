@@ -1,0 +1,87 @@
+.promo-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include spacing(gap, 12px, 12px, 8px);
+    cursor: pointer;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            & .promo-card__title {
+                color: var(--red);
+            }
+        }
+    }
+
+    &:active {
+        & .promo-card__title {
+            color: #A62424;
+        }
+    }
+
+    &__image-block {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        @include spacing(max-width, 340px, 304px, 350px);
+        @include spacing(height, 240px, 210px, 240px);
+        @include spacing(border-radius, 32px, 32px, 20px);
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 8px);
+        @include spacing(margin-top, 12px);
+    }
+
+    &__date {
+        @include t3;
+        color: var(--red);
+    }
+
+    &__bottom {
+        @include spacing(width, 544px, 378px, 330px);
+        @include spacing(height, 56px, 56px, 48px);
+        overflow: hidden;
+        @include TextTrunc(2);
+    }
+
+    &__title {
+        @include transition-primary;
+        @include spacing(height, 60px);
+        @include t1;
+        @include TextTrunc(2);
+        color: var(--Gray-Black);
+        overflow: hidden;
+    }
+
+    &__badge {
+        @include spacing(border-radius, 32px);
+        @include spacing(padding-block, 4px);
+        @include spacing(padding-inline, 16px);
+        position: absolute;
+        @include spacing(top, 12px);
+        @include spacing(left, 12px);
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--Gray-Dark);
+        background: var(--Gray-White);
+        text-align: center;
+        @include t4;
+        font-weight: 600 !important;
+
+        &_off {
+            display: none;
+        }
+    }
+}

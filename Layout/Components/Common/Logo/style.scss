@@ -1,0 +1,46 @@
+.logo {
+    display: inline-flex;
+    padding: vw(6px) vw(10px) vw(10px) 0;
+    user-select: none;
+
+    @include HD {
+        padding: vwh(6px) vwh(10px) vwh(10px) 0;
+    }
+
+    @include Mobile {
+        padding: vwm(6px) vwm(10px) vwm(10px) 0;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            svg {
+                fill: #FF3838;
+            }
+        }
+
+        &:active {
+            svg {
+                fill: #D93030;
+                transition: all 0.1s ease;
+            }
+        }
+    }
+
+    svg {
+        width: vw(131px);
+        height: vw(24px);
+        fill: #ffffff;
+        transition: all 0.2s ease;
+
+        @include HD {
+            width: vwh(131px);
+            height: vwh(24px);
+        }
+
+        @include Mobile {
+            width: vwm(131px);
+            height: vwm(24px);
+            fill: #FF3838;
+        }
+    }
+}

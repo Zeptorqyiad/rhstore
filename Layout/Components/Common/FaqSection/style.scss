@@ -1,0 +1,155 @@
+.faq-section {
+    overflow-x: clip;
+
+    &__container {
+        position: relative;
+    }
+
+    &__wrapper {
+        position: relative;
+        padding: vw(60px) vw(80px) vw(80px);
+        border-radius: vw(32px);
+        overflow: hidden;
+        background: #F2F2F2 url("/assets/images/main/faq-section/faq_bg.png") no-repeat 100%/100%;
+        background-size: cover;
+
+        @include HD {
+            padding: vwh(60px) vwh(80px) vwh(80px);
+            border-radius: vwh(32px);
+        }
+
+        @include Mobile {
+            padding: vwm(40px) vwm(24px);
+            border-radius: vwm(20px);
+            background-image: url("/assets/images/main/faq-section/faq_bg_m.png");
+        }
+    }
+
+    &__parallax {
+        position: absolute;
+        z-index: 2;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+        width: vw(280px);
+        height: vw(280px);
+        top: vw(-80px);
+        right: vw(80px);
+        filter: drop-shadow(vw(20px) vw(20px) vw(50px) #00000033);
+
+        @include HD {
+            width: vwh(280px);
+            height: vwh(280px);
+            top: vwh(-80px);
+            right: vwh(80px);
+            filter: drop-shadow(vwh(20px) vwh(20px) vwh(50px) #00000033);
+        }
+
+        @include Mobile {
+            display: none;
+        }
+    }
+
+    &__parallax-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__parallax-img-mobile {
+        display: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @include Mobile {
+            display: block;
+        }
+    }
+
+    &__parallax-mobile {
+        display: none;
+
+        @include Mobile {
+            display: block;
+            position: absolute;
+            transform: rotate(-13deg);
+
+            z-index: 1;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            width: vwm(86px);
+            height: vwm(86px);
+            top: vwm(-45px);
+            right: vwm(20px);
+            filter: drop-shadow(vwm(10px) vwm(10px) vwm(50px) #00000033);
+
+        }
+    }
+
+    &__block {
+        position: relative;
+        z-index: 3;
+    }
+
+    &__title {
+        -webkit-font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        color: #0D0D0D;
+        margin-bottom: vw(16px);
+
+        @include HD {
+            margin-bottom: vwh(16px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(16px);
+            max-width: vwm(200px);
+        }
+    }
+
+    &__text {
+        @include t2;
+        -webkit-font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        color: #404040;
+        max-width: vw(440px);
+        margin-bottom: vw(40px);
+
+        @include HD {
+            max-width: vwh(440px);
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            max-width: 100%;
+            margin-bottom: vwm(40px);
+        }
+    }
+
+    &__button {
+        padding: vw(10px) vw(24px);
+        border-radius: vw(12px);
+
+        @include HD {
+            padding: vwh(10px) vwh(24px);
+            border-radius: vwh(12px);
+        }
+
+        @include Mobile {
+            width: 100%;
+            justify-content: center;
+            padding: vwm(10px) vwm(24px);
+            border-radius: vwm(12px);
+        }
+
+        span {
+            @include button-m;
+        }
+    }
+}

@@ -1,0 +1,1 @@
+<?php App\Layout\Pages\DeliveryEdit\Layout::draw(); ?>

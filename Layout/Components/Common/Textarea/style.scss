@@ -1,0 +1,77 @@
+.textarea {
+    position: relative;
+
+    &__input {
+        @include t2;
+        width: 100%;
+        border: max(#{vw(2px), 2px}) solid #999999;
+        border-radius: vw(8px);
+        background: none;
+        padding: vw(12px) vw(24px);
+        color: #404040;
+        transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        field-sizing: content;
+        min-height: 5lh;
+        max-height: 10lh;
+        resize: none;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+        @include border-r-s;
+
+        @include HD {
+            padding: vwh(12px) vwh(24px);
+            border-width: max(#{vwh(2px), 2px});
+        }
+
+        @include Mobile {
+            padding: vwm(12px) vwm(24px);
+            border-width: max(#{vwm(2px), 2px});
+        }
+
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: #666;
+            }
+        }
+    }
+
+    &__label {
+        @include t2;
+        position: absolute;
+        left: vw(24px);
+        pointer-events: none;
+        color: #999999;
+        transform: translateY(50%);
+        transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        @include HD {
+            left: vwh(24px);
+        }
+
+        @include Mobile {
+            left: vwm(24px);
+        }
+    }
+
+    &__input:focus, &__input:not(:placeholder-shown) {
+        outline: none;
+        border-color: #666;
+    }
+
+    &__input:focus ~ .textarea__label,
+    &__input:not(:placeholder-shown) ~ .textarea__label {
+        transform: translateY(-50%) scale(0.75) translateX(-20%);
+        background-color: #ffffff;
+        padding: 0 vw(4px);
+
+        @include HD {
+            padding: 0 vwh(4px);
+        }
+
+        @include Mobile {
+            padding: 0 vwm(4px);
+        }
+    }
+}

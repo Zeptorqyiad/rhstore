@@ -1,0 +1,12 @@
+.post{
+  &__faq{
+    margin-bottom: vw(80px);
+
+    @include HD {
+      margin-bottom: vwh(80px);
+    }
+    @include Mobile {
+      margin-bottom: vwm(60px);
+    }
+  }
+}

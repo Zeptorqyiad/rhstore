@@ -1,0 +1,62 @@
+.my-account-email-card {
+    @include border-r;
+    box-shadow: 0 0 vw(15px) 0 rgba(0, 0, 0, 0.10);
+    padding: vw(24px);
+    display: inline-grid;
+    justify-items: start;
+    background-color: #FFFFFF;
+    max-width: fit-content;
+
+    @include HD {
+        padding: vwh(24px);
+        box-shadow: 0 0 vwh(15px) 0 rgba(0, 0, 0, 0.10);
+    }
+
+    @include Mobile {
+        padding: vwm(24px);
+        box-shadow: 0 0 vwm(15px) 0 rgba(0, 0, 0, 0.10);
+        text-align: center;
+        justify-items: center;
+    }
+
+    &__title {
+        @include t2;
+        color: #D93030;
+        margin-bottom: vw(4px);
+    }
+
+    &__text {
+        @include t3;
+        color: #999;
+        margin-bottom: vw(20px);
+
+        @include HD {
+            margin-bottom: vwh(20px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(20px);
+        }
+    }
+
+    &__button {
+        padding: vw(8px) vw(16px);
+        border-radius: vw(8px);
+
+        @include HD {
+            padding: vwh(8px) vwh(16px);
+            border-radius: vwh(8px);
+        }
+
+        @include Mobile {
+            width: 100%;
+            justify-content: center;
+            padding: vwm(8px) vwm(16px);
+            border-radius: vwm(8px);
+        }
+
+        span {
+            @include button-s;
+        }
+    }
+}

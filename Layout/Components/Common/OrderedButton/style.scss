@@ -1,0 +1,46 @@
+.ordered-button {
+  @include button-m;
+
+  border: none;
+  outline: none;
+
+  background-color: #389cff;
+
+  transition-property: background-color;
+  transition-duration: 200ms;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--Gray-White);
+
+  margin: vw(12px);
+
+  border-radius: vw(12px);
+
+  padding: vw(10px) vw(24px) vw(10px) vw(20px);
+  gap: vw(8px);
+
+  @include HD {
+    padding: vwh(10px) vwh(24px);
+    border-radius: vwh(12px);
+    gap: vwh(8px);
+    margin: vwh(12px);
+  }
+
+  @include Mobile {
+    padding: vwm(10px) vwm(24px);
+    border-radius: vwm(12px);
+    gap: vwm(8px);
+    margin: vwm(12px);
+  }
+
+  &:hover {
+    background-color: #6bb5ff;
+  }
+
+  &:active {
+    background-color: #2d7ccc;
+  }
+}

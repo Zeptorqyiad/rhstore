@@ -1,0 +1,65 @@
+.catalog-button {
+    position: relative;
+}
+
+.nav__button {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    padding: 0 vw(12px);
+    background-color: var(--red);
+    gap: vw(10px);
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 9;
+    height: vw(40px);
+    @include border-r-s;
+
+    @include HD {
+        height: vwh(40px);
+        padding: 0 vwh(12px);
+        gap: vwh(10px);
+    }
+
+    @include Mobile {
+        height: vwm(40px);
+        padding: 0 vwm(12px);
+        gap: vwm(10px);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: var(--red-lighter);
+        }
+    }
+
+    &:active {
+        transition: all 0.1s ease;
+        background-color: var(--red-dark);
+    }
+
+    &-icon {
+        width: vw(24px);
+        height: vw(24px);
+
+        @include HD {
+            width: vwh(24px);
+            height: vwh(24px);
+        }
+
+        @include Mobile {
+            width: vwm(24px);
+            height: vwm(24px);
+        }
+    }
+
+    &-text {
+        @include button-s;
+        color: var(--Gray-White);
+    }
+
+    &-icon.hidden,
+    &-icon--active.hidden {
+        display: none;
+    }
+}

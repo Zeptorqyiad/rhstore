@@ -1,0 +1,41 @@
+.orders-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: vw(40px);
+
+    @include HD {
+        gap: vwh(40px);
+    }
+    @include Mobile {
+        align-items: center;
+        gap: vwm(40px);
+    }
+
+    &__text {
+        @include t2b;
+        color: var(--Gray-Medium);
+    }
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 vw(24px);
+        height: vw(48px);
+        @include border-r-m;
+        @include button-m;
+        min-width: vw(220px);
+
+        @include HD {
+            padding: 0 vwh(24px);
+            height: vwh(48px);
+            min-width: vwh(220px);
+        }
+        @include Mobile {
+            padding: 0 vwm(24px);
+            height: vwm(48px);
+            min-width: vwm(220px);
+        }
+    }
+}

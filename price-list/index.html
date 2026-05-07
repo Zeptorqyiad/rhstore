@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Прайс-лист</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #cbd5f5;
+      font-size: 15px;
+      margin-bottom: 36px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    a.button {
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .download {
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      color: #fff;
+    }
+
+    .download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.45);
+    }
+
+    .secondary {
+      background: linear-gradient(135deg, #fb923c, #f97316);
+      color: #fff;
+    }
+
+    .secondary:hover {
+      transform: translateY(-2px);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 36px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Прайс-лист</h1>
+    <p>Актуальные цены и товары в наличии</p>
+
+    <div class="buttons">
+      <a class="button download" href="price.xlsx" download="Прайс rh store.xlsx">
+        Скачать прайс
+      </a>
+
+      <a class="button secondary" href="in-transit.xlsx" download="Товары в дороге rh store.xlsx">
+        Товары в дороге
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+.add-button {
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  display: flex;
+  width: vw(40px);
+  height: vw(40px);
+  background: #FF3838;
+  align-items: center;
+  justify-content: center;
+  border-radius: vw(8px);
+
+  @include HD {
+    width: vwh(40px);
+    height: vwh(40px);
+    border-radius: vwh(8px);
+  }
+
+  @include Mobile {
+    width: vwm(40px);
+    height: vwm(40px);
+    border-radius: vwm(8px);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: #FF5E5E;
+    }
+  }
+
+  &:active {
+    transition: all 0.1s ease;
+    background: #D93030;
+  }
+
+  svg {
+    width: vw(24px);
+    height: vw(24px);
+
+    @include HD {
+      width: vwh(24px);
+      height: vwh(24px);
+    }
+
+    @include Mobile {
+      width: vwm(24px);
+      height: vwm(24px);
+    }
+  }
+}

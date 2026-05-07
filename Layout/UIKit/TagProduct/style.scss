@@ -1,0 +1,62 @@
+.tag-product {
+    @include T4_B;
+    display: inline-flex;
+    align-items: flex-start;
+
+    padding: vw(3.5px) vw(10px);
+    gap: vw(2px);
+    border-radius: vw(120px);
+
+    @media screen and (max-width: $hd-width) {
+        padding: vwh(3.5px) vwh(10px);
+        gap: vwh(2px);
+        border-radius: vwh(120px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        @include T5_B;
+        height: vwt(20px);
+        padding: 0 vwt(8px);
+        gap: vwt(4px);
+        border-radius: vwt(120px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        height: vwm(20px);
+        padding: 0 vwm(8px);
+        gap: vwm(4px);
+        border-radius: vwm(120px);
+
+    }
+
+    &_style-hit {
+        color: var(--labels-text-6, #6176e6);
+        background: var(--labels-bg-6, #dfe3fb);
+    }
+
+    &_style-sale {
+        color: var(--labels-text-2, #ee516e);
+        background: var(--labels-bg-2, #fde8e8);
+    }
+
+    &_style-new {
+        color: var(--labels-text-5, #007ae5);
+        background: var(--labels-bg-5, #c6e1f9);
+    }
+
+    &_style-none {
+        color: $GrayDark;
+        background-color: $GrayLight;
+    }
+
+    &_style-primary {
+        color: $GrayWhite;
+        background-color: $Color2Darker;
+    }
+
+    &_style-secondary {
+        background-color: $GrayWhite;
+        color: $GrayDark;
+    }
+
+    &_style-promo {
+    }
+}

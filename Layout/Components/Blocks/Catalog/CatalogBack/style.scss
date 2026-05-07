@@ -1,0 +1,82 @@
+.catalog-back {
+    display: flex;
+    align-items: center;
+    gap: vw(10.5px);
+    padding: vw(8px) vw(16px) vw(8px) 0;
+    color: #404040;
+    transition: padding-left 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+    @include border-r-s;
+
+    @include HD {
+        gap: vwh(10.5px);
+        padding: vwh(8px) vwh(16px) vwh(8px) 0;
+    }
+
+    @include Mobile {
+        gap: vwm(10.5px);
+        padding: vwm(8px) vwm(16px) vwm(8px) 0;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            padding-left: vw(10.5px);
+            color: var(--red);
+
+            @include HD {
+                padding-left: vwh(10.5px);
+            }
+
+            @include Mobile {
+                padding-left: vwm(10.5px);
+            }
+
+            svg {
+                stroke: var(--red);
+            }
+        }
+    }
+
+    &:active {
+        transition: color 0.1s ease, background-color 0.1s ease;
+        background-color: #F2F2F2;
+        color: var(--red-dark);
+        padding-left: vw(10.5px);
+
+        @include HD {
+            padding-left: vwh(10.5px);
+        }
+
+        @include Mobile {
+            padding-left: vwm(10.5px);
+        }
+
+        svg {
+            stroke: var(--red-dark);
+            transition: stroke 0.1s ease;
+        }
+    }
+
+
+    svg {
+        flex-shrink: 0;
+        width: vw(6px);
+        height: vw(9px);
+        stroke: var(--Gray-Dark);
+        transition: stroke 0.2s ease;
+
+        @include HD {
+            width: vwh(6px);
+            height: vwh(9px);
+        }
+
+        @include Mobile {
+            width: vwm(6px);
+            height: vwm(9px);
+        }
+    }
+
+    &__text {
+        @include button-s;
+    }
+}

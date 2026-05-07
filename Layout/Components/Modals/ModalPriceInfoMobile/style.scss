@@ -1,0 +1,122 @@
+.modal-price-info-mobile {
+    display: none;
+
+    @include Mobile {
+        position: fixed;
+        left: 0;
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 22;
+    }
+
+    &__content {
+        position: relative;
+        padding: vw(68px) vw(24px) vw(74px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: vw(16px);
+        width: 100%;
+        background-color: var(--Gray-White);
+        border-radius: vw(20px);
+        transform: translateY(93%);
+        transition: transform 0.3s ease;
+        z-index: 10;
+        @include border-r;
+
+        @include HD {
+            padding: vwh(68px) vwh(24px) vwh(74px);
+        }
+
+        @include Mobile {
+            padding: vwm(68px) vwm(24px) vwm(74px);
+        }
+    }
+
+    &__content.opened {
+        transform: translateY(0);
+    }
+
+    &__title {
+        @include h2;
+
+        margin-bottom: vw(16px);
+        width: 90%;
+
+        @include Mobile {
+            margin-bottom: vwm(16px);
+        }
+    }
+
+    &__text {
+        @include t2;
+
+        color: #666;
+
+        margin-bottom: vw(32px);
+
+        @include Mobile {
+            margin-bottom: vwm(32px);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: vw(12px);
+        right: vw(12px);
+        padding: vw(12px);
+
+        @include HD {
+            padding: vwh(12px);
+            top: vwh(12px);
+            right: vwh(12px);
+        }
+
+        @include Mobile {
+            padding: vwm(12px);
+            top: vwm(12px);
+            right: vwm(12px);
+        }
+
+        svg {
+            fill: #404040;
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+    }
+
+    &__button {
+        justify-content: center;
+        padding: vw(8px) vw(16px);
+        align-self: stretch;
+        color: var(--Gray-White);
+        background-color: var(--red);
+        @include border-r-s;
+        @include button-s;
+
+        @include Mobile {
+            padding: vwm(8px) vwm(16px);
+        }
+    }
+
+    &.open-modal {
+        opacity: 1;
+        visibility: visible;
+    }
+}

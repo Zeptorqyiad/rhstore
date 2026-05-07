@@ -1,0 +1,62 @@
+.button {
+  &-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: vw(10px) vw(24px) vw(10px) vw(12px);
+    gap: vw(8px);
+    color: var(--Text-Icon-Gray-Medium);
+    transition: all 0.2s ease;
+    @include button-s;
+
+    @include HD {
+      padding: vwh(10px) vwh(24px) vwh(10px) vwh(12px);
+      gap: vwh(8px);
+    }
+    @include Mobile {
+      padding: vwm(10px) vwm(24px) vwm(10px) vwm(12px);
+      gap: vwm(8px);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--red);
+        svg {
+          path {
+            fill: var(--red);
+          }
+        }
+      }
+    }
+
+    &:active{
+      color: var(--red-dark);
+      svg {
+        path {
+          fill: var(--red-dark);
+        }
+      }
+    }
+
+    svg {
+      width: vw(24px);
+      height: vw(24px);
+      transition: all 0.2s ease;
+      @include button-s;
+
+      @include HD {
+        width: vwh(24px);
+        height: vwh(24px);
+      }
+      @include Mobile {
+        width: vwm(24px);
+        height: vwm(24px);
+      }
+
+      path{
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}
+

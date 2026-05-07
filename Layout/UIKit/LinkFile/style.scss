@@ -1,0 +1,129 @@
+.link-file {
+    display: flex;
+    align-items: center;
+
+    background: $GrayLighter;
+
+    gap: vw(12px);
+    border-radius: vw(24px);
+    padding: vw(12px) vw(24px) vw(12px) vw(12px);
+
+    @media screen and (max-width: $hd-width) {
+        gap: vw(12px);
+        border-radius: vw(24px);
+        padding: vw(12px) vw(24px) vw(12px) vw(12px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        padding: vwt(8px) vwt(16px) vwt(8px) vwt(8px);
+        gap: vwt(12px);
+        border-radius: vwt(24px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        padding: vwm(8px) vwm(16px) vwm(8px) vwm(8px);
+        gap: vwm(12px);
+        border-radius: vwm(24px);
+    }
+
+    position: relative;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            .link-file__title {
+                color: $Color1Main;
+            }
+
+            .link-file__icon {
+                background: $Color1Light;
+            }
+        }
+    }
+
+    &:active {
+        background: $Color2Lighter;
+
+        .link-file__title {
+            color: $Color1Main;
+        }
+
+        .link-file__icon {
+            background: $Color1Light;
+        }
+    }
+
+    // .link-file__link
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    // .link-file__icon
+    &__icon {
+        display: flex;
+        align-items: flex-start;
+        background: $Color1Lighter;
+        padding: vw(16px);
+        gap: vw(10px);
+        border-radius: vw(16px);
+
+        svg {
+            width: vw(24px);
+            height: vw(24px);
+
+            fill: none;
+            stroke: $GrayWhite;
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(24px);
+                height: vwt(24px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(16px);
+            gap: vwh(10px);
+            border-radius: vwh(16px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(12px);
+            gap: vwt(10px);
+            border-radius: vwt(16px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(12px);
+            gap: vwm(10px);
+            border-radius: vwm(16px);
+        }
+    }
+
+    // .link-file__title
+    &__title {
+        @include T3;
+        flex: 1 0 0;
+        color: $GrayDarker;
+
+        @media screen and (max-width: $hd-width) {
+        }
+        @media screen and (max-width: $tablet-width) {
+            @include T4;
+        }
+        @media screen and (max-width: $mobile-width) {
+        }
+    }
+
+    // .link-file__size
+    &__size {
+        @include T3;
+        color: $GrayMedium;
+    }
+}

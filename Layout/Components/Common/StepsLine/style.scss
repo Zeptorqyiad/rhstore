@@ -1,0 +1,89 @@
+.steps-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: vw(20px);
+    padding: vw(16px) 0;
+
+    @include HD {
+        gap: vwh(20px);
+        padding: vwh(16px) 0;
+    }
+
+    @include Mobile {
+        display: none;
+        gap: vwm(20px);
+        padding: vwm(16px) 0;
+    }
+
+    &__step {
+        display: flex;
+        align-items: center;
+        gap: vw(16px);
+
+        @include HD {
+            gap: vwh(16px);
+        }
+
+        @include Mobile {
+            gap: vwm(16px);
+        }
+    }
+
+    &__current-step {
+        .steps-line__step-number {
+            background-color: #FF3838;
+        }
+
+        .steps-line__step-text {
+            color: #0D0D0D;
+        }
+    }
+
+    &__line {
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: vw(80px);
+            height: vw(2px);
+
+            @include HD {
+                width: vwh(80px);
+                height: vwh(2px);
+            }
+
+            @include Mobile {
+                width: vwm(80px);
+                height: vwm(2px);
+            }
+        }
+    }
+
+    &__step-number {
+        @include button-mb;
+        color: #FFF;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: vw(40px);
+        height: vw(40px);
+        border-radius: 50%;
+        background-color: #FFABAB;
+
+        @include HD {
+            width: vwh(40px);
+            height: vwh(40px);
+        }
+
+        @include Mobile {
+            width: vwm(40px);
+            height: vwm(40px);
+        }
+    }
+
+    &__step-text {
+        @include t1b;
+        color: #999;
+    }
+}

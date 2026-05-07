@@ -1,0 +1,110 @@
+.cart {
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &__breadcrumbs {
+        margin-top: vw(12px);
+        margin-bottom: vw(48px);
+
+        @include HD {
+            margin-top: vwh(12px);
+            margin-bottom: vwh(48px);
+        }
+
+        @include Mobile {
+            margin-top: vwm(10px);
+            margin-bottom: vwm(10px);
+        }
+
+    }
+
+    &__view {
+        margin-bottom: vw(40px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(40px);
+        }
+    }
+
+    &__products-slider {
+        margin-bottom: vw(80px);
+
+        @include HD {
+            margin-bottom: vwh(80px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(40px);
+        }
+    }
+
+    &__bottom {
+        display: none;
+        position: fixed;
+        z-index: 11;
+        bottom: 16.53vw;
+        left: 0;
+        width: 100%;
+        padding: vw(7px) vw(24px);
+        background: var(--Gray-White);
+        gap: vw(24px);
+        margin-top: auto;
+        margin-bottom: 0;
+
+        @include Mobile {
+            display: flex;
+            flex-direction: column;
+            padding: vwm(7px) vwm(24px);
+            gap: vwm(24px);
+        }
+
+        &-text {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+            width: 100%;
+
+            &::after {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: vw(-12px);
+                height: vw(2px);
+                width: 100%;
+                background-color: var(--Gray-Steel);
+
+                @include Mobile {
+                    bottom: vwm(-12px);
+                    height: vwm(2px);
+                }
+
+            }
+        }
+
+        &-description,
+        &-result {
+            @include h4;
+            color: var(--Gray-Black);
+        }
+
+        &-button {
+            @include border-r-m;
+            @include button-m;
+            padding: vw(10.5px) vw(24px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--Gray-White);
+
+            @include Mobile {
+                padding: vwm(10.5px) vwm(24px);
+            }
+        }
+    }
+
+}

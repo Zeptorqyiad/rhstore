@@ -1,0 +1,40 @@
+.promo-numbers {
+    &__container {
+        @include spacing(padding-block, 60px, 40px, 40px);
+        border-top: vw(1px) solid var(--Gray-Steel);
+        border-bottom: vw(1px) solid var(--Gray-Steel);
+
+        @include HD {
+            border-width: vwh(1px);
+        }
+        @include Mobile {
+            border-width: vwm(1px);
+        }
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        @include spacing(gap, 40px, 40px, 24px);
+
+        @include Mobile {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 8px);
+        align-items: flex-start;
+
+        &--title {
+            @include h2;
+            color: var(--blue);
+        }
+        &--text {
+            @include t2;
+            color: var(--Gray-Dark);
+        }
+    }
+}

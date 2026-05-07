@@ -1,0 +1,16 @@
+<?php
+/** @var array $data */
+
+?>
+
+
+<a href="/<?= $data["href"] ?>" class="<?= $data["class_name"] ?> catalog-back" draggable="false">
+    <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.5 1.5L1.5 4.5L4.5 7.5" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"/>
+    </svg>
+
+    <p class="catalog-back__text">
+        <?= $data["text"] ?>
+    </p>
+</a>

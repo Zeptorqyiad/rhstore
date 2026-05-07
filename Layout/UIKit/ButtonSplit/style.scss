@@ -1,0 +1,108 @@
+.button-split, .button-credit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: vw(8px);
+  padding: vw(10px) vw(12px);
+  background-color: $GrayLighter;
+  border-radius: vw(12px);
+  cursor: pointer;
+
+  @media screen and (max-width: $hd-width) {
+    padding: vwh(10px) vwh(12px);
+    border-radius: vwh(12px);
+    gap: vwh(8px);
+  }
+  @media screen and (max-width: $tablet-width) {
+    padding: vwt(10px) vwt(12px);
+    border-radius: vwt(12px);
+    gap: vwt(8px);
+  }
+  @media screen and (max-width: $mobile-width) {
+    padding: vwm(10px) vwm(12px);
+    border-radius: vwm(12px);
+    gap: vwm(8px);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $Color2Lighter;
+    }
+  }
+
+  &:active {
+    background-color: $Color2Light;
+  }
+
+  &__column {
+    display: flex;
+    align-items: center;
+    gap: vw(8px);
+
+    @media screen and (max-width: $hd-width) {
+      gap: vwh(8px);
+    }
+    @media screen and (max-width: $tablet-width) {
+      gap: vwt(8px);
+    }
+    @media screen and (max-width: $mobile-width) {
+      gap: vwm(8px);
+    }
+  }
+
+  &__sber-logo {
+    width: vw(20px);
+    height: vw(20px);
+
+    @media screen and (max-width: $hd-width) {
+      width: vwh(20px);
+      height: vwh(20px);
+    }
+    @media screen and (max-width: $tablet-width) {
+      width: vwt(20px);
+      height: vwt(20px);
+    }
+    @media screen and (max-width: $mobile-width) {
+      width: vwm(20px);
+      height: vwm(20px);
+    }
+  }
+
+  &__text {
+    @include T5_B;
+    color: $GrayDark;
+    white-space: nowrap;
+  }
+
+  &__info-logo {
+    width: vw(16px);
+    height: vw(16px);
+
+    @media screen and (max-width: $hd-width) {
+      width: vwh(16px);
+      height: vwh(16px);
+    }
+    @media screen and (max-width: $tablet-width) {
+      width: vwt(16px);
+      height: vwt(16px);
+    }
+    @media screen and (max-width: $mobile-width) {
+      width: vwm(16px);
+      height: vwm(16px);
+    }
+  }
+}
+
+.button-credit {
+  &__text {
+    @include T5;
+    color: $GrayDarker;
+
+    i {
+      @include T5_B;
+      font-style: normal;
+      color: $GrayDark;
+    }
+  }
+}

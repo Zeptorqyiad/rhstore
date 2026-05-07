@@ -1,0 +1,18 @@
+.problem-badge {
+    @include t1;
+    display: inline-flex;
+    color: #FFF;
+    border-radius: vw(30px);
+    background: #389BFF;
+    padding: vw(4.5px) vw(12px);
+
+    @include HD {
+        border-radius: vwh(30px);
+        padding: vwh(4.5px) vwh(12px);
+    }
+
+    @include Mobile {
+        border-radius: vwm(30px);
+        padding: vwm(4.5px) vwm(12px);
+    }
+}

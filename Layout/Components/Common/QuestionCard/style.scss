@@ -1,0 +1,103 @@
+.question-card {
+    display: flex;
+    flex-direction: column;
+    gap: vw(16px);
+    background: var(--Gray-White);
+    padding: vw(24px);
+    @include border-r;
+
+    @include HD {
+        margin-top: 0;
+        gap: vwh(16px);
+        padding: vwh(24px);
+        border: none;
+    }
+    @include Mobile {
+        margin-top: vwm(24px);
+        gap: vwm(16px);
+        padding-bottom: vwm(24px);
+        border-radius: 0;
+        border-bottom: max(#{vwm(2px), 2px}) solid var(--Gray-Lighter);
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__name {
+        @include h4;
+        color: var(--Gray-Dark);
+    }
+
+    &__date {
+        @include t3b;
+        color: var(--Gray-Light);
+    }
+
+    &__center {
+        display: flex;
+        flex-direction: column;
+        gap: vw(4px);
+
+        @include HD {
+            gap: vwh(4px);
+        }
+        @include Mobile {
+            gap: vwm(4px);
+        }
+    }
+
+    &__title {
+        grid-area: title;
+        @include t2;
+        color: var(--Gray-Dark);
+    }
+
+    &__question {
+        @include t3l;
+        color: var(--Gray-Dark);
+    }
+
+    &__bottom {
+        display: grid;
+        grid-template-areas:
+                    "icon title"
+                    ". answer";
+        padding: vw(12px);
+        background: var(--Gray-Lighter);
+        @include border-r-xm;
+        grid-template-columns: max-content auto;
+        gap: vw(4px) vw(8px);
+
+        @include HD {
+            padding: vwh(12px);
+            gap: vwh(4px) vwh(8px);
+        }
+        @include Mobile {
+            padding: vwm(12px);
+            gap: vwm(4px) vwm(8px);
+        }
+    }
+
+    &__icon {
+        grid-area: icon;
+        height: vw(24px);
+        width: vw(24px);
+
+        @include HD {
+            height: vwh(24px);
+            width: vwh(24px);
+        }
+        @include Mobile {
+            height: vwm(24px);
+            width: vwm(24px);
+        }
+
+    }
+
+    &__answer-body {
+        grid-area: answer;
+        color: var(--Gray-Dark);
+    }
+}

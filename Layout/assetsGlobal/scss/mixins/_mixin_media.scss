@@ -1,0 +1,26 @@
+$hd-width: 1499px;
+$mobile-width: 576px;
+
+@mixin HD {
+    @media screen and (max-width: $hd-width) {
+        @content;
+    }
+}
+
+@mixin Mobile {
+    @media screen and (max-width: $mobile-width) {
+        @content;
+    }
+}
+
+/*----------SPACING-----------*/
+@mixin spacing($property, $desktop, $hd: $desktop, $mobile: $desktop) {
+    #{$property}: vw($desktop);
+
+    @include HD {
+        #{$property}: vwh($hd);
+    }
+    @include Mobile {
+        #{$property}: vwm($mobile);
+    }
+}

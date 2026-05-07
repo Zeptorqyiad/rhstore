@@ -1,0 +1,29 @@
+AddDefaultCharset UTF-8
+
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  RewriteCond %{HTTP_HOST} ^api\.(.*) [NC]
+  RewriteRule .*    api.php [L]
+
+  RewriteRule ^sitemap.xml    sitemap.php [L]
+  RewriteRule ^robots.txt     robots.php [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^admin /Admin/index.php [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule . index.php
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|gif|jpg|jpeg|png|ico|swf)$">
+    Header set Cache-Control "max-age=31536000"
+  </FilesMatch>
+  Header set Access-Control-Allow-Origin "*"
+</IfModule>

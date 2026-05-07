@@ -1,0 +1,84 @@
+@mixin border-r-xxl {
+    border-radius: vw(32px);
+
+    @include HD {
+        border-radius: vwh(32px);
+    }
+
+    @include Mobile {
+        border-radius: vwm(32px);
+    }
+}
+
+@mixin border-r {
+    border-radius: vw(32px);
+
+    @include HD {
+        border-radius: vwh(32px);
+    }
+
+    @include Mobile {
+        border-radius: vwm(20px);
+    }
+}
+
+@mixin border-r-xl {
+    border-radius: vw(32px);
+
+    @include HD {
+        border-radius: vwh(28px);
+    }
+
+    @include Mobile {
+        border-radius: vwm(28px);
+    }
+}
+
+@mixin border-r-l {
+    border-radius: vw(20px);
+
+    @include HD {
+        border-radius: vwh(20px);
+    }
+
+    @include Mobile {
+        border-radius: vwm(20px);
+    }
+}
+
+
+@mixin border-r-xm {
+    border-radius: vw(16px);
+
+    @include HD {
+        border-radius: vwh(16px);
+    }
+
+    @include Mobile {
+        border-radius: vwm(16px);
+    }
+}
+
+@mixin border-r-m {
+    border-radius: vw(12px);
+
+    @include HD {
+        border-radius: vwh(12px);
+    }
+
+    @include Mobile {
+        border-radius: vwm(12px);
+    }
+}
+
+@mixin border-r-s {
+    border-radius: vw(8px);
+
+    @include HD {
+        border-radius: vwh(8px);
+    }
+
+    @include Mobile {
+        border-radius: vwm(8px);
+    }
+}

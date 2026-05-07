@@ -1,0 +1,34 @@
+//.badge {
+//    @include T5;
+//    display: inline-flex;
+//    align-items: flex-start;
+//    padding: 0 vw(4px);
+//    gap: vw(10px);
+//    border-radius: vw(120px);
+//
+//    @media screen and (max-width: $hd-width) {
+//        padding: 0 vwh(4px);
+//        gap: vwh(10px);
+//        border-radius: vwh(120px);
+//    }
+//    @media screen and (max-width: $tablet-width) {
+//        padding: 0 vwt(4px);
+//        gap: vwt(10px);
+//        border-radius: vwt(120px);
+//    }
+//    @media screen and (max-width: $mobile-width) {
+//        padding: 0 vwm(4px);
+//        gap: vwm(10px);
+//        border-radius: vwm(120px);
+//    }
+//
+//    &_style-red {
+//        background: $Color1Main;
+//        color: $GrayWhite;
+//    }
+//
+//    &_style-blue {
+//        background: $Color2Dark;
+//        color: $GrayWhite;
+//    }
+//}

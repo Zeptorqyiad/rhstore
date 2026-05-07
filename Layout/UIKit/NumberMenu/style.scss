@@ -1,0 +1,41 @@
+.number-menu {
+    display: inline-flex;
+    align-items: flex-start;
+    @include H3;
+    color: $GrayDarker;
+    text-decoration: none;
+    -webkit-text-decoration: none;
+    gap: vw(10px);
+    padding: vw(9.5px) 0;
+    letter-spacing: vw(0.2px);
+    font-size: vw(20px);
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            color: $Color1Main;
+
+        }
+    }
+
+    &:active {
+    }
+
+    @media screen and (max-width: $hd-width) {
+        gap: vwh(10px);
+        padding: vwh(9.5px) 0;
+        letter-spacing: vwh(0.2px);
+        font-size: vwh(20px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        gap: vwt(10px);
+        padding: vwt(9.5px) 0;
+        letter-spacing: vwt(0.2px);
+        font-size: vwt(20px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        gap: vwm(10px);
+        padding: vwm(9.5px) 0;
+        letter-spacing: vwm(0.2px);
+        font-size: vwm(20px);
+    }
+}

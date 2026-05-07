@@ -1,0 +1,82 @@
+.tab-underline {
+    display: inline-flex;
+    align-items: flex-start;
+
+
+    cursor: pointer;
+
+    padding: vw(11.5px) 0 vw(9.5px) 0;
+    gap: vw(8px);
+    border-bottom: max(#{vw(2px)}, 2px) solid transparent;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            border-color: $Color2Lighter;
+
+            .tab-underline__text {
+                color: $GrayBlack;
+            }
+        }
+    }
+
+    @media screen and (max-width: $hd-width) {
+        padding: vwh(11.5px) 0 vwh(9.5px) 0;
+        gap: vwh(8px);
+        border-width: max(#{vwh(2px)}, 2px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        padding: vwt(11.5px) 0 vwt(9.5px) 0;
+        gap: vwt(8px);
+        border-width: max(#{vwt(2px)}, 2px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        padding: vwm(11.5px) 0 vwm(9.5px) 0;
+        gap: vwm(8px);
+        border-width: max(#{vwm(2px)}, 2px);
+    }
+
+    &_active {
+        border-color: $Color2Main !important;
+
+        .tab-underline__text {
+            color: $GrayBlack !important;
+        }
+
+        .tab-underline__badge {
+            background: $Color2Darker !important;
+        }
+    }
+
+    // .tab-underline__text
+    &__text {
+        @include H3;
+        color: $GrayMedium;
+    }
+
+    // .tab-underline__badge
+    &__badge {
+        @include T4_B;
+        color: $GrayWhite;
+
+        display: flex;
+        align-items: flex-start;
+        background: $Color2Main;
+
+        padding: vw(1.5px) vw(8px);
+        border-radius: vw(120px);
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(1.5px) vwh(8px);
+            border-radius: vwh(120px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(1.5px) vwt(8px);
+            border-radius: vwt(120px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(1.5px) vwm(8px);
+            border-radius: vwm(120px);
+        }
+    }
+}
+

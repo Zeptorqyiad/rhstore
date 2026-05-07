@@ -1,0 +1,202 @@
+.promo-banner {
+    @include spacing(padding-block-start, 40px);
+    @include spacing(padding-block-end, 60px, 60px, 40px);
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 40px, 40px, 24px);
+
+        @include Mobile {
+            flex-direction: column;
+        }
+
+        &-ls {
+            @include spacing(flex-basis, 680px, 606px);
+            @include spacing(height, 480px, 420px, 240px);
+            flex-shrink: 0;
+
+            @include Mobile {
+                flex-basis: unset;
+                width: 100%;
+            }
+
+            img {
+                @include spacing(border-radius, 32px, 32px, 20px);
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &-rs {
+            @include spacing(width, 700px);
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 20px);
+
+            @include Mobile {
+                width: 100%;
+            }
+        }
+    }
+
+    &__title {
+        @include Hero;
+        color: var(--Gray-Black);
+
+        &--accent {
+            color: var(--red);
+        }
+        &--third {
+            color: var(--Gray-Black);
+        }
+    }
+
+    &__badges {
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 12px, 12px, 8px);
+        width: fit-content;
+
+        @include Mobile {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__badge {
+        @include spacing(padding-block, 8px);
+        @include spacing(padding-inline, 24px);
+        @include spacing(border-radius, 32px, 32px, 20px);
+        background: var(--Gray-Steel);
+
+        &--date {
+            color: var(--red);
+            @include t3;
+        }
+        &--badge {
+            color: var(--Gray-Dark);
+            @include t3;
+        }
+    }
+
+    &__offer {
+        width: 100%;
+        @include spacing(padding, 24px);
+        @include spacing(border-radius, 32px, 32px, 20px);
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 12px);
+        background: var(--Gray-Lighter);
+
+        &--title {
+            @include h3;
+            color: var(--Gray-Black);
+            display: block;
+        }
+        &--text {
+            @include t2;
+            color: var(--Gray-Dark);
+        }
+    }
+
+    &__bullits {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 12px);
+
+        > li {
+            position: relative;
+            @include spacing(padding-left, 20px);
+
+            &::before {
+                content: '';
+                position: absolute;
+                @include spacing(top, 7px);
+                @include spacing(width, 8px);
+                @include spacing(height, 8px);
+                left: 0;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8' fill='none'%3E%3Cpath d='M7.03296 0H0.967038C0.439565 0 0 0.439565 0 0.967038V7.03296C0 7.56043 0.439565 8 0.967038 8H7.03296C7.56043 8 8 7.56043 8 7.03296V0.967038C8 0.439565 7.56043 0 7.03296 0Z' fill='%23FF3838'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: center;
+            }
+        }
+    }
+    &__bullit {
+        color: var(--Gray-Dark);
+        @include t2;
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 20px, 20px, 12px);
+        @include h3;
+
+        &--base {
+            color: var(--blue);
+        }
+        &--throught {
+            color: var(--Gray-Medium);
+            text-decoration-line: line-through;
+        }
+    }
+
+    &__social {
+        @include spacing(margin-top, 12px);
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 12px);
+
+        @include Mobile {
+            flex-direction: column;
+        }
+
+        &--btn {
+            flex: 1;
+            width: 100%;
+            @include spacing(padding-block, 14px);
+            @include spacing(padding-inline, 34px);
+            @include spacing(border-radius, 12px);
+            background: var(--red);
+            color: var(--Gray-White);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include button-l;
+
+            @include Mobile {
+                flex: 1;
+                flex-shrink: 0;
+                min-width: 100%;
+            }
+        }
+
+        & .social-network__item {
+            @include spacing(width, 58px);
+            @include spacing(height, 58px);
+            @include spacing(border-radius, 12px);
+
+            @include Mobile {
+                flex: 1;
+                width: 100%;
+            }
+
+            svg {
+                @include spacing(width, 58px);
+                @include spacing(height, 58px);
+            }
+        }
+        & .social-network__telegram {
+            background: var(--Other-Social-Tg);
+            display: flex;
+            justify-content: center;
+        }
+        & .social-network__whatsapp {
+            background: var(--Other-Social-Wt);
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

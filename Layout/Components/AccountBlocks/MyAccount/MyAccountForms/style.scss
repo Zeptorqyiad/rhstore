@@ -1,0 +1,500 @@
+.my-account-forms {
+    display: flex;
+    flex-direction: column;
+    gap: vw(24px);
+    max-width: vw(820px);
+
+    @include HD {
+        gap: vwh(24px);
+        max-width: vwh(820px);
+    }
+
+    @include Mobile {
+        gap: vwm(24px);
+        max-width: 100%;
+    }
+
+    &__card {
+        @include border-r;
+        padding: vw(32px);
+        background-color: #FFF;
+
+        @include HD {
+            padding: vwh(32px);
+        }
+
+        @include Mobile {
+            padding: 0;
+        }
+    }
+
+    &__card-title {
+        @include t1b;
+        color: #0D0D0D;
+        margin-bottom: vw(4px);
+
+        @include HD {
+            margin-bottom: vwh(4px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(4px);
+        }
+    }
+
+    &__card-text {
+        @include t3;
+        color: #999;
+        margin-bottom: vw(24px);
+
+        @include HD {
+            margin-bottom: vwh(24px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: vw(20px);
+        padding-bottom: vw(20px);
+
+
+        @include HD {
+            gap: vwh(20px);
+            padding-bottom: vwh(20px);
+
+        }
+
+        @include Mobile {
+            gap: vwm(20px);
+            padding-bottom: vwm(24px);
+            grid-template-columns: 1fr;
+        }
+    }
+
+    //&__input label {
+    //  width: 100%;
+    //}
+
+    &__org-wrapper {
+        display: none;
+
+        &_active {
+            display: block;
+        }
+    }
+
+    &__org-input {
+        width: 100%;
+        max-width: vw(552px);
+
+        @include HD {
+            max-width: vwh(552px);
+        }
+        @include Mobile {
+            max-width: 100%;
+        }
+
+        label {
+            width: 100%;
+
+        }
+
+        input {
+            height: vw(48px);
+            padding: 0 vw(24px);
+
+            width: 100%;
+
+            @include HD {
+                height: vwh(48px);
+                padding: 0 vwh(24px);
+            }
+            @include Mobile {
+                height: vwm(48px);
+                padding: 0 vwm(24px);
+            }
+        }
+    }
+
+    &__checkbox-box {
+        margin-bottom: vw(20px);
+
+        @include HD {
+            margin-bottom: vwh(20px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(20px);
+        }
+    }
+
+    &__checkbox.checkbox {
+        gap: vw(12px);
+
+        @include HD {
+            gap: vwh(12px);
+        }
+
+        @include Mobile {
+            gap: vwm(12px);
+        }
+
+        .checkbox__text {
+            @include t2;
+            color: #404040;
+        }
+    }
+
+    &__line {
+        display: flex;
+        justify-content: start;
+        gap: vw(12px);
+        margin-bottom: vw(20px);
+
+        @include HD {
+            gap: vwh(12px);
+            margin-bottom: vwh(20px);
+        }
+
+        @include Mobile {
+            gap: vwm(12px);
+            margin-bottom: vwm(20px);
+        }
+    }
+
+    &__bottom-text {
+        @include t3;
+        color: #999;
+    }
+
+    &__bottom-variant-text {
+        @include t2;
+        color: #404040;
+    }
+
+    &__box-bottom-text {
+        color: #0D0D0D;
+        margin-bottom: vw(24px);
+
+        @include HD {
+            margin-bottom: vwh(24px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__box-bottom-checkbox {
+        padding-bottom: vw(40px);
+        border-bottom: max(#{vw(2px), 2px}) solid #F2F2F2;
+        margin-bottom: vw(24px);
+
+        @include HD {
+            border-width: max(#{vwh(2px), 2px});
+            padding-bottom: vwh(40px);
+            margin-bottom: vwh(24px);
+        }
+
+        @include Mobile {
+            border-width: max(#{vwm(2px), 2px});
+            padding-bottom: vwm(40px);
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: vw(48px);
+        padding: 0 vw(24px);
+        @include button-m;
+        @include border-r-m;
+
+        @include HD {
+            height: vwh(48px);
+            padding: 0 vwh(24px);
+        }
+        @include Mobile {
+            height: vwm(48px);
+            padding: 0 vwm(24px);
+        }
+    }
+
+    &__first-card {
+        @include Mobile {
+            padding-bottom: vwm(8px);
+        }
+
+        .my-account-forms__card-title {
+            @include Mobile {
+                margin-bottom: vwm(32px);
+            }
+        }
+
+        .my-account-forms__card-text {
+            @include Mobile {
+                display: none;
+            }
+        }
+
+        .my-account-forms__inputs {
+            input {
+                height: vw(48px);
+
+                @include HD {
+                    height: vwh(48px);
+                }
+
+                @include Mobile {
+                    height: vwm(48px);
+                }
+            }
+        }
+
+    }
+
+    &__second-card {
+        @include Mobile {
+            padding-top: vwm(64px);
+            padding-bottom: 0;
+            border-top: max(#{vwm(2px), 2px}) solid #F2F2F2;
+            border-bottom: max(#{vwm(2px), 2px}) solid #F2F2F2;
+            border-radius: 0;
+        }
+
+        .my-account-forms__inputs {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+
+            @include Mobile {
+                padding-bottom: vwm(20px);
+                margin-bottom: vwm(20px);
+            }
+        }
+
+
+        .my-account-forms__input {
+            input {
+                height: vw(48px);
+
+                @include HD {
+                    height: vwh(48px);
+                }
+
+                @include Mobile {
+                    height: vwm(48px);
+                }
+            }
+        }
+    }
+
+
+    &__third-card, &__fourth-card, &__fifth-card {
+        @include Mobile {
+            border-radius: 0;
+            padding: vwm(9px) 0 vwm(32px);
+            border-bottom: max(#{vwm(2px), 2px}) solid #F2F2F2;
+        }
+
+        .my-account-forms__card-title {
+            margin-bottom: vw(20px);
+
+            @include HD {
+                margin-bottom: vwh(20px);
+            }
+
+            @include Mobile {
+                margin-bottom: vwm(32px);
+            }
+        }
+
+        .my-account-forms__inputs {
+            margin: 0;
+            padding: 0;
+            border: 0;
+
+            input {
+                @include Mobile {
+                    height: vwm(48px);
+                }
+            }
+        }
+    }
+
+    &__fifth-card {
+        @include Mobile {
+            border-bottom: none;
+            padding-bottom: vwm(10px);
+        }
+
+
+        .my-account-forms__card-title {
+            margin-bottom: vw(8px);
+
+            @include HD {
+                margin-bottom: vwh(8px);
+            }
+
+            @include Mobile {
+                margin-bottom: vwm(8px);
+            }
+        }
+
+        .my-account-forms__card-text {
+            margin-bottom: vw(32px);
+
+            @include HD {
+                margin-bottom: vwh(32px);
+            }
+
+            @include Mobile {
+                margin-bottom: vwm(32px);
+            }
+        }
+
+
+    }
+
+    &__box-bottom {
+        &-buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: vw(24px);
+
+            @include HD {
+                gap: vwh(24px);
+            }
+
+            @include Mobile {
+                flex-direction: column;
+                align-items: unset;
+                gap: vwm(24px);
+            }
+        }
+
+        &-checkbox label {
+            @include Mobile {
+                max-width: 290px;
+            }
+        }
+    }
+
+    &__changes {
+        @include t2;
+        color: var(--Gray-Light);
+        text-align: center;
+    }
+
+    //&__dropdown {
+    //    position: relative;
+    //    margin-bottom: vw(20px);
+    //
+    //    @include HD {
+    //        margin-bottom: vwh(20px);
+    //    }
+    //
+    //    @include Mobile {
+    //        margin-bottom: vwm(20px);
+    //    }
+    //}
+    //
+    //&__dropdown_active {
+    //    .variant-text-field input {
+    //        border-color: #999;
+    //    }
+    //
+    //    .my-account-forms__dropdown-wrapper {
+    //        opacity: 1;
+    //        z-index: 2;
+    //        user-select: auto;
+    //        pointer-events: all;
+    //    }
+    //}
+    //
+    //&__dropdown-wrapper {
+    //    position: absolute;
+    //    padding: vw(12px);
+    //    border-radius: vw(8px);
+    //    width: 100%;
+    //    top: 100%;
+    //    opacity: 0;
+    //    user-select: none;
+    //    pointer-events: none;
+    //    background-color: #FFFFFF;
+    //    box-shadow: 0 0 vw(15px) 0 rgba(0, 0, 0, 0.10);
+    //
+    //    @include HD {
+    //        padding: vwh(12px);
+    //        border-radius: vwh(8px);
+    //        box-shadow: 0 0 vwh(15px) 0 rgba(0, 0, 0, 0.10);
+    //    }
+    //
+    //    @include Mobile {
+    //        padding: vwm(12px);
+    //        border-radius: vwm(8px);
+    //        box-shadow: 0 0 vwm(15px) 0 rgba(0, 0, 0, 0.10);
+    //    }
+    //}
+    //
+    //&__dropdown-list {
+    //    display: grid;
+    //    overflow: hidden;
+    //    overflow-y: auto;
+    //    max-height: vw(216px);
+    //    gap: vw(4px);
+    //    @include scrollbar;
+    //
+    //    @include HD {
+    //        max-height: vwh(216px);
+    //        gap: vwh(4px);
+    //    }
+    //
+    //    @include Mobile {
+    //        max-height: vwm(216px);
+    //        gap: vwm(4px);
+    //    }
+    //}
+    //
+    //&__dropdown-item {
+    //    @include t3;
+    //    color: #666;
+    //    cursor: pointer;
+    //    padding: vw(9.5px) vw(16px);
+    //    border-radius: vw(8px);
+    //    transition: background-color 0.2s ease;
+    //
+    //    &_not-found {
+    //        @include t3b;
+    //    }
+    //
+    //    @include HD {
+    //        padding: vwh(9.5px) vwh(16px);
+    //        border-radius: vwh(8px);
+    //    }
+    //
+    //    @include Mobile {
+    //        padding: vwm(9.5px) vwm(16px);
+    //        border-radius: vwm(8px);
+    //    }
+    //
+    //    @media (any-hover: hover) {
+    //        &:hover {
+    //            background-color: #F2F2F2;
+    //        }
+    //    }
+    //
+    //    &:active {
+    //        background-color: #CCC;
+    //        transition: background-color 0.1s ease;
+    //    }
+    //}
+}

@@ -1,0 +1,40 @@
+.separator-line {
+    width: 100%;
+    @include spacing(height, 1px);
+
+    /*------Hidden------*/
+    &.mob-hidden {
+        @include Mobile {
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+            margin: 0;
+        }
+    }
+
+    /*------Vertical------*/
+
+    &.vert {
+        @include spacing(width, 1px);
+        height: 100%;
+    }
+
+    /*------Lighter------*/
+    &.lighter {
+        background: var(--Gray-Lighter);
+    }
+
+    /*------Light------*/
+    &.light {
+        background: var(--Gray-Light);
+    }
+
+    /*------Medium------*/
+    &.medium {
+        background: var(--Gray-Medium);
+    }
+
+    &.steel {
+        background: var(--Gray-Steel);
+    }
+}

@@ -1,0 +1,41 @@
+.for-sellers {
+    &__breadcrumbs {
+        margin-top: vw(12px);
+        margin-bottom: vw(32px);
+
+        @include HD {
+            margin-top: vwh(12px);
+            margin-bottom: vwh(32px);
+        }
+
+        @include Mobile {
+            margin-top: vwm(12px);
+            margin-bottom: vwm(32px);
+        }
+    }
+
+    &__container {
+        display: grid;
+        gap: vw(120px);
+
+        @include HD {
+            gap: vwh(120px);
+        }
+
+        @include Mobile {
+            gap: vwm(60px);
+        }
+    }
+
+    &__faq {
+        margin-bottom: vw(120px);
+
+        @include HD {
+            margin-bottom: vwh(120px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(60px);
+        }
+    }
+}

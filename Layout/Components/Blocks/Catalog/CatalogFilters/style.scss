@@ -1,0 +1,202 @@
+.catalog-filters {
+    display: flex;
+    height: fit-content;
+
+    @include Mobile {
+        display: none;
+    }
+
+    &__form {
+        overflow-y: scroll;
+        overflow-x: visible;
+        max-height: calc(100vh - max(#{vw(90px)}));
+        overscroll-behavior-y: contain;
+        @include scrollbar-none;
+
+        @include HD {
+            max-height: calc(100vh - max(#{vwh(90px)}));
+        }
+        @include Mobile {
+
+        }
+
+        & > :nth-last-child(2) {
+            border-bottom: none;
+        }
+    }
+
+    &__title {
+        color: var(--Gray-Black);
+        margin-bottom: vw(8px);
+
+        @include HD {
+            margin-bottom: vwh(8px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(8px);
+        }
+    }
+
+    &__categories {
+        border-bottom: max(#{vw(2px), 2px}) solid var(--Gray-Steel);
+        padding-bottom: vw(12px);
+
+        @include HD {
+            border-width: max(#{vwh(2px), 2px});
+            padding-bottom: vwh(12px);
+        }
+        @include Mobile {
+            border-width: max(#{vwm(2px), 2px});
+            padding-bottom: vwm(12px);
+        }
+    }
+
+    &__toggle-list {
+        margin-bottom: vw(12px);
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__check-list-item {
+        .checkbox-list__checkboxes {
+            @include scrollbar;
+            overflow: auto;
+            max-height: vw(300px);
+
+            @include HD {
+                max-height: vwh(300px);
+            }
+        }
+    }
+
+    &__check-list-item, &__check-list-bottom {
+        border-bottom: max(#{vw(2px), 2px}) solid var(--Gray-Steel);
+        padding: vw(12px) 0 vw(16px);
+
+        @include HD {
+            border-bottom: max(#{vwh(2px), 2px}) solid var(--Gray-Steel);
+            padding: vwh(12px) 0 vwh(16px);
+        }
+
+        @include Mobile {
+            border-bottom: max(#{vwm(2px), 2px}) solid var(--Gray-Steel);
+            padding: vwm(12px) 0 vwm(16px);
+        }
+    }
+
+    &__check-list-item:first-child {
+        border-top: max(#{vw(2px), 2px}) solid var(--Gray-Steel);
+
+        @include HD {
+            border-top: max(#{vwh(2px), 2px}) solid var(--Gray-Steel);
+        }
+
+        @include Mobile {
+            border-top: max(#{vwm(2px), 2px}) solid var(--Gray-Steel);
+        }
+    }
+
+    &__check-list-item:last-child {
+        border-bottom: none;
+    }
+
+    &__check-list-bottom {
+
+    }
+
+    &__apply-button {
+        @include button-s;
+        @include border-r-s;
+
+        padding: vw(8px) vw(16px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: var(--Gray-White);
+        text-align: center;
+        border-radius: vw(8px);
+
+        @include HD {
+            padding: vwh(8px) vwh(16px);
+        }
+
+        @include Mobile {
+            @include button-m;
+
+            padding: vwm(10.5px) vwm(24px);
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        position: sticky;
+        bottom: 0;
+        padding: vw(20px) 0 vw(24px);
+        background-color: var(--Gray-White);
+        border-top: max(#{vw(2px), 2px}) solid var(--Gray-Steel);
+        z-index: 2;
+        gap: vw(12px);
+
+        @include HD {
+            gap: vwh(12px);
+            padding: vwh(20px) 0 vwh(24px);
+            border-top: max(#{vwh(2px), 2px}) solid var(--Gray-Steel);
+        }
+
+        @include Mobile {
+            gap: vwm(12px);
+            padding: vwm(20px) 0 vwm(24px);
+            border-top: max(#{vwm(2px), 2px}) solid var(--Gray-Steel);
+        }
+
+    }
+
+    &__amount {
+        @include t3;
+
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--Gray-Medium);
+        gap: vw(4px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+        @include HD {
+            gap: vwh(4px);
+        }
+    }
+
+    &__amount.visible {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__reset {
+        @include t3;
+        color: var(--Gray-Medium);
+        @include transition-primary;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--red);
+            }
+        }
+
+        &:active {
+            color: var(--red-dark);
+        }
+    }
+}

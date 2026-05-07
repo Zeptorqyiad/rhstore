@@ -1,0 +1,38 @@
+.link-modal-property {
+    @include T2_B;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1 0 0;
+
+    text-decoration: none;
+    -webkit-text-decoration: none;
+
+    color: $GrayBlack;
+    padding: vw(1.5px) 0;
+    gap: vw(10px);
+
+    @media screen and (max-width: $hd-width) {
+        padding: vwh(1.5px) 0;
+        gap: vwh(10px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        padding: vwt(1.5px) 0;
+        gap: vwt(10px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        padding: vwm(1.5px) 0;
+        gap: vwm(10px);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            color: $Color2Dark;
+        }
+    }
+
+    &:active {
+        color: $Color2Darker;
+    }
+}

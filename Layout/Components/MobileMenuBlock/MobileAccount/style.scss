@@ -1,0 +1,203 @@
+.mobile-account {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: calc(100% - #{vwm(56px)});
+    background: #ffffff;
+    z-index: 22;
+    display: grid;
+    overflow: auto;
+
+    &__container {
+        display: grid;
+        align-content: space-between;
+
+        @include Mobile {
+            gap: vwm(40px);
+        }
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include Mobile {
+            margin: vwm(20px) 0 vwm(16px) vwm(12px);
+        }
+    }
+
+    &__title {
+        @include h4;
+        color: #0D0D0D;
+    }
+
+    &__close {
+        cursor: pointer;
+        @include transition-primary;
+
+        @include Mobile {
+            padding: vwm(12px);
+        }
+
+        svg {
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+
+
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+    }
+
+    &__name {
+        @include Mobile {
+            color: #999999;
+            margin-left: vwm(12px);
+            margin-bottom: vwm(32px);
+            max-width: vwm(160px);
+        }
+    }
+
+    &__items {
+        display: grid;
+    }
+
+    &__item {
+        @include Mobile {
+            border-bottom: max(#{vwm(2px), 2px}) solid #F2F2F2;
+        }
+
+        &:active {
+            svg {
+                margin-right: vwm(12px);
+                transition: margin-right 0.1s ease;
+            }
+        }
+    }
+
+    &__item:first-child {
+        @include Mobile {
+            border-top: max(#{vwm(2px), 2px}) solid #F2F2F2;
+        }
+    }
+
+    &__item-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: vw(12px);
+        @include transition-primary;
+
+        @include HD {
+            padding: vwh(12px);
+        }
+        @include Mobile {
+            padding: vwm(12px);
+        }
+
+        span {
+            @include t2b;
+            @include transition-primary;
+            color: var(--Gray-Black);
+        }
+
+        svg {
+            transition: margin-right 0.2s ease;
+            width: vwm(24px);
+            height: vwm(24px);
+        }
+
+        &:active {
+            background: var(--Gray-Lighter);
+
+            span {
+                color: var(--red-dark);
+            }
+        }
+    }
+
+    &__button {
+        display: inline-flex;
+        @include transition-primary;
+
+        @include Mobile {
+            width: 100%;
+            padding: vwm(10px) vwm(20px);
+            font-size: vwm(18px);
+            font-weight: 600;
+            border-radius: vwm(12px);
+            justify-content: center;
+            color: var(--red);
+        }
+
+        &:active {
+            transform: translateY(5%);
+            color: var(--red-dark);
+        }
+    }
+
+    &__bottom {
+        @include Mobile {
+            margin-bottom: vwm(73px);
+        }
+    }
+
+    &__auth {
+        display: none;
+
+        @include HD {
+            display: none;
+        }
+        @include Mobile {
+            display: block;
+            padding-bottom: vwm(62px);
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        height: vw(56px);
+
+        @include HD {
+            height: vwh(56px);
+        }
+        @include Mobile {
+            height: vwm(56px);
+        }
+    }
+
+    &__icon {
+        cursor: pointer;
+        @include transition-primary;
+
+        &:active {
+            transform: scale(.9);
+        }
+    }
+
+    &__form {
+        .authorization-form__first-link {
+            display: none;
+        }
+
+        .authorization-form__first-link_modal {
+            display: block;
+        }
+
+        .registration-form__first-link {
+            display: none;
+        }
+
+        .registration-form__first-link_modal {
+            display: block;
+        }
+    }
+}

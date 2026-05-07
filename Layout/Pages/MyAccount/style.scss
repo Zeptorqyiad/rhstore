@@ -1,0 +1,75 @@
+.my-account {
+    &__back {
+        background-color: var(--Gray-White);
+        padding-left: vw(250px);
+
+        @include HD {
+            padding-left: vwh(45px);
+            margin: 0;
+        }
+
+        @include Mobile {
+            padding-left: 0;
+        }
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: vw(220px) auto;
+        gap: vw(140px);
+        background-color: #F7F7F7;
+
+        @include HD {
+            grid-template-columns: vwh(196px) auto;
+            gap: vwh(128px);
+        }
+
+        @include Mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        padding-right: vw(250px);
+
+        @include HD {
+            padding-right: vwh(45px);
+        }
+
+        @include Mobile {
+            background-color: var(--Gray-White);
+            padding-right: 0;
+        }
+    }
+
+
+    &__breadcrumbs {
+        margin: vw(32px) 0 vw(12px);
+
+        @include HD {
+            margin: vwh(32px) 0 vwh(12px);
+        }
+
+        @include Mobile {
+            margin: vwm(12px) 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: vw(80px);
+
+        @include HD {
+            margin-bottom: vwh(80px);
+        }
+
+        @include Mobile {
+
+            margin: 0 vwm(12px) vwm(80px);
+
+        }
+    }
+}

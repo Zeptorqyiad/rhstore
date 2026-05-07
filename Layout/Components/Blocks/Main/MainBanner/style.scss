@@ -1,0 +1,181 @@
+.main-banner {
+    @include spacing(padding-top, 80px, 80px, 20px);
+    overflow: hidden;
+
+    &__container {
+        position: relative;
+        padding: vw(48px) vw(60px) vw(60px);
+        background-image: url('/assets/images/main/main-banner/main_start_bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        @include border-r;
+
+        @include HD {
+            padding: vwh(48px) vwh(60px) vwh(60px);
+        }
+
+        @include Mobile {
+            background-image: url('/assets/images/main/main-banner/main_start_bg_m.png');
+            padding: vwm(40px) vwm(24px);
+        }
+    }
+
+    &__title {
+        color: var(--Gray-Black);
+        @include spacing(max-width, 700px);
+        @include spacing(margin-bottom, 24px, 24px, 320px);
+        @include spacing(font-size, 52px);
+        @include Hero;
+
+        @include Mobile {
+            max-width: 100%;
+        }
+    }
+
+    &__title-red {
+        color: var(--red);
+        display: block;
+    }
+
+    &__paragraph {
+        @include t1;
+        color: var(--Gray-Dark);
+        @include spacing(margin-bottom, 60px, 60px, 40px);
+        @include spacing(max-width, 360px);
+
+        @include Mobile {
+            max-width: 100%;
+            font-size: vwm(16px);
+        }
+    }
+
+    &__link {
+        display: inline-block;
+
+        @include Mobile {
+            width: 100%;
+        }
+    }
+
+    &__button {
+        @include spacing(padding-block, 14px);
+        @include spacing(padding-inline, 34px);
+        transition: all 0.3s ease;
+        box-shadow: vw(8px) vw(8px) vw(30px) 0 rgba(203, 0, 0, 0.25);
+        @include border-r-m;
+
+        @include HD {
+            box-shadow: vwh(8px) vwh(8px) vwh(30px) 0 rgba(203, 0, 0, 0.25);
+        }
+
+        @include Mobile {
+            box-shadow: vwm(8px) vwm(8px) vwm(30px) 0 rgba(203, 0, 0, 0.25);
+            width: 100%;
+            justify-content: center;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: #FF5E5E;
+            }
+        }
+
+        &:active {
+            transition: all 0.1s ease;
+            background: var(--red-dark);
+            box-shadow: 0 0 0 rgba(203, 0, 0, 0.25);
+        }
+
+        span {
+            @include button-l;
+            color: #FFFFFF;
+        }
+    }
+
+
+    &__phone {
+        position: absolute;
+        user-select: none;
+        pointer-events: none;
+        @include spacing(top, -70px, -70px, 140px);
+        @include spacing(right, 110px, 60px, 55px);
+        @include spacing(height, 600px, 600px, 321px);
+        @include spacing(width, 440px, 440px, 228px);
+    }
+
+    &__phone-box {
+        transform: rotate(19deg);
+    }
+
+    &__box {
+        position: absolute;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    &__box-first {
+        @include spacing(top, 35px, 35px, 178px);
+        @include spacing(right, 445px, 376px, 228px);
+        @include spacing(height, 236px, 236px, 109px);
+        @include spacing(width, 241px, 241px, 102px);
+    }
+
+    &__box-second {
+        @include spacing(width, 253px, 253px, 132px);
+        @include spacing(height, 248px, 248px, 130px);
+        @include spacing(top, -86px, -86px, 261px);
+        @include spacing(right, -24px, -75px, -5px);
+    }
+
+    &__box-third {
+        @include spacing(width, 172px);
+        @include spacing(height, 169px);
+        @include spacing(right, 110px, 60px);
+        @include spacing(bottom, -25px);
+
+        @include Mobile {
+            display: none;
+        }
+    }
+
+    &__phone, &__box-first, &__box-second, &__box-third {
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

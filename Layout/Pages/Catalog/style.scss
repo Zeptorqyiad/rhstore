@@ -1,0 +1,51 @@
+.catalog {
+  &__breadcrumbs {
+    margin-top: vw(8px);
+    margin-bottom: vw(32px);
+
+    @include HD {
+      margin-top: 0;
+      margin-bottom: vwh(32px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(8px);
+    }
+  }
+
+  &__box {
+    margin-bottom: vw(140px);
+
+    @include HD {
+      margin-bottom: vwh(140px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(90px);
+    }
+  }
+
+  &__advantages {
+    margin-bottom: vw(80px);
+
+    @include HD {
+      margin-bottom: vwh(160px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(120px);
+    }
+  }
+
+  &__mailing   .mailing-list__container {
+    border-bottom: vw(2px) solid #CCC;
+
+    @include HD {
+      border-bottom: vwh(2px) solid #CCC;
+    }
+
+    @include Mobile {
+      border-bottom: vwm(2px) solid #CCC;
+    }
+  }
+}

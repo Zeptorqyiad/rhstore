@@ -1,0 +1,255 @@
+.manufacturer {
+  &__title {
+    color: #0D0D0D;
+    margin-bottom: vw(24px);
+
+    @include HD {
+      margin-bottom: vwh(24px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(24px);
+    }
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: vw(460px) 1fr 1fr;
+    gap: vw(20px);
+    grid-template-areas:
+    "text img1 img2"
+    "img3 img3 img2";
+    margin-bottom: vw(20px);
+
+    @include HD {
+      grid-template-columns: vwh(408px) 1fr 1fr;
+      gap: vwh(4px) vwh(20px);
+      margin-bottom: vwh(20px);
+    }
+
+    @include Mobile {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+    "text text"
+    "img3 img1"
+    "img2 img2";
+      gap: vwm(12px);
+      margin-bottom: vwm(12px);
+    }
+  }
+
+  &__text {
+    @include t2;
+    color: #404040;
+  }
+
+  &__button-link {
+    justify-self: start;
+
+    @include HD {
+
+    }
+
+    @include Mobile {
+      justify-self: stretch;
+      margin-bottom: vwm(28px);
+    }
+
+  }
+
+  &__button {
+    padding: vw(8px) vw(16px);
+    border-radius: vw(8px);
+
+    @include HD {
+      padding: vwh(8px) vwh(16px);
+      border-radius: vwh(8px);
+    }
+
+    @include Mobile {
+      width: 100%;
+      justify-content: center;
+      padding: vwm(10.5px) vwm(16px);
+      border-radius: vwm(12px);
+    }
+
+    span {
+      @include button-s;
+
+      @include Mobile {
+        @include button-m;
+      }
+    }
+  }
+
+  &__first-cell {
+    grid-area: text;
+    display: grid;
+    gap: vw(40px);
+
+    @include HD {
+      gap: vwh(40px);
+    }
+
+    @include Mobile {
+      gap: vwm(40px);
+    }
+  }
+
+  &__second-cell, &__third-cell, &__fourth-cell {
+    @include border-r;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__second-cell {
+    width: vw(220px);
+    height: vw(160px);
+    grid-area: img1;
+    justify-self: right;
+    margin-top: vw(62px);
+
+    @include HD {
+      width: vwh(196px);
+      height: vwh(144px);
+      margin-top: vwh(62px);
+    }
+
+    @include Mobile {
+      margin-top: 0;
+      width: auto;
+      height: vwm(132px);
+    }
+  }
+
+  &__third-cell {
+    position: relative;
+    width: vw(580px);
+    height: vw(340px);
+    grid-area: img2;
+    margin-top: vw(62px);
+
+    @include HD {
+      width: vwh(520px);
+      height: vwh(308px);
+      margin-top: vwh(62px);
+    }
+
+    @include Mobile {
+      width: auto;
+      height: vwm(208px);
+      margin-top: 0;
+    }
+
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__fourth-cell {
+    width: vw(220px);
+    height: vw(160px);
+    grid-area: img3;
+    justify-self: right;
+    margin-right: vw(240px);
+
+    @include HD {
+      width: vwh(196px);
+      height: vwh(144px);
+      margin-right: vwh(220px);
+    }
+
+    @include Mobile {
+      width: vwm(169px);
+      height: vwm(132px);
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: vw(20px);
+
+    @include HD {
+      gap: vwh(20px);
+    }
+
+    @include Mobile {
+      grid-template-columns: 1fr;
+      gap: vwm(12px);
+    }
+  }
+
+  &__item {
+    @include border-r;
+    padding: vw(40px);
+
+    @include HD {
+      padding: vwh(40px);
+    }
+
+    @include Mobile {
+      padding: vwm(40px) vwm(24px);
+    }
+  }
+
+  &__item-title {
+    margin-bottom: vw(12px);
+
+    @include HD {
+      margin-bottom: vwh(12px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(12px);
+    }
+  }
+
+  &__item-text {
+    @include t2;
+  }
+
+  &__item:nth-child(1) {
+    background-color: #F2F2F2;
+
+    .manufacturer__item-title {
+      color: #D93030;
+    }
+
+    .manufacturer__item-text {
+      color: #404040;
+    }
+  }
+
+  &__item:nth-child(2) {
+    background-color: #666666;
+
+    .manufacturer__item-title {
+      color: #FFFFFF;
+    }
+
+    .manufacturer__item-text {
+      color: #FFFFFF;
+    }
+  }
+
+  &__item:nth-child(3) {
+    background-color: #FF5E5E;
+
+    .manufacturer__item-title {
+      color: #FFFFFF;
+    }
+
+    .manufacturer__item-text {
+      color: #FFFFFF;
+    }
+  }
+}

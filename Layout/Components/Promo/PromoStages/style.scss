@@ -1,0 +1,106 @@
+.promo-stages {
+    @include spacing(padding-block, 60px, 60px, 40px);
+    display: flex;
+    flex-direction: column;
+    @include spacing(gap, 40px, 40px, 24px);
+
+    &__title {
+        color: var(--Gray-Black);
+        @include h1;
+        @include spacing(max-width, 700px);
+
+        @include Mobile {
+            max-width: unset;
+            width: 100%;
+        }
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 20px, 20px, 12px);
+
+        @include Mobile {
+            flex-direction: column;
+        }
+
+        &-ls {
+            position: sticky;
+            @include spacing(top, 80px);
+            height: 100%;
+            @include spacing(flex-basis, 700px, 628px);
+            flex-shrink: 0;
+
+            @include Mobile {
+                flex-basis: unset;
+                width: 100%;
+                position: initial;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                @include spacing(border-radius, 32px, 32px, 20px);
+                @include spacing(height, 390px, 350px, 190px);
+            }
+        }
+        &-rs {
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 20px);
+        }
+    }
+
+    &__item {
+        background: var(--Gray-Lighter);
+        @include spacing(border-radius, 32px, 32px, 20px);
+        @include spacing(padding, 24px);
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 24px);
+
+        & .promo-banner__badge {
+            background: var(--Gray-White);
+            width: fit-content;
+            @include t1;
+        }
+        &--title {
+            @include h3;
+            color: var(--blue);
+        }
+        &--text {
+            @include t2;
+            color: var(--Gray-Dark);
+        }
+        &--btn {
+            @include spacing(padding-block, 10px);
+            @include spacing(padding-inline, 24px);
+            color: var(--Gray-White);
+            background: var(--Gray-Black);
+            @include spacing(border-radius, 8px);
+            width: fit-content !important;
+            @include t2b;
+
+            @include Mobile {
+                min-width: 100%;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+        }
+        &.accentColor {
+            background: #FF5E5E;
+
+            & .promo-stages__item--title,
+            & .promo-stages__item--text {
+                color: var(--Gray-White);
+            }
+        }
+        &_text-block {
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 12px);
+        }
+    }
+}

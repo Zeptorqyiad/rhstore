@@ -1,0 +1,57 @@
+.main-news-slider {
+    &__container {
+        display: grid;
+        grid-template-areas:
+        "title buttons"
+        "slider slider";
+        @include spacing(gap, 24px, 24px, 12px);
+
+        @include Mobile {
+            grid-template-areas:
+        "title"
+        "slider"
+        "buttons";
+        }
+    }
+
+    &__title {
+        color: #0D0D0D;
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__rs-content {
+        grid-area: buttons;
+        justify-self: right;
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 12px);
+
+        @include Mobile {
+            justify-self: center;
+            width: 100%;
+        }
+
+        &--btn {
+            @include spacing(padding-block, 10px);
+            @include spacing(padding-inline, 24px);
+            color: var(--Gray-White);
+            @include t2b;
+            @include spacing(border-radius, 12px);
+
+            @include Mobile {
+                flex: 1;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    &__slider {
+        overflow: hidden;
+        grid-area: slider;
+        @include border-r;
+    }
+}

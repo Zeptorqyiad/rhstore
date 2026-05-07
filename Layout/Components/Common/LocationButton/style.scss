@@ -1,0 +1,76 @@
+.location-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: vw(8px) 0;
+    gap: vw(8px);
+
+    @include HD {
+        padding: vwh(8px) 0;
+        gap: vwh(8px);
+    }
+
+    @include Mobile {
+        padding: vwm(8px) 0;
+        gap: vwm(8px);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            svg {
+                stroke: var(--red);
+            }
+
+            span {
+                color: var(--red);
+            }
+        }
+
+        &:active {
+            svg {
+                stroke: var(--red-dark);
+                transition: all 0.1s ease;
+            }
+
+            span {
+                color: var(--red-dark);
+                transition: all 0.1s ease;
+            }
+        }
+    }
+
+    svg {
+      flex-shrink: 0;
+        width: vw(24px);
+        height: vw(24px);
+        stroke: #ffffff;
+        transition: all 0.2s ease;
+
+        @include HD {
+            width: vwh(24px);
+            height: vwh(24px);
+        }
+
+        @include Mobile {
+            width: vwm(24px);
+            height: vwm(24px);
+        }
+    }
+
+    span {
+        @include button-s;
+        transition: all 0.2s ease;
+        color: #FFFFFF;
+        margin-top: vw(3px);
+        text-wrap: nowrap;
+
+        @include HD {
+            margin-top: vwh(3px);
+        }
+
+        @include Mobile {
+            margin-top: vwm(3px);
+        }
+    }
+}
+

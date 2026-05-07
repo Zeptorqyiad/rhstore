@@ -1,0 +1,89 @@
+.social-network {
+    display: flex;
+    @include spacing(gap, 12px);
+    transition: background 0.3s ease;
+
+    &__item {
+        overflow: hidden;
+        cursor: pointer;
+        @include border-r-s;
+    }
+
+    &__item svg {
+        @include spacing(width, 40px);
+        @include spacing(height, 40px);
+        transition: fill 0.3s ease;
+    }
+
+    &__telegram svg {
+        fill: #27A6E5;
+
+        @media (any-hover: hover) {
+            &:hover {
+                fill: #6CBDE5;
+            }
+        }
+
+        &:active {
+            fill: #1E81B2;
+        }
+    }
+
+    &__whatsapp svg {
+        fill: #48C95F;
+
+        @media (any-hover: hover) {
+            &:hover {
+                fill: #79C987;
+            }
+        }
+
+        &:active {
+            fill: #379948;
+        }
+    }
+
+    &__max {
+        position: relative;
+        overflow: hidden;
+        transition: background 0.3s ease;
+        background: radial-gradient(215.36% 215.36% at 118.08% 16.73%, #9F4FDC 6.88%, #6C2FDE 18.69%, #5130E8 27.96%, #214EFA 42.67%, #43BBFC 67.32%);
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:active {
+            &::after {
+                opacity: 1;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
+            }
+        }
+
+        svg {
+            color: var(--Gray-White);
+            @include spacing(padding, 8px);
+            transition: background 0.3s;
+            will-change: background;
+        }
+
+        @include Mobile {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

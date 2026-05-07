@@ -1,0 +1,155 @@
+.brands-cards {
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: vw(20px);
+
+
+        @include HD {
+            gap: vwh(20px);
+        }
+
+        @include Mobile {
+            grid-template-columns: 1fr;
+            gap: vwm(12px);
+        }
+    }
+
+    &__card {
+        position: relative;
+        background-color: #F2F2F2;
+        padding: vw(40px);
+        overflow: hidden;
+        @include border-r;
+
+        @include HD {
+            padding: vwh(40px);
+        }
+
+        @include Mobile {
+            padding: vwm(40px) vwm(24px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                .brands-cards__title {
+                    color: var(--red);
+                }
+
+                .brands-cards__logo {
+                    bottom: vw(-55px);
+
+                    @include HD {
+                        bottom: vwh(-55px);
+                    }
+
+                    @include Mobile {
+                        bottom: vwm(-55px);
+                    }
+                }
+            }
+        }
+    }
+
+    &__title {
+        transition: color 0.2s ease;
+        margin-bottom: vw(24px);
+        color: var(--Gray-Black);
+
+        @include HD {
+            margin-bottom: vwh(24px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__text {
+        @include t2;
+        color: var(--Gray-Dark);
+        margin-bottom: vw(40px);
+        max-width: vw(280px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+            max-width: vwh(240px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(40px);
+            max-width: vwm(220px);
+        }
+    }
+
+    &__buttons {
+        display: grid;
+        justify-items: start;
+        gap: vw(8px);
+        position: relative;
+        z-index: 2;
+
+        @include HD {
+            gap: vwh(8px);
+        }
+        @include Mobile {
+            gap: vwm(8px);
+        }
+    }
+
+    &__first-button, &__second-button {
+        padding: vw(8px) vw(16px);
+        @include border-r-s;
+
+
+        @include HD {
+            padding: vwh(8px) vwh(16px);
+        }
+
+        @include Mobile {
+            padding: vwm(8px) vwm(16px);
+        }
+
+        span {
+            @include button-s;
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        bottom: vw(-90px);
+        right: vw(12px);
+        height: vw(243px);
+        transition: bottom 0.2s ease-in-out;
+        z-index: 1;
+
+        @include HD {
+            height: vwh(243px);
+            bottom: vwh(-90px);
+            right: vwh(12px);
+        }
+
+        @include Mobile {
+            height: vwm(243px);
+            bottom: vwm(-90px);
+            right: vwm(12px);
+        }
+
+        img {
+            filter: drop-shadow(vw(20px) vw(80px) vw(40px) rgba(82, 19, 19, 0.1));
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            user-select: none;
+
+            @include HD {
+                filter: drop-shadow(vwh(20px) vwh(80px) vwh(40px) rgba(82, 19, 19, 0.1));
+            }
+
+            @include Mobile {
+                filter: drop-shadow(vwm(20px) vwm(80px) vwm(40px) rgba(82, 19, 19, 0.1));
+            }
+        }
+    }
+}

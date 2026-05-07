@@ -1,0 +1,193 @@
+.mobile-catalog {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100% - #{vwm(56px)});
+    background: var(--Gray-White);
+    z-index: 21;
+    display: grid;
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        padding: 0 vw(12px) vw(12px);
+
+        @include Mobile {
+            padding: 0 vwm(12px) vwm(12px);
+        }
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include Mobile {
+            margin: vwm(20px) 0 vwm(20px) vwm(12px);
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        gap: vw(20px);
+        background: var(--Gray-White);
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+
+        @include Mobile {
+            padding: vwm(12px)  vwm(12px) vwm(73px);
+            gap: vwm(20px);
+        }
+    }
+
+    &__title {
+        @include h4;
+        color: var(--Gray-Black);
+    }
+
+    &__close {
+        cursor: pointer;
+        @include transition-primary;
+
+        @include Mobile {
+          padding: vwm(12px);
+        }
+
+        svg {
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+    }
+
+    &__items {
+        display: grid;
+        overflow: auto;
+        align-items: start;
+        height: 100%;
+        max-height: 40vh;
+        @include scrollbar;
+
+        @include Mobile {
+            max-height: 48dvh;
+        }
+    }
+
+    &__items-children {
+        display: none;
+
+        @include Mobile {
+            padding: vwm(12px) 0 0 vwm(12px);
+        }
+    }
+
+    &__items-children.visible {
+        display: grid;
+
+        @include Mobile {
+            padding: vwm(12px) 0 0 vwm(12px);
+        }
+    }
+
+    &__radio-wrapper {
+        @include Mobile {
+            padding: vwm(12px);
+            border-bottom: max(#{vwm(2px), 2px}) solid #F2F2F2;
+            margin-left: vwm(12px);
+        }
+
+        &:first-child {
+            margin-left: 0;
+            border-top: max(#{vwm(2px), 2px}) solid #F2F2F2;
+        }
+    }
+
+    &__radio-wrapper-child {
+        @include Mobile {
+            padding: vwm(12px) 0;
+            border-bottom: max(#{vwm(2px), 2px}) solid #F2F2F2;
+        }
+
+        &:first-child {
+            border-top: max(#{vwm(2px), 2px}) solid #F2F2F2;
+        }
+
+        &:last-child {
+            border-bottom: none;
+            padding: vwm(12px) 0 0;
+        }
+    }
+
+    &__radio-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__radio-label {
+        color: var(--Gray-Dark);
+        @include button-s;
+    }
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-checkmark {
+        display: inline-block;
+        position: relative;
+        border-radius: 50%;
+        transition: border 0.1s linear;
+
+        @include Mobile {
+            width: vwm(22px);
+            height: vwm(22px);
+            border: max(#{vwm(2px), 2px}) solid #F2F2F2;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            background-color: #FFFFFF;
+
+            @include Mobile {
+                width: vwm(12px);
+                height: vwm(12px);
+            }
+        }
+    }
+
+    &__radio-button input[type="radio"]:checked ~ &__radio-checkmark {
+        @include Mobile {
+            border: max(#{vwm(5px), 5px}) solid var(--red);
+        }
+    }
+
+    &__button {
+        @include Mobile {
+            width: 100%;
+            padding: vwm(10.5px) vwm(20px);
+            border-radius: vwm(12px);
+            justify-content: center;
+        }
+
+        span {
+            @include button-m;
+        }
+    }
+
+}

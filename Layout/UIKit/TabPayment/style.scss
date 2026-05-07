@@ -1,0 +1,87 @@
+.tab-payment {
+    display: flex;
+    align-items: center;
+    flex: 1 0 0;
+
+    border-radius: vw(16px);
+    padding: vw(7.5px) vw(14px);
+    gap: vw(12px);
+    border: max(#{vw(2px)}, 2px) solid $GrayLighter;
+
+    cursor: pointer;
+
+    background: $GrayWhite;
+
+    transition: background 150ms, border-color 150ms, color 150ms;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            border-color: $Color2Light;
+        }
+    }
+
+    &:active {
+        border-color: $Color2Lighter;
+    }
+
+    &_active {
+        background: $Color2Darker !important;
+        border-color: $Color2Darker !important;
+
+        .tab-payment__text {
+            color: $GrayWhite;
+        }
+    }
+
+    @media screen and (max-width: $hd-width) {
+        border-radius: vwh(16px);
+        padding: vwh(7.5px) vwh(14px);
+        gap: vwh(12px);
+        border-width: max(#{vwh(2px)}, 2px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        border-radius: vwt(16px);
+        padding: vwt(7.5px) vwt(14px);
+        gap: vwt(12px);
+        border-width: max(#{vwt(2px)}, 2px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        border-radius: vwm(16px);
+        padding: vwm(7.5px) vwm(14px);
+        gap: vwm(12px);
+        border-width: max(#{vwm(2px)}, 2px);
+    }
+
+    // .tab-payment__icon
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: vw(24px);
+            height: vw(24px);
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(24px);
+                height: vwt(24px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+    }
+
+    // .tab-payment__text
+    &__text {
+        @include T2;
+        color: $GrayDark;
+        align-self: stretch;
+        white-space: nowrap;
+    }
+}

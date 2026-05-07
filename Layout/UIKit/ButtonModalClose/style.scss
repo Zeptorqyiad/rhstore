@@ -1,0 +1,43 @@
+.button-modal-close {
+    padding: vw(8px);
+    position: absolute;
+    top: vw(32px);
+    right: vw(32px);
+    @include border-r-m;
+    @include transition-primary;
+
+    @include HD {
+        top: vwh(32px);
+        right: vwh(32px);
+        padding: vwh(8px);
+    }
+    @include Mobile {
+        top: vwm(12px);
+        right: vwm(12px);
+        padding: vwm(8px);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background: var(--Gray-Lighter);
+        }
+    }
+
+    &:active {
+        background: var(--Gray-Light);
+    }
+
+    svg {
+        height: vw(24px);
+        width: vw(24px);
+
+        @include HD {
+            height: vwh(24px);
+            width: vwh(24px);
+        }
+        @include Mobile {
+            height: vwm(24px);
+            width: vwm(24px);
+        }
+    }
+}

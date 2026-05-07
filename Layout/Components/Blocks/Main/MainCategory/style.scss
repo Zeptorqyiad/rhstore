@@ -1,0 +1,178 @@
+.main-category {
+    &__title {
+        color: var(--Gray-Black);
+        margin-bottom: vw(40px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+
+        @include Mobile {
+            grid-template-columns: 1fr;
+            gap: vwm(12px);
+        }
+    }
+
+    &__card {
+        position: relative;
+        display: grid;
+        padding: vw(40px);
+        border-radius: vw(32px);
+        background: var(--Gray-Steel) url("/assets/images/main/main-category/main-category.webp") no-repeat center / cover;
+        min-height: vw(380px);
+        overflow: hidden;
+
+        @include HD {
+            min-height: vwh(380px);
+            padding: vwh(40px);
+            border-radius: vwh(32px);
+        }
+
+        @include Mobile {
+            min-height: vwm(315px);
+            padding: vwm(40px) vwm(24px);
+            border-radius: vwm(20px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                .main-category__card-title {
+                    color: var(--red-dark);
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            right: 0;
+            top: 54%;
+            transform: translateY(-50%);
+            max-height: vw(315px);
+            user-select: none;
+
+            @include HD {
+                max-height: vwh(315px);
+            }
+
+            @include Mobile {
+                top: 53%;
+                right: vwm(-20px);
+                max-height: vwm(215px);
+            }
+
+        }
+    }
+
+    &__card-top {
+        z-index: 1;
+    }
+
+    &__card-title {
+        color: #0D0D0D;
+        margin-bottom: vw(12px);
+        transition: all 0.2s ease;
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            max-width: vwm(200px);
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__card-features {
+        display: grid;
+    }
+
+    &__card-feature {
+        padding: vw(8px) 0;
+
+        @include HD {
+            padding: vwh(8px) 0;
+        }
+
+        @include Mobile {
+            padding: vwm(8px) 0;
+        }
+    }
+
+    &__card-feature-image {
+
+    }
+
+    &__card-link {
+        display: inline-block;
+
+        @media (any-hover: hover) {
+            &:hover {
+                .main-category__card-features-name, .main-category__card-features-description {
+                    color: var(--red);
+                }
+            }
+        }
+
+        &:active {
+            .main-category__card-features-name, .main-category__card-features-description {
+                color: var(--red-dark);
+            }
+        }
+    }
+
+    &__card-features-name {
+        @include button-s;
+        -webkit-font-feature-settings: "pnum" on, "lnum" on, "ss09" on, "liga" off;
+        font-feature-settings: "pnum" on, "lnum" on, "ss09" on, "liga" off;
+        color: var(--Gray-Dark);
+        transition: all 0.2s ease;
+    }
+
+    &__card-features-description {
+        @include button-sl;
+        color: var(--Gray-Dark);
+        transition: all 0.2s ease;
+    }
+
+    &__card-bottom {
+        display: flex;
+        align-items: flex-end;
+        z-index: 1;
+    }
+
+    &__card-button {
+        padding: vw(8px) vw(12px) vw(8px) vw(16px);
+        border-radius: vw(8px);
+        margin-top: vw(20px);
+
+        @include HD {
+            padding: vwh(8px) vwh(12px) vwh(8px) vwh(16px);
+            border-radius: vwh(8px);
+            margin-top: vwh(20px);
+        }
+        @include Mobile {
+            padding: vwm(8px) vwm(12px) vwm(8px) vwm(16px);
+            border-radius: vwm(8px);
+            width: auto;
+            margin-top: vwm(20px);
+        }
+
+        span {
+            @include button-s;
+        }
+    }
+}

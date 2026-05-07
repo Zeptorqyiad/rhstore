@@ -1,0 +1,332 @@
+.problem-three {
+    &__badge {
+        margin-bottom: vw(12px);
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__title {
+        @include h1;
+        color: var(--Gray-Black);
+        margin-bottom: vw(40px);
+        max-width: vw(490px);
+
+        @include HD {
+            font-size: vwh(40px);
+            margin-bottom: vwh(40px);
+            max-width: vwh(490px);
+        }
+
+        @include Mobile {
+            font-size: vwm(24px);
+            margin-bottom: vwm(40px);
+            max-width: 85%;
+        }
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+
+        @include Mobile {
+            grid-template-columns: 1fr;
+            gap: vwm(12px);
+        }
+    }
+
+    &__column-left {
+        background-color: #F2F2F2;
+        border-radius: vw(32px);
+        padding: vw(24px);
+
+        @include HD {
+            border-radius: vwh(32px);
+            padding: vwh(24px);
+        }
+
+        @include Mobile {
+            border-radius: vwm(20px);
+            padding: vwm(12px) vwm(12px) vwm(24px) vwm(12px);
+        }
+    }
+
+    &__card-badge, &__card-decision {
+        border-radius: vw(32px);
+        font-size: vw(20px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+        background-color: #FFFFFF;
+        display: inline-flex;
+        margin-bottom: vw(24px);
+
+        @include HD {
+            border-radius: vwh(32px);
+            font-size: vwh(20px);
+            margin-bottom: vwh(24px);
+        }
+
+        @include Mobile {
+            border-radius: vwm(8px);
+            font-size: vwm(12px);
+            line-height: 150%;
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__card-badge {
+        padding: vw(8px) vw(24px);
+        color: #000;
+
+        @include HD {
+            padding: vwh(8px) vwh(24px);
+        }
+
+        @include Mobile {
+            padding: vwm(4px) vwm(8px);
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__card-decision {
+        align-items: center;
+        padding: vw(8px) vw(24px) vw(8px) vw(12px);
+        color: #404040;
+        gap: vw(10px);
+
+        @include HD {
+            padding: vwh(8px) vwh(24px) vwh(8px) vwh(12px);
+            gap: vwh(10px);
+        }
+
+        @include Mobile {
+            padding: vwm(4px) vwm(8px);
+            gap: vwm(8px);
+        }
+
+        img {
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: vw(12px);
+
+        @include HD {
+            gap: vwh(12px);
+        }
+
+        @include Mobile {
+            gap: vwm(12px);
+        }
+
+        img {
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+    }
+
+    &__item:not(:last-child) {
+        padding-bottom: vw(20px);
+        border-bottom: max(#{vw(2px), 2px}) solid #CCCCCC;
+
+        @include HD {
+            padding-bottom: vwh(20px);
+            border-bottom: max(#{vwh(2px), 2px}) solid #CCCCCC;
+        }
+
+        @include Mobile {
+            padding-bottom: vwm(20px);
+            border-bottom: max(#{vwm(2px), 2px}) solid #CCCCCC;
+        }
+    }
+
+    &__item:not(:first-child) {
+        padding-top: vw(20px);
+
+        @include HD {
+            padding-top: vwh(20px);
+        }
+
+        @include Mobile {
+            padding-top: vwm(20px);
+        }
+    }
+
+    &__item-text {
+        @include t1;
+        color: #666;
+
+        @include Mobile {
+            @include t2;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-areas:
+    '. .'
+    '. .'
+    'five five';
+        gap: vw(20px);
+        grid-template-columns: vw(460px) auto;
+
+        @include HD {
+            gap: vwh(20px);
+            grid-template-columns: vwh(388px) auto;
+        }
+
+        @include Mobile {
+            gap: vwm(12px);
+            grid-template-columns: vwm(220px) auto;
+        }
+    }
+
+    &__card {
+        padding: vw(24px);
+        border-radius: vw(32px);
+
+        @include HD {
+            padding: vwh(24px);
+            border-radius: vwh(32px);
+        }
+
+        @include Mobile {
+            padding: vwm(12px) vwm(12px) vwm(24px);
+            border-radius: vwm(20px);
+        }
+    }
+
+    &__card:nth-child(1) {
+        background-color: #FF5E5E;
+    }
+
+    &__card:nth-child(2) {
+        height: vw(202px);
+        overflow: hidden;
+        padding: 0;
+
+        @include HD {
+            height: vwh(232px);
+        }
+
+        @include Mobile {
+            height: vwm(118px);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__card:nth-child(3) {
+        background-color: #6BB5FF;
+    }
+
+    &__card:nth-child(4) {
+        background-color: #389BFF;
+        height: vw(202px);
+        overflow: hidden;
+        padding: 0;
+
+        @include HD {
+            height: vwh(232px);
+        }
+
+        @include Mobile {
+            height: vwm(118px);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__card:nth-child(5) {
+        background-color: #389BFF;
+        grid-area: five;
+
+        .problem-three__card-text {
+            margin-bottom: vw(24px);
+
+            @include HD {
+                margin-bottom: vwh(24px);
+            }
+
+            @include Mobile {
+                margin-bottom: vwm(24px);
+            }
+        }
+    }
+
+    &__card-text {
+        @include t1;
+        color: #FFF;
+
+        @include Mobile {
+            @include t2;
+        }
+    }
+
+    &__button {
+        padding: vw(10px) vw(24px);
+        border-radius: vw(12px);
+
+        @include HD {
+            padding: vwh(10px) vwh(24px);
+            border-radius: vwh(12px);
+        }
+
+        @include Mobile {
+            justify-content: center;
+            padding: vwm(8px) vwm(16px);
+            border-radius: vwm(8px);
+        }
+
+        span {
+            @include button-m;
+
+            @include Mobile {
+                @include button-s;
+            }
+        }
+    }
+}

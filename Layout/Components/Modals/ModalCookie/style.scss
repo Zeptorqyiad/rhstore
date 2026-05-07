@@ -1,0 +1,99 @@
+.cookie {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    margin: auto auto vw(20px) vw(20px);
+    background: var(--Gray-White);
+    box-shadow: 0 0 15px 0 #0000001a;
+    overflow: hidden;
+    transition-property: overlay, display, opacity;
+    transition-behavior: allow-discrete;
+    @include transition-primary;
+    @include border-r;
+
+    @include HD {
+        margin: auto auto vwh(20px) vwh(20px);
+    }
+    @include Mobile {
+        margin: auto 0 0;
+        max-width: 100%;
+        width: 100%;
+        z-index: 30;
+    }
+
+    &__container {
+        box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        @include spacing(padding, 32px);
+        @include spacing(max-width, 420px);
+
+        @include Mobile {
+            padding: vwm(64px) vwm(24px) vwm(94px);
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @include spacing(gap, 16px);
+    }
+
+    &__title {
+        @include h3;
+        @include spacing(margin-top, 6px);
+        color: var(--Gray-Darker);
+    }
+
+    &__description {
+        @include t2;
+        color: var(--Gray-Darker);
+
+        &--link {
+            color: var(--red);
+        }
+    }
+
+    &__submit {
+        display: inline-flex;
+        align-items: center;
+        color: var(--Text-Icon-Gray-White);
+        background: var(--red);
+        @include spacing(padding-inline, 20px);
+        @include spacing(height, 48px);
+        user-select: none;
+        @include t3b;
+        @include border-r-m;
+        @include transition-primary;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: var(--red-lighter);
+            }
+        }
+
+        &:active {
+            background: var(--red-dark);
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        @include spacing(padding-block, 12px);
+        background: var(--Gray-Black);
+        color: var(--Gray-White);
+        @include t2b;
+        font-weight: 700 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include spacing(border-radius, 8px);
+    }
+}

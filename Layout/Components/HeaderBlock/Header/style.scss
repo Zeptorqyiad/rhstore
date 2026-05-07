@@ -1,0 +1,448 @@
+.header {
+    position: sticky;
+    background-color: var(--Gray-Black);
+    height: vw(73px);
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+
+    @include HD {
+        height: vwh(73px);
+    }
+
+    @include Mobile {
+        background-color: #F2F2F2;
+        height: vwm(57px);
+        z-index: 27;
+    }
+
+    &__container {
+        position: relative;
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        @include Mobile {
+            justify-content: space-between;
+        }
+    }
+
+    &__logo-swap {
+        display: flex;
+        position: relative;
+        align-items: flex-start;
+        flex-direction: column;
+        overflow: hidden;
+        width: vw(140px);
+        height: vw(48px);
+        gap: vw(40px);
+        top: 0;
+        @include transition-primary;
+
+        .logo {
+            margin-top: vw(4px);
+
+            @include HD {
+                margin-top: vwh(4px);
+            }
+            @include Mobile {
+                margin-top: vwm(4px);
+            }
+        }
+
+        .nav__button {
+            z-index: 11;
+        }
+
+        &_scrolled {
+            overflow: unset;
+            top: vw(-80px);
+
+            @include HD {
+                top: vwh(-68px);
+            }
+            @include Mobile {
+                overflow: hidden;
+                top: 0;
+            }
+        }
+
+        &_pinned {
+            overflow: hidden;
+            top: 0;
+        }
+
+        @include HD {
+            width: vwh(140px);
+            height: vwh(48px);
+        }
+
+        @include Mobile {
+            width: vwm(140px);
+            height: vwm(48px);
+        }
+    }
+
+    &__center {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        @include Mobile {
+            display: none;
+        }
+    }
+
+    &__dash {
+        background-color: #404040;
+        width: max(#{vw(2px), 2px});
+        height: vw(40px);
+        margin: 0 vw(26px);
+
+        @include HD {
+            width: max(#{vwh(2px), 2px});
+            height: vwh(40px);
+            margin: 0 vwh(26px);
+        }
+
+        @include Mobile {
+            width: max(#{vwm(2px), 2px});
+            height: vwm(40px);
+            margin: 0 vwm(20px);
+        }
+    }
+
+    &__location {
+        margin-right: vw(40px);
+
+        @include HD {
+            margin-left: vwh(4px);
+            margin-right: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-left: vwm(4px);
+            margin-right: vwm(40px);
+        }
+    }
+
+    &__location-box {
+        position: relative;
+    }
+
+    &__search-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    &__search {
+        flex: 1;
+        margin-right: vw(8px);
+
+        @include HD {
+            margin-right: vwh(8px);
+        }
+
+        @include Mobile {
+            margin-right: vwm(8px);
+        }
+    }
+
+    &__search-input {
+        @include button-s;
+        color: var(--Gray-White);
+        width: 100%;
+        border: max(#{vw(2px), 2px}) solid var(--Gray-Dark);
+        outline: none;
+        height: vw(48px);
+        padding: 0 vw(12px);
+        border-radius: vw(8px);
+        background-color: var(--Gray-Dark);
+        @include transition-primary;
+
+        @include HD {
+            border: max(#{vwh(2px), 2px}) solid var(--Gray-Dark);
+            height: vwh(48px);
+            padding: 0 vwh(12px);
+            border-radius: vwh(8px);
+        }
+
+        @include Mobile {
+            border: max(#{vwm(2px), 2px}) solid var(--Gray-Dark);
+            height: vwm(48px);
+            padding: 0 vwm(12px);
+            border-radius: vwm(8px);
+        }
+
+        &::placeholder {
+            @include button-s;
+            color: #999;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: #999999;
+            }
+        }
+
+        &:focus-within {
+            border-color: #CCCCCC;
+            background-color: #FFFFFF;
+            color: var(--Gray-Dark);
+        }
+    }
+
+    &__button-search {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--red);
+        border-radius: vw(8px);
+        width: vw(48px);
+        height: vw(48px);
+        transition: all 0.2s ease;
+
+        @include HD {
+            border-radius: vwh(8px);
+            width: vwh(48px);
+            height: vwh(48px);
+        }
+
+        @include Mobile {
+            border-radius: vwm(8px);
+            width: vwm(48px);
+            height: vwm(48px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #FF5E5E;
+            }
+        }
+
+        &:active {
+            background-color: #D93030;
+            transition: all 0.1s ease;
+        }
+
+        svg {
+            width: vw(20px);
+            height: vw(20px);
+
+            @include HD {
+                width: vwh(20px);
+                height: vwh(20px);
+            }
+
+            @include Mobile {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: vw(25px);
+
+        @include HD {
+            gap: vwh(25px);
+        }
+
+        @include Mobile {
+            gap: 0;
+        }
+    }
+
+    &__profile {
+        position: relative;
+
+        @include Mobile {
+            display: none;
+        }
+
+        &:hover .header__profile-dropdown {
+            opacity: 1;
+            pointer-events: all;
+            user-select: auto;
+        }
+    }
+
+    &__profile-dropdown {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        opacity: 0;
+        user-select: none;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        padding-top: vw(38px);
+
+        @include HD {
+            padding-top: vwh(38px);
+        }
+
+        @include Mobile {
+            padding-top: vwm(38px);
+        }
+    }
+
+    &__button-profile-name, &__button-cart-result {
+        @include button-s;
+        color: #FFFFFF;
+        transition: all 0.2s ease;
+        margin-right: vw(8px);
+
+        @include HD {
+            margin-right: vwh(8px);
+        }
+
+        @include Mobile {
+            margin-right: vwm(8px);
+        }
+    }
+
+    &__button-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__button-profile, &__button-like, &__button-cart {
+        svg {
+            width: vw(24px);
+            height: vw(24px);
+            fill: #FFFFFF;
+            transition: all 0.2s ease;
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    fill: #FF5E5E;
+                }
+
+                span {
+                    color: #FF5E5E;
+                }
+            }
+        }
+
+        &:active {
+            svg {
+                fill: #FF3838;
+                transition: all 0.1s ease;
+            }
+
+            span {
+                color: #FF3838;
+                transition: all 0.1s ease;
+            }
+        }
+    }
+
+    &__button-like,
+    &__button-cart, {
+        position: relative;
+    }
+
+    &__button-like::after,
+    &__button-cart:not(.modal-cart)::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: vw(-4px);
+        width: vw(4px);
+        height: vw(4px);
+        background-color: var(--red);
+        border-radius: 100%;
+        opacity: 0;
+        transition: opacity 0.1s linear;
+
+        @include HD {
+            top: 0;
+            right: vwh(-4px);
+            width: vwh(4px);
+            height: vwh(4px);
+            border-radius: 100%;
+        }
+
+        @include Mobile {
+            top: vwm(10px);
+            right: vwm(6px);
+            width: vwm(4px);
+            height: vwm(4px);
+            border-radius: 100%;
+        }
+    }
+
+    &__button-like.active::after,
+    &__button-cart.active:not(.modal-cart)::after {
+        opacity: 1;
+    }
+
+    &__button-cart.active:hover + .modal-cart {
+            opacity: 1;
+            pointer-events: all;
+            user-select: auto;
+    }
+
+    &__button-profile, &__button-cart {
+        @include Mobile {
+            display: none;
+        }
+    }
+
+    &__button-like {
+        @include Mobile {
+            padding: vwm(10px) vwm(12px);
+
+            svg {
+                fill: #404040;
+            }
+        }
+    }
+
+
+    &__button-mob-search {
+        display: none;
+
+        @include Mobile {
+            padding: vwm(10px) vwm(12px);
+            display: block;
+        }
+
+        svg {
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+
+        svg path {
+            transition: all 0.2s ease;
+        }
+
+        &:active {
+            svg path {
+                stroke: #FF3838;
+                transition: all 0.1s ease;
+            }
+        }
+    }
+}

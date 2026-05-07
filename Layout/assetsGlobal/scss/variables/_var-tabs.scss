@@ -1,0 +1,49 @@
+:root {
+    /* Primary main */
+    --Tab-Primary-Main-Static: var(--Gray-Lighter);
+    --Tab-Primary-Main-Hover: var(--Gray-Lighter);
+    --Tab-Primary-Main-Press: var(--Color1-Lighter);
+    --Tab-Primary-Main-Active: var(--Color1-Lighter);
+
+    /* Primary dark */
+    --Tab-Primary-Dark-Static: var(--Gray-Dark);
+    --Tab-Primary-Dark-Hover: var(--Gray-Dark);
+    --Tab-Primary-Dark-Press: var(--Gray-Darker);
+    --Tab-Primary-Dark-Active: var(--Gray-Darker);
+
+    /* Secondary main */
+    --Tab-Secondary-Main-Static: transparent;
+    --Tab-Secondary-Main-Hover: var(--Gray-Lighter);
+    --Tab-Secondary-Main-Press: var(--Color1-Lighter);
+    --Tab-Secondary-Main-Active: var(--Gray-Lighter);
+
+    /* Secondary dark */
+    --Tab-Secondary-Dark-Static: transparent;
+    --Tab-Secondary-Dark-Hover: var(--Gray-Dark);
+    --Tab-Secondary-Dark-Press: var(--Gray-Darker);
+    --Tab-Secondary-Dark-Active: var(--Gray-Dark);
+
+    /* Outline main */
+    --Tab-Outline-Main-Static: var(--Gray-Light);
+    --Tab-Outline-Main-Hover: var(--Color1-Light);
+    --Tab-Outline-Main-Press: var(--Gray-Lighter);
+    --Tab-Outline-Main-Active: var(--Color1-Main);
+
+    /* Outline dark */
+    --Tab-Outline-Dark-Static: var(--Gray-Dark);
+    --Tab-Outline-Dark-Hover: var(--Gray-Medium);
+    --Tab-Outline-Dark-Press: var(--Gray-Dark);
+    --Tab-Outline-Dark-Active: var(--Color1-Main);
+
+    /* Underline main */
+    --Tab-Underline-Main-Static: transparent;
+    --Tab-Underline-Main-Hover: var(--Gray-Lighter);
+    --Tab-Underline-Main-Press: var(--Gray-Light);
+    --Tab-Underline-Main-Active: var(--Color1-Main);
+
+    /* Underline dark */
+    --Tab-Underline-Dark-Static: transparent;
+    --Tab-Underline-Dark-Hover: var(--Gray-Medium);
+    --Tab-Underline-Dark-Press: var(--Gray-Dark);
+    --Tab-Underline-Dark-Active: var(--Color1-Main);
+}

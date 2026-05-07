@@ -1,0 +1,135 @@
+.btn-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $Color2Lighter;
+
+    padding: vw(5.5px) vw(12px);
+    gap: vw(4px);
+    border-radius: vw(20px);
+
+    cursor: pointer;
+
+    @media screen and (max-width: $hd-width) {
+        padding: vwh(5.5px) vwh(12px);
+        gap: vwh(4px);
+        border-radius: vwh(20px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        padding: vwt(5.5px) vwt(12px);
+        gap: vwt(4px);
+        border-radius: vwt(20px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        padding: vwm(5.5px) vwm(12px);
+        gap: vwm(4px);
+        border-radius: vwm(20px);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background-color: $Color2Light;
+
+            .btn-info__subtext {
+                color: $GrayMedium;
+            }
+
+            .btn-info__icon svg {
+                stroke: $GrayMedium;
+            }
+
+            .btn-info__divider {
+                background-color: $GrayMedium;
+            }
+        }
+    }
+
+    &:active {
+        background-color: $Color2Main;
+
+        .btn-info__subtext {
+            color: $GrayMedium;
+        }
+        .btn-info__icon svg {
+            stroke: $GrayMedium;
+        }
+
+        .btn-info__divider {
+            background-color: $GrayMedium;
+        }
+    }
+
+    // .btn-info__text
+    &__text {
+        color: $GrayDarker;
+    }
+
+    // .btn-info__divider
+    &__divider {
+        display: flex;
+        align-self: stretch;
+        justify-content: center;
+        align-items: center;
+
+        margin: vw(4px) vw(8px);
+        gap: vw(10px);
+        width: vw(2px);
+        height: vw(13px);
+        background-color: $GrayLight;
+
+        @media screen and (max-width: $hd-width) {
+            margin: vwh(4px) vwh(8px);
+            gap: vwh(10px);
+            width: vwh(2px);
+            height: vwh(13px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            margin: vwt(4px) vwt(8px);
+            gap: vwt(10px);
+            width: vwt(2px);
+            height: vwt(13px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            margin: vwm(4px) vwm(8px);
+            gap: vwm(10px);
+            width: vwm(2px);
+            height: vwm(13px);
+        }
+    }
+
+    // .btn-info__subtext
+    &__subtext {
+        color: $GrayLight;
+    }
+
+    // .btn-info__icon
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: vw(20px);
+            height: vw(20px);
+            stroke: $GrayLight;
+            fill: none;
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(20px);
+                height: vwh(20px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(20px);
+                height: vwt(20px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+    }
+
+    &__text, &__subtext {
+        @include T4_B;
+    }
+}

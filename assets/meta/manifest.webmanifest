@@ -1,0 +1,12 @@
+{
+  "name": "RH Store",
+  "short_name": "RH Store",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "",
+  "theme_color": "#ff3838",
+  "icons": [
+      { "src": "/assets/meta/icon-192.png", "type": "image/png", "sizes": "192x192" },
+      { "src": "/assets/meta/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

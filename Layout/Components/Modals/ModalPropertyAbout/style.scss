@@ -1,0 +1,132 @@
+.modal-property {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: calc(100% - #{vwm(124px)}) !important;
+    top: 0;
+    left: 0;
+    padding: vw(14px) vw(16px) vw(10px) vw(12px);
+    flex-direction: column;
+    background-color: var(--Gray-White);
+    z-index: 30 !important;
+    transform: translateX(100%);
+    transition: transform 0.1s ease;
+
+    @include Mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: vwm(14px) vwm(16px) vwm(10px) vwm(12px);
+    }
+
+    &__top {
+        position: fixed;
+        padding: vw(16px);
+        top: 0;
+        left: 0;
+        margin-bottom: 26px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--Gray-White);
+
+        @include Mobile {
+            padding: vwm(16px);
+        }
+    }
+
+    &__body {
+        padding: 0 vw(12px) vw(12px);
+        display: flex;
+        flex-direction: column;
+
+        @include Mobile {
+            padding: 0 vwm(12px) vwm(12px);
+        }
+
+        .about-product__item-bottom {
+            padding: 0;
+        }
+    }
+
+    &__wrap {
+        overflow-y: auto;
+
+        @include Mobile {
+            margin-top: vwm(50px);
+        }
+
+        &::-webkit-scrollbar {
+            width: vw(8px);
+
+            @include HD {
+                width: vwh(8px);
+            }
+            @include Mobile {
+                width: vwm(8px);
+            }
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--Gray-Light);
+            @include border-r-s;
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    background: var(--Gray-Light);
+                }
+            }
+
+            &:active {
+                background: var(--Gray-Light);
+            }
+        }
+    }
+
+    &__title {
+        @include h3;
+
+        margin-bottom: vw(20px);
+        align-self: flex-start;
+        color: var(--Gray-Dark);
+        padding-top: vw(56px);
+
+        @include Mobile {
+            margin-bottom: vwm(20px);
+            padding-top: 0;
+        }
+    }
+
+    &__content {
+        @include t3;
+
+        color: var(--Gray-Medium);
+        margin-bottom: vw(24px);
+
+        @include Mobile {
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__btn {
+        padding: vw(12px);
+
+        @include HD {
+            padding: vw(12px);
+        }
+
+        @include Mobile {
+            padding: vw(12px);
+        }
+    }
+
+    &__button-cart.purchase-card__button-cart {
+        margin-bottom: 0;
+    }
+
+    &.open-modal {
+        transform: translateX(0);
+    }
+}
+

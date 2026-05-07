@@ -1,0 +1,54 @@
+.tab-color {
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background: $GrayLighter;
+
+    width: vw(48px);
+    height: vw(48px);
+    padding: vw(4px);
+    gap: vw(10px);
+    border-radius: vw(16px);
+    border: max(#{vw(2px)}, 2px) solid transparent;
+
+    cursor: pointer;
+    
+    @media screen and (max-width: $hd-width) {
+        width: vwh(48px);
+        height: vwh(48px);
+        padding: vwh(4px);
+        gap: vwh(10px);
+        border-radius: vwh(16px);
+        border-width: max(#{vwh(2px)}, 2px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        width: vwt(48px);
+        height: vwt(48px);
+        padding: vwt(4px);
+        gap: vwt(10px);
+        border-radius: vwt(16px);
+        border-width: max(#{vwt(2px)}, 2px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        width: vwm(48px);
+        height: vwm(48px);
+        padding: vwm(4px);
+        gap: vwm(10px);
+        border-radius: vwm(16px);
+        border-width: max(#{vwm(2px)}, 2px);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            border-color: $Color2Lighter;
+        }
+    }
+
+    &_active {
+        border-color: $Color2Light !important;
+    }
+
+    // .tab-color__img
+    &__img {
+    }
+}

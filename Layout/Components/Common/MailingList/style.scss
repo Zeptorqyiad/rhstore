@@ -1,0 +1,180 @@
+.mailing-list {
+    background-color: var(--Gray-Lighter);
+
+    &__container {
+        padding: vw(60px) 0;
+        display: grid;
+        grid-template-columns: vw(540px) auto;
+        gap: vw(60px);
+
+        @include HD {
+            padding: vwh(60px) 0;
+            gap: vwh(60px);
+            grid-template-columns: vwh(540px) auto;
+        }
+
+        @include Mobile {
+            padding: vwm(40px) 0;
+            grid-template-columns: 1fr;
+            gap: vwm(24px);
+        }
+    }
+
+    &__card, &__mail-card {
+        background: var(--Gray-White);
+        @include border-r;
+    }
+
+    &__card {
+        padding: vw(40px);
+
+        @include HD {
+            padding: vwh(40px);
+        }
+
+        @include Mobile {
+            padding: vwm(40px) vwm(24px);
+        }
+    }
+
+    &__mail-card {
+        padding: vw(40px) vw(40px) vw(50px);
+
+        @include HD {
+            padding: vwh(40px) vwh(40px) vwh(50px);
+        }
+
+        @include Mobile {
+            padding: vwm(40px) vwm(24px) vwm(50px);
+        }
+    }
+
+    &__card-title {
+        color: var(--Gray-Black);
+        margin-bottom: vw(12px);
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+            font-size: vwm(24px);
+            line-height: 120%;
+        }
+    }
+
+    &__card-text {
+        @include t2;
+        color: var(--Gray-Dark);
+        margin-bottom: vw(40px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(40px);
+            max-width: vwm(264px);
+        }
+    }
+
+    &__card-button {
+        padding: vw(10px) vw(16px);
+        @include border-r-s;
+        grid-area: submit;
+
+        @include HD {
+            padding: vwh(10px) vwh(16px);
+            margin-top: 0;
+        }
+
+        @include Mobile {
+            justify-self: self-start;
+            padding: vwm(10px) vwm(16px);
+            margin-top: vwm(16px);
+        }
+
+        span {
+            @include button-vs;
+        }
+    }
+
+    &__mail-card-title {
+        color: var(--Gray-Black);
+        margin-bottom: vw(32px);
+
+        @include HD {
+            margin-bottom: vwh(32px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(32px);
+            font-size: vwm(24px);
+            line-height: 120%;
+        }
+    }
+
+    &__mail-card-line {
+        display: grid;
+        gap: vw(12px);
+        margin-bottom: vw(16px);
+        grid-auto-columns: auto auto;
+        align-items: center;
+        justify-content: start;
+        grid-template-areas:
+                'input submit'
+                'checkbox checkbox';
+
+        @include HD {
+            gap: vwh(12px);
+            margin-bottom: vwh(16px);
+        }
+
+        @include Mobile {
+            gap: vwm(16px);
+            margin-bottom: vwm(32px);
+            grid-template-areas:
+                'input'
+                'checkbox'
+                'submit';
+        }
+    }
+
+    &__mail-card-input {
+        input {
+            padding: 0 vw(12px);
+            height: vw(40px);
+            width: vw(300px);
+
+            @include HD {
+                padding: 0 vwh(12px);
+                height: vwh(40px);
+                width: vwh(300px);
+            }
+
+            @include Mobile {
+                padding: 0 vwm(12px);
+                height: vwm(44px);
+                width: 100%;
+            }
+        }
+
+        .variant-text-field__label {
+            transform: translateY(40%);
+        }
+    }
+
+    &__checkbox {
+        max-width: vw(400px);
+        grid-area: checkbox;
+
+        @include HD {
+            max-width: vwh(400px);
+        }
+
+        @include Mobile {
+            max-width: 100%;
+        }
+    }
+}

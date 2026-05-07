@@ -1,0 +1,249 @@
+.button {
+    &-primary, &-secondary, &-gray, &-blue, &-transparent, &-blacks {
+        -webkit-font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        -webkit-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+
+        span {
+            user-select: none;
+        }
+
+        svg {
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+
+        .loader {
+            width: vw(24px);
+            height: vw(24px);
+            display: none;
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+
+        &.loading .loader {
+            display: block;
+        }
+
+        &.loading span {
+            display: none;
+        }
+    }
+
+	&.hidden {
+		display: none !important;
+	}
+
+    &.loading i {
+        display: block;
+    }
+
+    &.loading span {
+        display: none;
+    }
+
+    &-primary {
+        background: var(--red);
+        gap: vw(6px);
+
+        @include HD {
+            gap: vwh(6px);
+        }
+
+        @include Mobile {
+            gap: vwm(6px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background:var(--red-lighter);
+            }
+        }
+
+        &:active {
+            transition: all 0.1s ease;
+            background: var(--red-dark);
+        }
+
+        span {
+            color: #F2F2F2;
+        }
+    }
+
+    &-secondary {
+        background: var(--Gray-Black);
+        gap: vw(6px);
+
+        @include HD {
+            gap: vwh(6px);
+        }
+
+        @include Mobile {
+            gap: vwm(6px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: var(--Gray-Dark);
+            }
+        }
+
+        &:active {
+            transition: all 0.1s ease;
+            background: #666666;
+        }
+
+        span {
+            color: #ffffff;
+        }
+    }
+
+    &-gray {
+        background: #F2F2F2;
+
+        span {
+            transition: all 0.2s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                span {
+                    color: var(--red);
+                }
+            }
+        }
+
+        &:active {
+            transition: all 0.1s ease;
+            background: #CCC;
+
+            span {
+                transition: all 0.1s ease;
+                color: var(--red-dark);
+            }
+        }
+
+        span {
+            color: #404040;
+        }
+    }
+
+    &-transparent {
+        background: transparent;
+
+        span {
+            transition: all 0.2s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+
+                span {
+                    color: var(--red);
+                }
+            }
+        }
+
+        &:active {
+            transition: all 0.1s ease;
+            background: var(--Gray-Light);
+
+            span {
+                transition: all 0.1s ease;
+                color: var(--red-dark);
+            }
+        }
+
+        span {
+            color: #404040;
+        }
+    }
+
+    &-blue {
+        background: #389BFF;
+
+        span {
+            transition: all 0.2s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: #6BB5FF;
+
+                span {
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        &:active {
+            transition: all 0.1s ease;
+            background: #2D7CCC;
+
+            span {
+                transition: all 0.1s ease;
+                color: #FFFFFF;
+            }
+        }
+
+        span {
+            color: #FFFFFF;
+        }
+    }
+
+    &-black {
+        background: var(--Gray-Black);
+
+        span {
+            transition: all 0.2s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: var(--Gray-Darker);
+
+                span {
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        &:active {
+            transition: all 0.1s ease;
+            background: var(--Gray-Dark);
+
+            span {
+                transition: all 0.1s ease;
+                color: #FFFFFF;
+            }
+        }
+
+        span {
+            color: #FFFFFF;
+        }
+    }
+}

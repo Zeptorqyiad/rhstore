@@ -1,0 +1,35 @@
+.link-main {
+    text-decoration: none;
+    -webkit-text-decoration: none;
+
+
+    &_style-light {
+        @include T4;
+        color: $Color2Dark;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: $GrayDarker;
+            }
+        }
+
+        &:active {
+            color: $GrayBlack;
+        }
+    }
+
+    &_style-bold {
+        @include T4_B;
+        color: $Color2Dark;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: $Color2Main;
+            }
+        }
+
+        &:active {
+            color: $Color2Light;
+        }
+    }
+}

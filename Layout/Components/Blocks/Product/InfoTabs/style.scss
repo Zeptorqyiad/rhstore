@@ -1,0 +1,132 @@
+.info-tabs {
+    @include Mobile {
+        display: none;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: vw(40px);
+        margin-bottom: vw(32px);
+
+        @include HD {
+            gap: vwh(40px);
+            margin-bottom: vwh(32px);
+        }
+
+        @include Mobile {
+            gap: vwm(40px);
+            margin-bottom: vwm(32px);
+        }
+    }
+
+    &__button {
+        @include h4;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: vw(9px) 0 vw(7px);
+        border-bottom: max(#{vw(2px), 2px}) solid #FFFFFF;
+        transition: all 0.2s ease;
+        background: #FFFFFF;
+        color: #666666;
+
+        @include HD {
+            padding: vwh(9px) 0 vwh(7px);
+            border-bottom: max(#{vwh(2px), 2px}) solid #FFFFFF;
+        }
+
+        @include Mobile {
+            padding: vwm(9px) 0 vwm(7px);
+            border-bottom: max(#{vwm(2px), 2px}) solid #FFFFFF;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-bottom-color: #FFABAB;
+            }
+        }
+    }
+
+    &__button_active {
+        color: #D93030;
+        border-color: #D93030;
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-bottom-color: #D93030;
+            }
+        }
+    }
+
+    &__item {
+        @include t3;
+        color: var(--Gray-Medium);
+
+        animation: fadeEffect 0.4s;
+
+        &_delivery {
+            p {
+                margin-bottom: vw(20px);
+
+                @include HD {
+                    margin-bottom: vwh(20px);
+                }
+                @include Mobile {
+                    margin-bottom: vwm(20px);
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    //&__content {
+    //    p {
+    //        @include t3;
+    //        color: #999999;
+    //    }
+    //
+    //}
+
+    @keyframes fadeEffect {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

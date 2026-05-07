@@ -1,0 +1,232 @@
+.text-field {
+    background: var(--Gray-White);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    border-radius: vw(16px);
+
+    @include HD {
+        border-radius: vwh(16px);
+    }
+    @include Mobile{
+        border-radius: vwm(16px);
+    }
+
+    &_read-only {
+        .text-field__input {
+            color: var(--Gray-Medium);
+        }
+
+        .text-field__block {
+            background: var(--Color2-Lighter) !important;
+            border-color: var(--Color2-Lighter) !important;
+        }
+    }
+
+    &_size-sm {
+        .text-field__block {
+            border-radius: vw(12px);
+            border: max(#{vw(2px), 2px}) solid var(--Color2-Lighter);
+            padding: vw(5.5px) vw(14px);
+            gap: vw(8px);
+            @include transition-primary;
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    border-color: var(--red);
+                    background-color: var(--Gray-White);
+                }
+            }
+
+            &:focus-within {
+                border-color: var(--red-dark);
+                color: var(--Gray-Black);
+            }
+
+            @include HD {
+                border-radius: vwh(12px);
+                border-width: max(#{vwh(2px)}, 2px);
+                padding: vwh(5.5px) vwh(14px);
+                gap: vwh(8px);
+            }
+            @include Mobile {
+                border-radius: vwm(12px);
+                border-width: max(#{vwm(2px)}, 2px);
+                padding: vwm(5.5px) vwm(14px);
+                gap: vwm(8px);
+            }
+        }
+
+        .text-field__icon svg {
+            width: vw(20px);
+            height: vw(20px);
+
+            @include HD {
+                width: vwh(20px);
+                height: vwh(20px);
+            }
+            @include Mobile {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+    }
+
+    &_size-md {
+        .text-field__input {
+            display: flex;
+            align-items: center;
+            flex: 1 0 0;
+            padding: vw(1.5px) 0;
+            @include transition-primary;
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    border-color: var(--red);
+                    background-color: var(--Gray-White);
+                }
+            }
+
+            &:focus-within {
+                border-color: var(--red-dark);
+                color: var(--Gray-Black);
+            }
+
+            @include HD {
+                padding: vwh(1.5px) 0;
+
+            }
+            @include Mobile {
+                padding: vwm(1.5px) 0;
+
+            }
+        }
+
+        .text-field__block {
+            padding: vw(10px) vw(14px);
+            gap: vw(8px);
+            border-radius: vw(16px);
+            border: max(#{vw(2px)}, 2px) solid var(--Color2-Lighter);
+            @include transition-primary;
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    border-color: var(--red);
+                    background-color: var(--Gray-White);
+                }
+            }
+
+            &:focus-within {
+                border-color: var(--red-dark);
+                color: var(--Gray-Black);
+            }
+
+
+            @include HD {
+                padding: vwh(10px) vwh(14px);
+                gap: vwh(8px);
+                border-radius: vwh(16px);
+                border-width: max(#{vwh(2px)}, 2px);
+            }
+            @include Mobile {
+                padding: vwm(10px) vwm(14px);
+                gap: vwm(8px);
+                border-radius: vwm(16px);
+                border-width: max(#{vwm(2px)}, 2px);
+            }
+        }
+
+        .text-field__icon svg {
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+    }
+
+    &_error {
+        .text-field__message {
+            display: block;
+            color: var(--Color1-Light) !important;
+        }
+
+        .text-field__block {
+            border-color: var(--Color1-Lighter) !important;
+        }
+
+    }
+
+    // .text-field__block
+    &__block {
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+        @include transition-primary;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                border-color: var(--red);
+                background-color: var(--Gray-White);
+            }
+        }
+
+        &:focus-within {
+            border-color: var(--red-dark);
+            color: var(--Gray-Black);
+        }
+    }
+
+    // .text-field__input
+    &__input {
+        @include T4;
+        flex: 1 0 0;
+        appearance: none;
+        color: var(--Gray-Black);
+
+        &::placeholder {
+            color: var(--Gray-Medium);
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+            font-family: "CoFo Sans", sans-serif;
+            -webkit-box-shadow: 0 0 0 5000px var(--Gray-White) inset;
+        }
+
+        /* Firefox */
+        &[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
+
+    // .text-field__icon
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+
+    }
+
+    // .text-field__message
+    &__message {
+        @include T5;
+        display: none;
+    }
+}

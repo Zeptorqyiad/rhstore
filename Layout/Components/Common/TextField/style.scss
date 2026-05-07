@@ -1,0 +1,72 @@
+.text-field {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+    &__input {
+        @include t3;
+        background: #FFFFFF;
+        border: max(#{vw(2px), 2px}) solid #CCCCCC;
+        border-radius: vw(8px);
+        color: #404040;
+        outline: none;
+      @include transition-primary;
+
+        @include HD {
+            border: max(#{vwh(2px), 2px}) solid #CCCCCC;
+            border-radius: vwh(8px);
+        }
+
+        @include Mobile {
+            border: max(#{vwm(2px), 2px}) solid #CCCCCC;
+            border-radius: vwm(8px);
+        }
+
+        &::placeholder {
+            @include t2;
+            color: #999;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: #FF3838;
+            }
+        }
+
+        &:focus-within {
+            border-color: #D93030;
+        }
+    }
+
+
+    &__span {
+        position: absolute;
+        right: vw(10px);
+        top: 50%;
+        transform: translateY(-50%);
+        @include t3;
+        color: #999;
+    }
+
+    &__label {
+        @include t-placeholder;
+        color: #999;
+        background-color: #FFFFFF;
+        position: absolute;
+        padding: 0 vw(4px);
+        top: vw(-8px);
+        left: vw(20px);
+
+        @include HD {
+            padding: 0 vwh(4px);
+            top: vwh(-8px);
+            left: vwh(20px);
+        }
+
+        @include Mobile {
+            padding: 0 vwm(4px);
+            top: vwm(-8px);
+            left: vwm(20px);
+        }
+    }
+}

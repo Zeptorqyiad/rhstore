@@ -1,0 +1,101 @@
+.toggle-list-mobile {
+    display: grid;
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: vw(22px) vw(12px);
+        gap: vw(20px);
+
+        @include Mobile {
+            padding: vwm(22px) vwm(12px);
+            gap: vwm(20px);
+
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: vw(4px);
+
+        @include Mobile {
+            gap: vwm(4px);
+        }
+    }
+
+    &__first {
+        @include t2b;
+        color: var(--Gray-Black);
+    }
+
+    &__subtext {
+        @include t3;
+        color: var(--Gray-Medium);
+    }
+
+    &__text_color_red {
+        color: var(--red);
+    }
+
+    &__hint {
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            .toggle-list__hint-box {
+                opacity: 1;
+            }
+        }
+
+        svg {
+            width: vw(14px);
+            height: vw(14px);
+        }
+    }
+
+    &__hint-box {
+        position: absolute;
+        top: vw(-12px);
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+        background: var(--Gray-Medium);
+        padding: vw(12px);
+        border-radius: vw(8px);
+        width: vw(225px);
+        transition: all 0.2s ease;
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+        box-shadow: 0 0 vw(15px) 0 rgba(0, 0, 0, 0.10);
+        z-index: 1;
+
+        @include HD {
+            top: vwh(-12px);
+            padding: vwh(12px);
+            border-radius: vwh(8px);
+            width: vwh(225px);
+            box-shadow: 0 0 vwh(15px) 0 rgba(0, 0, 0, 0.10);
+        }
+
+        @include Mobile {
+            top: vwm(-12px);
+            padding: vwm(12px);
+            border-radius: vwm(8px);
+            width: vwm(225px);
+            box-shadow: 0 0 vwm(15px) 0 rgba(0, 0, 0, 0.10);
+        }
+    }
+
+    &__hint-text {
+        @include t3;
+        color: var(--Gray-White);
+    }
+}
+
+
+

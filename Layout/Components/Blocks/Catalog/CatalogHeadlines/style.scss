@@ -1,0 +1,115 @@
+.catalog-headlines {
+    position: sticky;
+    top: vw(72px);
+    background-color: var(--Gray-Steel);
+    padding: vw(12px) vw(12px) vw(12px) vw(122px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    @include border-r-s;
+
+    @include HD {
+        padding: vwh(12px) vwh(12px) vwh(12px) vwh(122px);
+        top: vwh(72px);
+    }
+
+    @include Mobile {
+        display: none;
+        top: vwm(56px);
+    }
+
+    &__left {
+        @include t3b;
+        color: var(--Gray-Dark);
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        gap: vw(24px);
+
+        @include HD {
+            gap: vwh(24px);
+        }
+
+        @include Mobile {
+            gap: vwm(24px);
+        }
+    }
+
+    &__right-text {
+        @include t3b;
+        color: #404040;
+        width: vw(190px);
+        @include spacing(padding-left, 32px);
+
+        @include HD {
+            width: vwh(190px);
+        }
+    }
+
+    &__right-box {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: vw(12px);
+
+        @include HD {
+            gap: vwh(12px);
+        }
+
+        @include Mobile {
+            gap: vwm(12px);
+        }
+    }
+
+    &__sale-info.sale-info_secondary {
+        .sale-info__button {
+            background-color: transparent;
+
+            .sale-info__text.secondary {
+                color: var(--Gray-Light);
+            }
+        }
+
+        .sale-info__button.flat {
+            display: none;
+        }
+    }
+
+    &__sale-info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: vw(63px);
+
+        @include HD {
+            width: vwh(63px);
+        }
+
+        .sale__info-text.primary {
+            color: var(--Gray-Black);
+        }
+    }
+
+    &__sale-info:last-child {
+        //margin-left: vw(10px);
+        width: vw(72px);
+
+        @include HD {
+            //margin-left: vwh(10px);
+            width: vwh(72px);
+        }
+
+        @include Mobile {
+            //margin-left: vwm(10px);
+        }
+    }
+
+    &__sale-info.sale-info_secondary.inactive {
+        span {
+            color: #CCCCCC;
+        }
+    }
+}

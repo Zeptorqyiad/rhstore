@@ -1,0 +1,78 @@
+.promo-info {
+    @include spacing(padding-block, 60px, 60px, 40px);
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 60px, 60px, 24px);
+
+        @include Mobile {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &-ls {
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 40px, 40px, 24px);
+
+            &--title {
+                @include h1;
+                color: var(--Gray-Black);
+                overflow-wrap: break-word;
+                max-width: 100%;
+                display: block;
+            }
+            &--text {
+                @include t2;
+                color: var(--Gray-Dark);
+                width: 100%;
+
+                ul {
+                    list-style-type: disc !important;
+                    @include spacing(padding-left, 16px);
+                }
+            }
+        }
+        &-rs {
+            position: sticky;
+            @include spacing(top, 80px);
+            height: 100%;
+
+            @include spacing(flex-basis, 600px, 600px);
+            flex-shrink: 0;
+            width: 100%;
+
+            @include Mobile {
+                flex-basis: unset;
+                width: 100%;
+                position: inherit;
+                top: 0;
+            }
+
+            img {
+                width: 100%;
+                @include spacing(height, 420px, 420px, 240px);
+                object-fit: cover;
+                @include spacing(border-radius, 32px, 32px, 20px);
+            }
+        }
+    }
+    &__consist {
+        @include spacing(padding, 40px, 40px, 24px);
+        @include spacing(border-radius, 32px, 32px, 20px);
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 12px);
+        background: var(--Gray-Lighter);
+
+        &--title {
+            @include h3;
+            color: var(--red-dark);
+        }
+        &--text {
+            @include t2;
+            color: var(--Gray-Dark);
+        }
+    }
+}

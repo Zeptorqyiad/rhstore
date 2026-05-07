@@ -1,0 +1,103 @@
+.active-orders {
+    &__back {
+        background-color: var(--Gray-White);
+        padding-left: vw(250px);
+
+        @include HD {
+            padding-left: vwh(45px);
+        }
+
+        @include Mobile {
+            padding-left: vwm(12px);
+        }
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: vw(220px) auto;
+        gap: vw(140px);
+        background-color: #F7F7F7;
+
+        @include HD {
+            grid-template-columns: vwh(196px) auto;
+            gap: vwh(128px);
+        }
+
+        @include Mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__column {
+        background-color: #F7F7F7;
+        padding-right: vw(250px);
+        //height: 100vh;
+        min-height: vw(1100px);
+
+        @include HD {
+            padding-right: vwh(45px);
+            min-height: vwh(1100px);
+        }
+
+        @include Mobile {
+            min-height: vwm(932px);
+            padding-right: vwm(12px);
+            background-color: var(--Gray-White);
+        }
+    }
+
+    &__breadcrumbs {
+        margin: vw(32px) 0 vw(12px);
+
+        @include HD {
+            margin: vwh(32px) 0 vwh(12px);
+        }
+
+        @include Mobile {
+            margin: vwm(32px) 0 vwm(12px);
+        }
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: vw(40px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(40px);
+        }
+    }
+
+    &__title {
+        color: var(--Gray-Black);
+    }
+
+    &__dropdown {
+        @include Mobile {
+            display: none;
+        }
+    }
+
+    &__dropdown.dropdown {
+        .dropdown__input {
+            background-color: #F7F7F7;
+        }
+    }
+
+    &__cards {
+        margin-bottom: vw(40px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(40px);
+        }
+    }
+}

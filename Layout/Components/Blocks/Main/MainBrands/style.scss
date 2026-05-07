@@ -1,0 +1,79 @@
+.main-brands {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    //grid-template-columns: auto auto;
+    align-items: start;
+    @include spacing(gap, 20px, 20px, 16px);
+  }
+
+  &__text {
+    max-width: vw(460px);
+    display: grid;
+    gap: vw(12px);
+
+    @include HD {
+      max-width: vwh(412px);
+      gap: vwh(12px);
+    }
+
+    @include Mobile {
+      max-width: 100%;
+      gap: vwm(12px);
+    }
+  }
+
+  &__title {
+    color: #0D0D0D;
+  }
+
+  &__description {
+    @include t2;
+    color: #999999;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: vw(12px);
+
+    @include HD {
+      gap: vwh(12px);
+    }
+
+    @include Mobile {
+      gap: vwm(8px);
+    }
+  }
+
+  &__tab-link {
+    @include t2;
+    display: flex;
+    padding: vw(12px) vw(24px);
+    border-radius: vw(16px);
+    background: #F2F2F2;
+    color: #666666;
+    transition: all 0.2s ease;
+
+    @include HD {
+      padding: vwh(12px) vwh(24px);
+      border-radius: vwh(16px);
+    }
+
+    @include Mobile {
+      padding: vwm(12px) vwm(24px);
+      border-radius: vwm(16px);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #D93030;
+      }
+    }
+
+    &:active {
+      background: #CCCCCC;
+      color: #A62424;
+    }
+  }
+}

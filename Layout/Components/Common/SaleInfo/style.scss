@@ -1,0 +1,106 @@
+.sale-info {
+    position: relative;
+    width: fit-content;
+
+    &.hide {
+        display: none;
+    }
+
+    &__button {
+        display: inline-flex;
+        gap: vw(3px);
+        padding: vw(4px);
+        border-radius: vw(8px);
+        background-color: #F2F2F2;
+
+        @include HD {
+            gap: vwh(3px);
+            padding: vwh(4px);
+            border-radius: vwh(8px);
+        }
+
+        @include Mobile {
+            gap: vwm(3px);
+            padding: vwm(4px);
+            border-radius: vwm(8px);
+        }
+    }
+
+    &:hover {
+        .sale-info__hint {
+            opacity: 1;
+        }
+    }
+
+    &__text {
+        @include t5;
+        color: #404040;
+    }
+
+    svg {
+        fill: #404040;
+        width: vw(14px);
+        height: vw(14px);
+
+        @include HD {
+            width: vwh(14px);
+            height: vwh(14px);
+        }
+
+        @include Mobile {
+            width: vwm(14px);
+            height: vwm(14px);
+        }
+    }
+
+    &_secondary {
+        .sale-info__button {
+            padding: 0;
+            border-radius: 0;
+            background-color: #FFFFFF;
+        }
+
+        .sale-info__text {
+            @include t3b;
+        }
+    }
+
+    &__hint {
+        position: absolute;
+        @include spacing(top, 70px);
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+        background: var(--Gray-Medium);
+        padding: vw(12px);
+        width: max-content;
+        max-width: 80vw;
+        transition: all 0.2s ease;
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+        box-shadow: 0 0 vw(15px) 0 rgba(0, 0, 0, 0.10);
+        @include border-r-s;
+
+        @include HD {
+            padding: vwh(12px);
+            box-shadow: 0 0 vwh(15px) 0 rgba(0, 0, 0, 0.10);
+        }
+
+        @include Mobile {
+            left: 100%;
+            padding: vwm(12px);
+            width: max-content;
+            box-shadow: 0 0 vwm(15px) 0 rgba(0, 0, 0, 0.10);
+        }
+    }
+
+    &__hint-text {
+        @include t3;
+        color: #FFF;
+        max-width: 14ch;
+        text-overflow: ellipsis;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+}

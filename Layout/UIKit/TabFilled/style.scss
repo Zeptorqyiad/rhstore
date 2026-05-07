@@ -1,0 +1,128 @@
+.tab-filled {
+    display: flex;
+    align-items: center;
+    //flex: 1 0 0;
+    background: $GrayLighter;
+
+    flex-shrink: 0;
+
+    padding: vw(9.5px) vw(16px);
+    gap: vw(8px);
+    border-radius: vw(16px);
+
+    cursor: pointer;
+    
+    position: relative;
+
+    transition: transform 200ms;
+
+    &_icon-right {
+        .tab-filled__icon_right {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background-color: $Color2Lighter;
+        }
+    }
+
+    &:active {
+        transform: scale(0.83);
+        background-color: $Color2Lighter;
+    }
+
+    @media screen and (max-width: $hd-width) {
+        padding: vwh(9.5px) vwh(16px);
+        gap: vwh(8px);
+        border-radius: vwh(16px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        padding: vwt(9.5px) vwt(16px);
+        gap: vwt(8px);
+        border-radius: vwt(16px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        padding: vwm(9.5px) vwm(16px);
+        gap: vwm(8px);
+        border-radius: vwm(16px);
+    }
+
+    // .tab-filled__link
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    // .tab-filled__icon
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: vw(20px);
+            height: vw(20px);
+
+            fill: none;
+            stroke: $GrayDarker;
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(20px);
+                height: vwh(20px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(20px);
+                height: vwt(20px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+
+        // .tab-filled__icon_left
+        &_left {
+        }
+
+        // .tab-filled__icon_right
+        &_right {
+            margin-left: auto;
+        }
+    }
+
+    // .tab-filled__text
+    &__text {
+        @include T4;
+        color: $GrayDarker;
+        align-self: stretch;
+    }
+
+    &_size-big {
+        padding: vw(12px) vw(20px);
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(12px) vwh(20px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(12px) vwt(20px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(12px) vwm(20px);
+        }
+
+        svg {
+            stroke: $Color2Dark;
+        }
+
+        .tab-filled__text {
+            color: $Color2Dark;
+            @include T3_B;
+        }
+    }
+}

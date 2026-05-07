@@ -1,0 +1,107 @@
+:root {
+    /* Primary main */
+    --Button-Primary-Main-Static: var(--Color1-Main);
+    --Button-Primary-Main-Hover: var(--Color1-Light);
+    --Button-Primary-Main-Press: var(--Color1-Dark);
+    --Button-Primary-Main-Disable: var(--Gray-Light);
+
+    /* Primary dark */
+    --Button-Primary-Dark-Static: var(--Color1-Main);
+    --Button-Primary-Dark-Hover: var(--Color1-Light);
+    --Button-Primary-Dark-Press: var(--Color1-Dark);
+    --Button-Primary-Dark-Disable: var(--Gray-Medium);
+
+    /* Accent main */
+    --Button-Accent-Main-Static: var(--Color2-Dark);
+    --Button-Accent-Main-Hover: var(--Color2-Main);
+    --Button-Accent-Main-Press: var(--Color2-Darker);
+    --Button-Accent-Main-Disable: var(--Gray-Light);
+
+    /* Accent dark */
+    --Button-Accent-Dark-Static: var(--Color2-Dark);
+    --Button-Accent-Dark-Hover: var(--Color2-Main);
+    --Button-Accent-Dark-Press: var(--Color2-Darker);
+    --Button-Accent-Dark-Disable: var(--Gray-Medium);
+
+    /* Gray main */
+    --Button-Gray-Main-Static: var(--Gray-Dark);
+    --Button-Gray-Main-Hover: var(--Gray-Medium);
+    --Button-Gray-Main-Press: var(--Gray-Darker);
+    --Button-Gray-Main-Disable: var(--Gray-Light);
+
+    /* Gray dark */
+    --Button-Gray-Dark-Static: var(--Gray-White);
+    --Button-Gray-Dark-Hover: var(--Gray-Light);
+    --Button-Gray-Dark-Press: var(--Gray-Medium);
+    --Button-Gray-Dark-Disable: var(--Gray-Medium);
+
+    /* Secondary main */
+    --Button-Secondary-Main-Static: var(--Gray-Lighter);
+    --Button-Secondary-Main-Hover: var(--Color1-Lighter);
+    --Button-Secondary-Main-Press: var(--Color1-Light);
+
+    /* Secondary dark */
+    --Button-Secondary-Dark-Static: var(--Gray-Dark);
+    --Button-Secondary-Dark-Hover: var(--Gray-Medium);
+    --Button-Secondary-Dark-Press: var(--Gray-Darker);
+
+    /* Outline main */
+    --Button-Outline-Main-Static: var(--Color1-Main);
+    --Button-Outline-Main-Hover: var(--Color1-Light);
+    --Button-Outline-Main-Press: var(--Color1-Dark);
+
+    /* Outline dark */
+    --Button-Outline-Dark-Static: var(--Color1-Main);
+    --Button-Outline-Dark-Hover: var(--Color1-Light);
+    --Button-Outline-Dark-Press: var(--Color1-Dark);
+
+    /* Monochrome main */
+    --Button-Monochrome-Main-Static: var(--Gray-Light);
+    --Button-Monochrome-Main-Hover: var(--Gray-Light);
+    --Button-Monochrome-Main-Press: var(--Gray-Medium);
+
+    /* Monochrome dark */
+    --Button-Monochrome-Dark-Static: var(--Gray-Medium);
+    --Button-Monochrome-Dark-Hover: var(--Gray-Medium);
+    --Button-Monochrome-Dark-Press: var(--Gray-Darker);
+
+    /* Flat main */
+    --Button-Flat-Main-Static: transparent;
+    --Button-Flat-Main-Hover: var(--Gray-Lighter);
+    --Button-Flat-Main-Press: var(--Color1-Lighter);
+
+    /* Flat dark */
+    --Button-Flat-Dark-Static: transparent;
+    --Button-Flat-Dark-Hover: var(--Gray-Dark);
+    --Button-Flat-Dark-Press: var(--Gray-Darker);
+}
+
+$ButtonPrimaryStatic: var(--Color1-Main);
+$ButtonPrimaryHover: var(--Color1-Light);
+$ButtonPrimaryPress: var(--Color1-Dark);
+$ButtonPrimaryDisable: var(--Gray-Light);
+$ButtonPrimaryLoading: var(--Gray-Light);
+
+$ButtonGrayStatic: var(--Gray-Dark);
+$ButtonGrayHover: var(--Gray-Medium);
+$ButtonGrayPress: var(--Gray-Darker);
+$ButtonGrayDisable: var(--Gray-Light);
+$ButtonGrayLoading: var(--Gray-Light);
+
+$ButtonSecondaryStatic: var(--Color2-Dark);
+$ButtonSecondaryHover: var(--Color2-Main);
+$ButtonSecondaryPress: var(--Color2-Darker);
+$ButtonSecondaryDisable: var(--Gray-Light);
+$ButtonSecondaryLoading: var(--Gray-Light);
+
+$ButtonWhiteStatic: var(--Gray-Light);
+$ButtonWhiteHover: var(--Gray-Light);
+$ButtonWhitePress: var(--Gray-Medium);
+$ButtonWhiteDisable: var(--Gray-Medium);
+$ButtonWhiteLoading: var(--Gray-Medium);
+
+$ButtonFlatStatic: transparent;
+$ButtonFlatHover: var(--Gray-Lighter);
+$ButtonFlatPress: var(--Color1-Lighter);
+$ButtonFlatDisable: var(--Color1-Lighter);
+$ButtonFlatLoading: var(--Color1-Lighter);

@@ -1,0 +1,40 @@
+.payment {
+  &__breadcrumbs {
+    margin-top: vw(12px);
+    margin-bottom: vw(32px);
+
+    @include HD {
+      margin-top: vwh(12px);
+      margin-bottom: vwh(32px);
+    }
+
+    @include Mobile {
+      margin-top: vwm(12px);
+      margin-bottom: vwm(12px);
+    }
+  }
+
+  &__nav {
+    margin-bottom: vw(60px);
+
+    @include HD {
+      margin-bottom: vwh(60px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(40px);
+    }
+  }
+
+  &__content {
+    margin-bottom: vw(160px);
+
+    @include HD {
+      margin-bottom: vwh(160px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(60px);
+    }
+  }
+}

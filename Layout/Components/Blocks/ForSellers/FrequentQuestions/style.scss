@@ -1,0 +1,30 @@
+.frequent-questions {
+    &__title {
+        color: #0D0D0D;
+        margin-bottom: vw(40px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__box {
+        display: grid;
+        max-width: vw(700px);
+        gap: vw(12px);
+
+        @include HD {
+            gap: vwh(12px);
+            max-width: vwh(700px);
+        }
+
+        @include Mobile {
+            max-width: 100%;
+            gap: vwm(12px);
+        }
+    }
+}

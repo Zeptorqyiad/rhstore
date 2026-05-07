@@ -1,0 +1,41 @@
+.products-slider {
+    &__container {
+        display: grid;
+        grid-template-areas:
+    "title buttons"
+    "slider slider";
+        grid-template-rows: auto max-content;
+        grid-template-columns: auto;
+        gap: vw(40px);
+        align-items: center;
+
+        @include HD {
+            gap: vwh(40px);
+        }
+
+        @include Mobile {
+            grid-template-columns: 1fr auto;
+            column-gap: vwm(20px);
+            row-gap: vwm(40px);
+            align-items: start;
+        }
+    }
+
+    &__title {
+        color: var(--Gray-Black);
+        align-self: center;
+        @include h3;
+    }
+
+    &__buttons {
+        grid-area: buttons;
+        justify-self: right;
+        align-self: center;
+
+    }
+
+    &__slider {
+        overflow: hidden;
+        grid-area: slider;
+    }
+}

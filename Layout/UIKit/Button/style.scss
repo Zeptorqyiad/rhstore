@@ -1,0 +1,411 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background $defaultTransition, border-color $defaultTransition, transform 200ms;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-text-decoration: none;
+
+    &_style-primary {
+        background: $ButtonPrimaryStatic;
+
+
+        .loader span {
+            background-color: $GrayWhite;
+        }
+
+        .btn__text {
+            color: $GrayWhite;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: $ButtonPrimaryHover;
+            }
+        }
+
+        &:active {
+            background: $ButtonPrimaryPress;
+            transform: scale(0.83);
+        }
+
+        &:disabled {
+            background: $ButtonPrimaryDisable;
+
+            .btn__text {
+                color: $GrayMedium;
+            }
+        }
+
+        &._loading {
+            background: $ButtonPrimaryLoading;
+        }
+    }
+
+    &_style-gray {
+        background: $ButtonGrayStatic;
+
+        .loader span {
+            background-color: $GrayWhite;
+        }
+
+
+        .btn__text {
+            color: $GrayWhite;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: $ButtonGrayHover;
+            }
+        }
+
+        &:active {
+            background: $ButtonGrayPress;
+            transform: scale(0.83);
+        }
+
+        &:disabled {
+            background: $ButtonGrayDisable;
+
+            .btn__text {
+                color: $GrayMedium;
+            }
+        }
+
+        &._loading {
+            background: $ButtonGrayLoading;
+        }
+    }
+
+    &_style-secondary {
+        background: $ButtonSecondaryStatic;
+
+        .loader span {
+            background-color: $Color1Main;
+        }
+
+
+        .btn__text {
+            color: $GrayDarker;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: $ButtonSecondaryHover;
+            }
+        }
+
+        &:active {
+            background: $ButtonSecondaryPress;
+            transform: scale(0.83);
+        }
+
+        &:disabled {
+            background: $ButtonSecondaryDisable;
+
+            .btn__text {
+                color: $GrayMedium;
+            }
+        }
+
+        &._loading {
+            background: $ButtonSecondaryLoading;
+        }
+    }
+
+    &_style-white {
+        background: $ButtonWhiteStatic;
+
+        .loader span {
+            background-color: $Color1Main;
+        }
+
+
+        .btn__text {
+            color: $GrayDarker;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: $ButtonWhiteHover;
+            }
+        }
+
+        &:active {
+            background: $ButtonWhitePress;
+            transform: scale(0.83);
+        }
+
+        &:disabled {
+            background: $ButtonWhiteDisable;
+
+            .btn__text {
+                color: $GrayMedium;
+            }
+        }
+
+        &._loading {
+            background: $ButtonWhiteLoading;
+        }
+    }
+
+    &_style-accent {
+        background: #E0EBF0;
+
+        .loader span {
+            background-color: $GrayWhite;
+        }
+
+
+        .btn__text {
+            color: $GrayDarker;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: #AFDAE8;
+            }
+        }
+
+        &:active {
+            background: #AFDAE8;
+            transform: scale(0.83);
+        }
+
+        &:disabled {
+            background: #C5C6C7;
+
+            .btn__text {
+                color: $GrayMedium;
+            }
+        }
+
+        &._loading {
+            background: #AFDAE8;
+        }
+    }
+
+    &_style-flat {
+        background: $ButtonFlatStatic;
+
+        .loader span {
+            background-color: $Color1Main;
+        }
+
+
+        .btn__text {
+            color: $GrayDarker;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: $ButtonFlatHover;
+            }
+        }
+
+        &:active {
+            background: $ButtonFlatPress;
+            transform: scale(0.83);
+        }
+
+        &:disabled {
+            background: $ButtonFlatDisable;
+
+            .btn__text {
+                color: $GrayMedium;
+            }
+        }
+
+        &._loading {
+            background: $ButtonFlatLoading;
+        }
+    }
+
+    &_size-small {
+        padding: vw(9.5px) vw(20px);
+        gap: vw(8px);
+        border-radius: vw(30px);
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(9.5px) vwh(20px);
+            gap: vwh(8px);
+            border-radius: vwh(30px);
+
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(9.5px) vwt(20px);
+            gap: vwt(8px);
+            border-radius: vwt(30px);
+
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(9.5px) vwm(20px);
+            gap: vwm(8px);
+            border-radius: vwm(30px);
+
+        }
+
+        .btn__text {
+            @include T4_B;
+        }
+
+        .btn__icon svg {
+            width: vw(16px);
+            height: vw(16px);
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(16px);
+                height: vwh(16px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(16px);
+                height: vwt(16px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(16px);
+                height: vwm(16px);
+            }
+        }
+    }
+
+    &_size-medium {
+        padding: vw(12px) vw(24px);
+        border-radius: vw(30px);
+        gap: vw(8px);
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(12px) vwh(24px);
+            border-radius: vwh(30px);
+            gap: vwh(8px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(12px) vwt(24px);
+            border-radius: vwt(30px);
+            gap: vwt(8px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(12px) vwm(24px);
+            border-radius: vwm(30px);
+            gap: vwm(8px);
+        }
+
+        .btn__text {
+            @include T3_B;
+        }
+
+        .btn__icon svg {
+            width: vw(20px);
+            height: vw(20px);
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(20px);
+                height: vwh(20px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(20px);
+                height: vwt(20px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+    }
+
+    &_icon-center.btn_size-small {
+        border-radius: vw(30px);
+        padding: vw(12px);
+        gap: vw(8px);
+
+        @media screen and (max-width: $hd-width) {
+            border-radius: vwh(30px);
+            padding: vwh(12px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            border-radius: vwt(30px);
+            padding: vwt(12px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            border-radius: vwm(30px);
+            padding: vwm(12px);
+        }
+    }
+
+
+    &_icon-right.btn_size-small {
+        padding: vw(9.5px) vw(16px) vw(9.5px) vw(20px);
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(9.5px) vwh(16px) vwh(9.5px) vwh(20px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(9.5px) vwt(16px) vwt(9.5px) vwt(20px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(9.5px) vwm(16px) vwm(9.5px) vwm(20px);
+        }
+    }
+    &_icon-right.btn_size-medium {
+        padding: vw(12px) vw(20px) vw(12px) vw(24px);
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(12px) vwh(20px) vwh(12px) vwh(24px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(12px) vwt(20px) vwt(12px) vwt(24px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(12px) vwm(20px) vwm(12px) vwm(24px);
+        }
+    }
+
+    &_icon-left.btn_size-small {
+        padding: vw(9.5px) vw(20px) vw(9.5px) vw(16px);
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(9.5px) vwh(20px) vwh(9.5px) vwh(16px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(9.5px) vwt(20px) vwt(9.5px) vwt(16px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(9.5px) vwm(20px) vwm(9.5px) vwm(16px);
+        }
+    }
+    &_icon-left.btn_size-medium {
+        padding: vw(12px) vw(24px) vw(12px) vw(20px);
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(12px) vwh(24px) vwh(12px) vwh(20px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(12px) vwt(24px) vwt(12px) vwt(20px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(12px) vwm(24px) vwm(12px) vwm(20px);
+        }
+    }
+
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            transition: stroke $defaultTransition, fill $defaultTransition;
+        }
+    }
+
+    &__icon_right {
+    }
+
+    &__icon_left {
+    }
+
+    &__text {
+        transition: color $defaultTransition;
+    }
+}

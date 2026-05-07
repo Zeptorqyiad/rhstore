@@ -1,0 +1,144 @@
+.quantity-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: vw(4px);
+    transition: translateY 0.3s ease;
+
+    @include HD {
+        gap: vwh(4px);
+    }
+
+    @include Mobile {
+        gap: vwm(4px);
+    }
+
+    &__button-minus, &__button-plus {
+        border: none;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #F2F2F2;
+        width: vw(32px);
+        height: vw(40px);
+        border-radius: vw(8px);
+        flex-shrink: 0;
+
+        @include HD {
+            width: vwh(32px);
+            height: vwh(40px);
+            border-radius: vwh(8px);
+        }
+
+        @include Mobile {
+            width: vwm(32px);
+            height: vwm(40px);
+            border-radius: vwm(8px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: #FFABAB;
+
+                svg {
+                    fill: #FFFFFF;
+                }
+            }
+        }
+
+        &:active {
+            transition: all 0.1s ease;
+            background: #FF5E5E;
+
+            svg {
+                transition: all 0.1s ease;
+                fill: #FFFFFF;
+            }
+        }
+
+        svg {
+            fill: #404040;
+            width: vw(10px);
+            height: vw(10px);
+            transition: all 0.2s ease;
+
+            @include HD {
+                width: vwh(10px);
+                height: vwh(10px);
+            }
+
+            @include Mobile {
+                width: vwm(10px);
+                height: vwm(10px);
+            }
+        }
+    }
+
+    &__label input {
+        @include t3;
+        width: 100%;
+        background: #FFFFFF;
+        border: max(#{vw(2px), 2px}) solid #F2F2F2;
+        border-radius: vw(8px);
+        color: #666;
+        outline: none;
+        height: vw(40px);
+        padding: 0 vw(12px);
+        text-align: center;
+
+        @include HD {
+            border: max(#{vwh(2px), 2px}) solid #F2F2F2;
+            border-radius: vwh(8px);
+            height: vwh(40px);
+            padding: 0 vwh(12px);
+        }
+
+        @include Mobile {
+            border: max(#{vwm(2px), 2px}) solid #F2F2F2;
+            border-radius: vwm(8px);
+            height: vwm(40px);
+            padding: 0 vwm(10px);
+        }
+
+        &::placeholder {
+            @include t3;
+            color: #CCC;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: #999;
+            }
+        }
+
+        &:focus-within {
+            border-color: #999;
+        }
+    }
+
+    &__amount {
+        @include t-placeholder;
+        position: absolute;
+        bottom: vw(-20px);
+        color: var(--Gray-Light);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        @include HD {
+            bottom: vwh(-20px);
+        }
+
+        @include Mobile {
+            bottom: vwm(-20px);
+        }
+    }
+
+
+    &__amount.visible {
+        opacity: 1;
+    }
+
+}

@@ -1,0 +1,142 @@
+.modal-price-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    //flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    overflow: auto;
+    transition: opacity 0.1s ease;
+    z-index: 100;
+
+    @include Mobile {
+        display: none;
+    }
+
+    &__content {
+        position: relative;
+        padding: vw(56px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: vw(16px);
+        width: vw(512px);
+        height: vw(258px);
+        background-color: var(--Gray-White);
+        @include border-r;
+
+        @include HD {
+            width: vwh(512px);
+            height: vwh(258px);
+        }
+    }
+
+    &__top {
+        margin-bottom: vw(16px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: vw(18px);
+
+        @include HD {
+            margin-bottom: vw(16px);
+            gap: vw(25px);
+        }
+
+        svg {
+            padding: vw(13px);
+            width: vw(32px);
+            height: vw(32px);
+            background-color: #FF3838;
+            flex-shrink: 0;
+            border-radius: vw(12px);
+            box-sizing: content-box;
+
+            @include HD {
+                width: vwh(32px);
+                height: vwh(32px);
+            }
+
+            @include Mobile {
+                display: none;
+            }
+        }
+
+    }
+
+    &__title {
+        width: vw(324px);
+        @include h3;
+
+        @include HD {
+         width: 80%;
+        }
+    }
+
+    &__text {
+        @include h3;
+    }
+
+    &__close {
+        position: absolute;
+        padding: vw(12px);
+        border-radius: vwh(100%);
+        transition: background-color 0.2s ease;
+        top: vw(8px);
+        right: vw(8px);
+
+        @include HD {
+            padding: vwh(12px);
+            top: vwh(10px);
+            right: vwh(10px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                transition: background-color 0.1s ease;
+                background-color: #F2F2F2;
+            }
+        }
+
+        &:active {
+            background-color: #CCC;
+        }
+
+        svg {
+            fill: #404040;
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+    }
+
+    &__text {
+        @include t2;
+        color: #666;
+    }
+
+    &__accent {
+        @include t2;
+        color: var(--Gray-Dark);
+    }
+
+    &.open-modal {
+        visibility: visible;
+        opacity: 1;
+    }
+}

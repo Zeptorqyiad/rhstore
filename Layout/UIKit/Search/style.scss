@@ -1,0 +1,102 @@
+.search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: $GrayLighter;
+    gap: vw(12px);
+    height: vw(48px);
+    padding: vw(4px) vw(16px);
+    border-radius: vw(16px);
+    border: max(#{vw(2px)}, 2px) solid $GrayLighter;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            border-color: $Color2Lighter;
+            background: $GrayLighter;
+        }
+    }
+
+    &:focus-within {
+        border-color: $Color2Lighter;
+        background: $GrayWhite;
+
+        .search__icon_reset {
+            display: flex;
+        }
+
+        .search__input {
+            color: $GrayDarker;
+        }
+    }
+
+    @media screen and (max-width: $hd-width) {
+        gap: vwh(12px);
+        height: vwh(48px);
+        padding: vwh(4px) vwh(16px);
+        border-radius: vwh(16px);
+        border-width: max(#{vwh(2px)}, 2px);
+    }
+    @media screen and (max-width: $tablet-width) {
+        gap: vwt(12px);
+        height: vwt(48px);
+        padding: vwt(4px) vwt(16px);
+        border-radius: vwt(16px);
+        border-width: max(#{vwt(2px)}, 2px);
+    }
+    @media screen and (max-width: $mobile-width) {
+        gap: vwm(12px);
+        height: vwm(48px);
+        padding: vwm(4px) vwm(16px);
+        border-radius: vwm(16px);
+        border-width: max(#{vwm(2px)}, 2px);
+    }
+
+    // .search__icon
+    &__icon {
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+
+        width: vw(24px);
+        height: vw(24px);
+
+        @media screen and (max-width: $hd-width) {
+            width: vwh(24px);
+            height: vwh(24px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            width: vwt(24px);
+            height: vwt(24px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            width: vwm(24px);
+            height: vwm(24px);
+        }
+
+        // .search__icon_reset
+        &_reset {
+            fill: none;
+            stroke: $GrayLight;
+            display: none;
+            cursor: pointer;
+        }
+
+        // .search__icon_search
+        &_search {
+            fill: none;
+            stroke: $GrayMedium;
+        }
+    }
+
+    // .search__input
+    &__input {
+        @include T3;
+        color: $GrayMedium;
+        width: 100%;
+    }
+
+    // .search__label
+    &__label {
+        flex: 1 0 0;
+    }
+}

@@ -1,0 +1,56 @@
+:root {
+    /*----------MAIN-----------*/
+    /* GRAY */
+    --Gray-Black: #0d0d0d;
+    --Gray-Darker: #2b2b2b;
+    --Gray-Dark: #404040;
+    --Gray-Dark-Medium: #666;
+    --Gray-Medium: #999;
+    --Gray-Light: #ccc;
+    --Gray-Lighter: rgb(242, 242, 242);
+    --Gray-White: #fff;
+    --Gray-Steel: #f2f2f2;
+    --Gray-Border: #D9E8FF;
+    --Gray-Bg: #F7F7F7;
+
+
+    /* Color1 */
+    --Color1-Darker: #a61029;
+    --Color1-Dark: #cc1433;
+    --Color1-Main: #f23051;
+    --Color1-Light: #fc8b9e;
+    --Color1-Lighter: #fcd7dd;
+
+    /* Color2 */
+    --Color2-Darker: #554d80;
+    --Color2-Dark: #665c99;
+    --Color2-Main: #897acc;
+    --Color2-Light: #cbc2f2;
+    --Color2-Lighter: #f9f7ff;
+
+    --red: #ff3838;
+    --red-dark: #d93030;
+    --red-lighter: #ffabab;
+    --blue: #389bff;
+    --blue-dark: #2d7ccc;
+    --green-dark: #379948;
+    --text-gray: #393C41;
+}
+
+$GrayWhite: #fff;
+$GrayLight: #ccc;
+$GrayLighter: rgb(242, 242, 242);
+$GrayMedium: #999;
+$GrayDark: #404040;
+$GrayDarker: #2b2b2b;
+$GrayBlack: #0d0d0d;
+
+$Color1Main: #f23051;
+$Color1Light: #fc8b9e;
+$Color1Lighter: #f9f7ff;
+
+$Color2Main: #897acc;
+$Color2Light: #cbc2f2;
+$Color2Lighter: #f9f7ff;
+$Color2Dark: #665c99;
+$Color2Darker: #554d80;

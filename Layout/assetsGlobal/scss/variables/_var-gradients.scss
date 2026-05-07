@@ -1,0 +1,13 @@
+:root {
+    /*----------Gradient-----------*/
+    /* Color1 */
+    --Gradient-Color-1-Dark: linear-gradient(90deg, #D117B2 0%, #CC1433 100%);
+    --Gradient-Color-1-Main: linear-gradient(90deg, #897ACC 0%, #CC29A3 49.48%, #F23051 100%);
+    --Gradient-Color-1-Light: linear-gradient(90deg, #EF60D7 0%, #F26179 100%);
+    --Gradient-Calc-Page: linear-gradient(100deg, #6BB5FF 3.3%, #B676CC 52.85%, #FF5E5E 102.4%);
+
+    /* Color2 */
+    --Gradient-Color-2-Dark: linear-gradient(90deg, #1793D1 0%, #13BF69 100%);
+    --Gradient-Color-2-Main: linear-gradient(135deg, #7160BF 1.6%, #D982C3 59.33%, #FFD24C 113.56%);
+    --Gradient-Color-2-Light: linear-gradient(90deg, #60BFEF 0%, #79F2B6 100%);
+}

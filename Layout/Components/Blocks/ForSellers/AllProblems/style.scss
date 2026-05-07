@@ -1,0 +1,253 @@
+.all-problems {
+    &__container {
+        display: grid;
+        align-items: start;
+        grid-template-columns: 1fr 1fr;
+        gap: vw(20px);
+        grid-template-areas:
+    'text cards'
+    'info cards';
+
+        @include HD {
+            gap: vwh(20px);
+        }
+
+        @include Mobile {
+            grid-template-areas:
+    'text'
+    'cards'
+    'info';
+            grid-template-columns: 1fr;
+            gap: vwm(24px);
+        }
+    }
+
+    &__box {
+        grid-area: text;
+        display: grid;
+        gap: vw(40px);
+
+        @include HD {
+            gap: vwh(40px);
+        }
+
+        @include Mobile {
+            gap: vwm(24px);
+        }
+    }
+
+    &__title {
+        @include h1;
+        max-width: 98%;
+
+        @include HD {
+            font-size: vwh(40px);
+        }
+
+        @include Mobile {
+            font-size: vwm(24px);
+            max-width: 100%;
+        }
+
+        span:nth-child(1) {
+            color: #0D0D0D;
+        }
+
+        span:nth-child(2) {
+            color: #389BFF;
+        }
+    }
+
+    &__text {
+        @include t1;
+        max-width: vw(581px);
+        color: #404040;
+
+        @include HD {
+            max-width: vwh(581px);
+        }
+
+        @include Mobile {
+            max-width: 100%;
+            @include t2;
+        }
+    }
+
+    &__info {
+        @include border-r;
+        position: relative;
+        margin-top: vw(92px);
+        grid-area: info;
+        background-color: #389BFF;
+        padding: vw(40px);
+
+        @include HD {
+            margin-top: vwh(92px);
+            padding: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-top: vwm(24px);
+            padding: vwm(12px);
+        }
+    }
+
+    &__info-text {
+        @include t1;
+        color: #FFF;
+        max-width: vw(400px);
+
+        @include HD {
+            max-width: vwh(400px);
+        }
+
+        @include Mobile {
+            max-width: vwm(218px);
+            @include t2;
+        }
+    }
+
+    &__info-img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: vw(304px);
+        -webkit-filter: drop-shadow(vw(10px) 0 vw(10px) rgba(0, 0, 0, 0.15));
+        filter: drop-shadow(vw(10px) 0 vw(10px) rgba(0, 0, 0, 0.15));
+
+        @include HD {
+            height: vwh(304px);
+            -webkit-filter: drop-shadow(vwh(10px) 0 vwh(10px) rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(vwh(10px) 0 vwh(10px) rgba(0, 0, 0, 0.15));
+        }
+
+        @include Mobile {
+            width: vwm(138px);
+            height: vwm(182px);
+            right: vwm(-6px);
+            -webkit-filter: drop-shadow(vwm(10px) 0 vwm(10px) rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(vwm(10px) 0 vwm(10px) rgba(0, 0, 0, 0.15));
+        }
+
+        img {
+            width: vw(231px);
+            height: vw(304px);
+            -o-object-fit: cover;
+            object-fit: cover;
+
+            @include HD {
+                width: vwh(231px);
+                height: vwh(304px);
+            }
+
+            @include Mobile {
+                width: vwm(138px);
+                height: vwm(182px);
+            }
+        }
+    }
+
+    &__cards {
+        grid-area: cards;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+
+        @include Mobile {
+            gap: vwm(12px);
+        }
+    }
+
+    &__card {
+        @include border-r;
+        padding: vw(24px);
+
+        @include HD {
+            padding: vwh(24px);
+        }
+
+        @include Mobile {
+            padding: vwm(12px);
+        }
+    }
+
+    &__card:nth-child(1) {
+        background-color: #6BB5FF;
+    }
+
+    &__card:nth-child(2) {
+        background-color: #FF5E5E;
+    }
+
+    &__card:nth-child(3) {
+        background-color: #FFABAB;
+    }
+
+    &__card:nth-child(4) {
+        background-color: #389BFF;
+    }
+
+    &__card-text {
+        @include h3;
+        color: #FFFFFF;
+
+        @include Mobile {
+            @include t3b;
+        }
+    }
+
+    &__card-decision {
+        @include border-r;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-feature-settings: 'ss09' on;
+        font-size: vw(20px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+        background-color: #FFFFFF;
+        display: inline-flex;
+        margin-bottom: vw(24px);
+        align-items: center;
+        padding: vw(8px) vw(24px) vw(8px) vw(12px);
+        color: #404040;
+        gap: vw(10px);
+
+        @include HD {
+            border-radius: vwh(32px);
+            font-size: vwh(20px);
+            margin-bottom: vwh(24px);
+            padding: vwh(8px) vwh(24px) vwh(8px) vwh(12px);
+            gap: vwh(10px);
+        }
+
+        @include Mobile {
+            width: 100%;
+            justify-content: center;
+            border-radius: vwm(8px);
+            font-size: vwm(12px);
+            line-height: 150%;
+            margin-bottom: vwm(12px);
+            padding: vwm(4px) vwm(8px);
+            gap: vwm(8px);
+        }
+
+        img {
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+    }
+}

@@ -1,0 +1,210 @@
+.onboarding {
+    background: var(--Gray-White);
+    padding: vw(32px);
+    width: vw(820px);
+    @include border-r;
+
+    @include HD {
+        padding: vwh(32px);
+        width: vwh(820px);
+        max-width: unset;
+        max-height: unset;
+    }
+    @include Mobile {
+        max-width: 100dvw;
+        max-height: 100dvh;
+        padding: vwm(56px) vwm(12px) vwm(80px);
+        width: 100%;
+        height: 100%;
+        border-radius: unset;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: vw(12px);
+
+        @include HD {
+            gap: vwh(12px);
+        }
+        @include Mobile {
+            gap: vwm(12px);
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: vw(8px);
+        max-width: vw(688px);
+
+        @include HD {
+            gap: vwh(8px);
+            max-width: vwh(688px);
+        }
+        @include Mobile {
+            gap: vwm(8px);
+            max-width: vwm(688px);
+        }
+    }
+
+    &__title {
+        color: var(--Gray-Black);
+        @include h3;
+    }
+
+    &__desc {
+        color: var(--Gray-Dark);
+        min-height: 3lh;
+        @include t3;
+    }
+
+    &__image {
+        @include border-r-xm;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        max-height: vw(320px);
+        max-width: vw(756px);
+        background: var(--Gray-Lighter);
+        border: max(#{(vw(4px)), 4px}) solid var(--Gray-Light);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        mask: linear-gradient(#000 0 0);
+
+        @include HD {
+            border-width: max(#{(vwh(4px)), 4px});
+            max-height: vwh(320px);
+            max-width: vwh(756px);
+        }
+        @include Mobile {
+            border-width: max(#{(vwm(4px)), 4px});
+            height: vwm(420px);
+            width: 100%;
+            max-width: unset;
+            max-height: unset;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            user-select: none;
+            transform: scale(1.02);
+        }
+    }
+
+    &__divider {
+        height: max(#{vw(2px), 2px});
+        background: var(--Gray-Steel);
+        @include border-r;
+
+        @include HD {
+            height: max(#{vwh(2px), 2px});
+        }
+        @include Mobile {
+            height: max(#{vwm(2px), 2px});
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: vw(40px);
+
+        @include HD {
+            gap: vwh(40px);
+        }
+        @include Mobile {
+            flex-direction: column;
+            gap: vwm(32px);
+        }
+    }
+
+    &__progress {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: vw(12px);
+        width: 100%;
+
+        @include HD {
+            gap: vwh(12px);
+        }
+        @include Mobile {
+            gap: vwm(12px);
+        }
+
+        &-step {
+            color: var(--Gray-Light);
+            @include t1;
+
+            &_current {
+
+            }
+
+            &_final {
+
+            }
+        }
+
+        &-bar {
+            height: vw(20px);
+            background: var(--Gray-Steel);
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            mask: linear-gradient(#000 0 0);
+
+            @include border-r-s;
+
+            @include HD {
+                height: vwh(20px);
+            }
+            @include Mobile {
+                height: vwm(20px);
+            }
+
+            &-meter {
+                @include transition-primary;
+                background: linear-gradient(5deg, #CC2D2D -4.68%, #FF3838 50.48%, #FFBB38 102.31%);
+                height: 100%;
+                width: 20%;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+        @include Mobile {
+            flex-direction: column-reverse;
+            gap: vwm(12px);
+        }
+    }
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: vw(40px);
+        padding: 0 vw(16px);
+        @include button-vs;
+        @include border-r-s;
+
+        @include HD {
+            height: vwh(40px);
+            padding: 0 vwh(16px);
+        }
+        @include Mobile {
+            height: vwm(40px);
+            padding: 0 vwm(16px);
+        }
+    }
+}

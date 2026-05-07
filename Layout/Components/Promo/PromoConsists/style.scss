@@ -1,0 +1,49 @@
+.promo-consists {
+    @include spacing(padding-block, 60px, 60px, 40px);
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 40px, 40px, 24px);
+    }
+
+    &__title {
+        @include h1;
+        color: var(--Gray-Black);
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include spacing(gap, 20px, 20px, 12px);
+
+        @include Mobile {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        background: var(--Gray-Lighter);
+        @include spacing(border-radius, 32px, 32px, 20px);
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 24px, 24px, 12px);
+        @include spacing(padding, 40px, 40px, 24px);
+
+        & .promo-banner__badge {
+            background: var(--Gray-White);
+            width: fit-content;
+            font-weight: 600 !important;
+        }
+
+        &--title {
+            color: var(--red-dark);
+            @include h3;
+        }
+        &--text {
+            color: var(--Gray-Dark);
+            @include t2;
+        }
+    }
+}

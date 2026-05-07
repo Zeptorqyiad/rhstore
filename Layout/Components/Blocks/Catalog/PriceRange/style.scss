@@ -1,0 +1,211 @@
+.price-range {
+    width: 100%;
+    padding-bottom: vw(12px);
+
+    @include HD {
+        padding-bottom: vwh(12px);
+    }
+    @include Mobile {
+        padding-bottom: vwm(12px);
+    }
+
+    &__title {
+        @include t2b;
+        color: var(--Gray-Black);
+        margin-bottom: vw(20px);
+        display: block;
+
+        @include HD {
+            margin-bottom: vwh(20px);
+        }
+        @include Mobile {
+            margin-bottom: vwm(20px);
+        }
+    }
+
+    &__slider {
+        height: vw(4px);
+        border-radius: vw(2px);
+        position: relative;
+        background-color: var(--Gray-Light);
+
+        @include HD {
+            height: vwh(4px);
+            border-radius: vwh(2px);
+        }
+        @include Mobile {
+            height: vwm(4px);
+            border-radius: vwm(2px);
+        }
+    }
+
+    &__selected {
+        height: 100%;
+        left: 30%;
+        right: 30%;
+        position: absolute;
+        background-color: var(--red-lighter);
+    }
+
+    &__input {
+        position: relative;
+
+        input {
+            position: absolute;
+            width: 100%;
+            height: vw(5px);
+            top: vw(-5px);
+            background: none;
+            pointer-events: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            @include transition-primary;
+
+            &::-moz-range-thumb {
+                border-radius: 50%;
+                background: var(--red);
+                pointer-events: auto;
+                -webkit-appearance: none;
+                cursor: pointer;
+                @include transition-primary;
+
+                height: vw(20px);
+                width: vw(20px);
+
+                @include HD {
+                    height: vwh(20px);
+                    width: vwh(20px);
+                }
+                @include Mobile {
+                    height: vwm(20px);
+                    width: vwm(20px);
+                }
+
+                &:active {
+                    background: var(--red-dark);
+                }
+            }
+
+            &::-webkit-slider-thumb {
+                border-radius: 50%;
+                background: var(--red);
+                pointer-events: auto;
+                -webkit-appearance: none;
+                cursor: pointer;
+                @include transition-primary;
+
+                height: vw(20px);
+                width: vw(20px);
+
+                @include HD {
+                    height: vwh(20px);
+                    width: vwh(20px);
+                }
+                @include Mobile {
+                    height: vwm(20px);
+                    width: vwm(20px);
+                }
+
+                &:active {
+                    background: var(--red-dark);
+                }
+            }
+
+            @include HD {
+                height: vwh(5px);
+                top: vwh(-5px);
+            }
+
+            @include Mobile {
+                height: vwm(5px);
+                top: vwm(-5px);
+            }
+        }
+    }
+
+    &__price {
+        margin-top: vw(20px);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: vw(8px);
+
+        @include HD {
+            gap: vwh(8px);
+            margin-top: vwh(20px);
+        }
+        @include Mobile {
+            gap: vwm(8px);
+            margin-top: vwm(20px);
+        }
+    }
+}
+
+.form-control-price {
+    padding: vw(5.5px) vw(10px);
+    border: max(#{vw(2px), 2px}) solid var(--Gray-Light);
+    gap: vw(4px);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: border-color .2s;
+    @include border-r-s;
+    cursor: text;
+
+    @include HD {
+        padding: vwh(5.5px) vwh(10px);
+        border-width: max(#{vwh(2px), 2px});
+        gap: vwh(4px);
+
+    }
+
+    @include Mobile {
+        padding: vwm(7.5px) vwm(10px);
+        border-width: max(#{vwm(2px), 2px});
+        gap: vwm(4px);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            border-color: var(--red);
+        }
+    }
+
+    &:focus-within {
+        border-color: var(--red-dark);
+
+        .form-control-price__input {
+            font-weight: 600;
+        }
+    }
+
+    &--writing {
+        .form-control-price__input {
+            font-weight: 600;
+        }
+    }
+
+    &__text {
+        @include t3b;
+        color: var(--Gray-Light);
+        text-align: right;
+        user-select: none;
+    }
+
+    &__input {
+        @include t3;
+        border: none;
+        width: 100%;
+
+        text-align: right;
+
+        -moz-appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}

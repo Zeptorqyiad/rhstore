@@ -1,0 +1,75 @@
+.search-not-found {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: vw(60px) 0 vw(160px);
+        gap: vw(32px);
+
+        @include HD {
+            gap: vwh(32px);
+            padding: vwh(60px) 0 vwh(160px);
+        }
+        @include Mobile {
+            gap: vwm(32px);
+            padding: vwm(40px) 0 vwm(100px);
+        }
+    }
+
+    &__image {
+        height: vw(96px);
+        width: vw(96px);
+        user-select: none;
+
+        @include HD {
+            height: vwh(80px);
+            width: vwh(80px);
+        }
+        @include Mobile {
+            height: vwm(72px);
+            width: vwm(72px);
+        }
+    }
+
+    &__description {
+        @include t2;
+        color: var(--Gray-Medium);
+        text-align: center;
+    }
+
+    &__button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: vw(40px);
+        padding: 0 vw(16px);
+        background: var(--red);
+        color: var(--Gray-White);
+        @include button-m;
+        @include border-r-m;
+        @include transition-primary;
+
+        @include HD {
+            height: vwh(40px);
+            padding: 0 vwh(16px);
+        }
+
+        @include Mobile {
+            height: vwm(40px);
+            width: 100%;
+            padding: 0;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: var(--red-lighter);
+            }
+        }
+
+        &:active {
+            background: var(--red-dark);
+        }
+    }
+}

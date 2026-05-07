@@ -1,0 +1,121 @@
+.city-selector {
+    display: flex;
+    position: relative;
+
+    &__input {
+        input {
+            height: vw(48px);
+
+            @include HD {
+                height: vwh(48px);
+            }
+
+            @include Mobile {
+                height: vwm(48px);
+            }
+        }
+    }
+
+    &__dropdown {
+        position: relative;
+        margin-bottom: vw(20px);
+
+        @include HD {
+            margin-bottom: vwh(20px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(20px);
+        }
+    }
+
+    &__dropdown_active {
+        .variant-text-field input {
+            border-color: #999;
+        }
+
+        .city-selector__dropdown-wrapper {
+            opacity: 1;
+            z-index: 2;
+            user-select: auto;
+            pointer-events: all;
+        }
+    }
+
+    &__dropdown-wrapper {
+        position: absolute;
+        padding: vw(12px);
+        border-radius: vw(8px);
+        width: 100%;
+        top: 100%;
+        opacity: 0;
+        user-select: none;
+        pointer-events: none;
+        background-color: #FFFFFF;
+        box-shadow: 0 0 vw(15px) 0 rgba(0, 0, 0, 0.10);
+
+        @include HD {
+            padding: vwh(12px);
+            border-radius: vwh(8px);
+            box-shadow: 0 0 vwh(15px) 0 rgba(0, 0, 0, 0.10);
+        }
+
+        @include Mobile {
+            padding: vwm(12px);
+            border-radius: vwm(8px);
+            box-shadow: 0 0 vwm(15px) 0 rgba(0, 0, 0, 0.10);
+        }
+    }
+
+    &__dropdown-list {
+        display: grid;
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: vw(216px);
+        gap: vw(4px);
+        @include scrollbar;
+
+        @include HD {
+            max-height: vwh(216px);
+            gap: vwh(4px);
+        }
+
+        @include Mobile {
+            max-height: vwm(216px);
+            gap: vwm(4px);
+        }
+    }
+
+    &__dropdown-item {
+        @include t3;
+        color: #666;
+        cursor: pointer;
+        padding: vw(9.5px) vw(16px);
+        transition: background-color 0.2s ease;
+        @include border-r-s;
+
+        &_not-found {
+            @include t3b;
+        }
+
+        @include HD {
+            padding: vwh(9.5px) vwh(16px);
+
+        }
+
+        @include Mobile {
+            padding: vwm(9.5px) vwm(16px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #F2F2F2;
+            }
+        }
+
+        &:active {
+            background-color: #CCC;
+            transition: background-color 0.1s ease;
+        }
+    }
+}

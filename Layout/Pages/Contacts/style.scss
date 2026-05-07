@@ -1,0 +1,66 @@
+.contacts {
+  &__breadcrumbs {
+    margin-bottom: vw(24px);
+
+    @include HD {
+      margin-bottom: vwh(32px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(12px);
+    }
+
+  }
+
+  &__title {
+    margin-bottom: vw(80px);
+
+    @include HD {
+      margin-bottom: vwh(60px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(28px);
+    }
+  }
+
+  &__container {
+    margin: 0 vw(370px) vw(176px);
+
+    @include HD {
+      margin: 0 vwh(153px) vwh(176px);
+    }
+
+    @include Mobile {
+      margin: 0 vwm(12px) vwm(88px);
+    }
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: auto vw(700px);
+    gap: vw(20px);
+
+    @include HD {
+      grid-template-columns: auto vwh(628px);
+      gap: vwh(20px);
+    }
+
+    @include Mobile {
+      grid-template-columns: 1fr;
+      gap: vwm(68px);
+    }
+  }
+
+  &__faq {
+    margin-bottom: vw(80px);
+
+    @include HD {
+      margin-bottom: vwh(80px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(60px);
+    }
+  }
+}

@@ -1,0 +1,158 @@
+.modal-promo {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	overflow: auto;
+	transition: opacity 0.1s ease;
+	z-index: 100;
+
+	&.open-modal {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&--title {
+			@include h3;
+			color: var(--Gray-Black);
+		}
+ 	}
+
+	&__close {
+		@include spacing(width, 40px);
+		@include spacing(height, 40px);
+		@include spacing(padding, 8px);
+
+		svg {
+			@include spacing(width, 24px);
+			@include spacing(height, 24px);
+		}
+	}
+
+	&__content {
+		position: relative;
+		@include spacing(padding, 40px);
+		display: flex;
+		flex-direction: column;
+		@include spacing(gap, 20px);
+		@include spacing(width, 420px);
+		height: fit-content;
+		background: var(--Gray-White);
+		@include border-r;
+	}
+
+	&__social {
+		display: flex;
+		flex-direction: column !important;
+		@include spacing(gap, 12px);
+
+		& .social-network__item {
+			@include spacing(width, 58px);
+			@include spacing(height, 58px);
+			@include spacing(border-radius, 12px);
+			flex: 1;
+			width: 100%;
+
+			svg {
+				@include spacing(width, 58px);
+				@include spacing(height, 58px);
+			}
+
+
+			@media (hover: hover) and (pointer: fine) {
+				&:hover {
+					&.social-network__telegram {
+						background: #6CBDE5;
+
+						svg {
+							fill: #6CBDE5;
+						}
+					}
+					&.social-network__whatsapp {
+						background: #79C987;
+
+						svg {
+							fill: #79C987;
+						}
+					}
+				}
+			}
+		}
+
+		& .social-network__telegram {
+			background: var(--Other-Social-Tg);
+			display: flex;
+			justify-content: center;
+			transition: background 0.3s ease;
+		}
+
+		& .social-network__whatsapp {
+			background: var(--Other-Social-Wt);
+			display: flex;
+			justify-content: center;
+			transition: background 0.3s ease;
+		}
+
+		& .social-network__max {
+			display: flex;
+			justify-content: center;
+			transition: background 0.3s;
+			width: 100%;
+
+			svg {
+				width: 100%;
+			}
+		}
+
+		& .promo-form__social--btn {
+			@include t2b;
+			@include spacing(min-height, 58px);
+			@include spacing(border-radius, 12px);
+			justify-content: center;
+
+			@include Mobile {
+				@include t3b;
+			}
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		@include spacing(gap, 20px);
+
+		& .modal-feedback__input {
+			@include spacing(margin-bottom, 20px);
+		}
+
+		& .modal-feedback__button {
+			width: 100%;
+			flex: 1;
+			@include spacing(padding-block, 14px);
+			color: var(--Gray-White);
+			@include t1b;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			@include spacing(border-radius, 12px);
+			@include spacing(margin-top, 20px);
+		}
+	}
+
+	&__text {
+		color: var(--Gray-Dark);
+		@include t2;
+	}
+}

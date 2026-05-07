@@ -1,0 +1,86 @@
+.social {
+  width: vw(40px);
+  height: vw(40px);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  @media screen and (max-width: $hd-width) {
+    width: vwh(40px);
+    height: vwh(40px);
+  }
+  @media screen and (max-width: $tablet-width) {
+    width: vwt(40px);
+    height: vwt(40px);
+  }
+  @media screen and (max-width: $mobile-width) {
+    width: vwm(40px);
+    height: vwm(40px);
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
+  &_style-vk {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .social__icon svg rect {
+          fill: $ButtonWhiteHover;
+        }
+      }
+    }
+
+    &:active {
+      .social__icon svg rect {
+        fill: $ButtonSecondaryStatic;
+      }
+    }
+
+  }
+
+  &_style-tg {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .social__icon svg rect {
+          fill: $ButtonWhiteHover;
+        }
+      }
+    }
+
+    &:active {
+      .social__icon svg rect {
+        fill: $ButtonSecondaryStatic;
+      }
+    }
+
+  }
+
+  &_style-ok {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .social__icon svg rect {
+          fill: $ButtonWhiteHover;
+        }
+      }
+    }
+
+    &:active {
+      .social__icon svg rect {
+        fill: $ButtonSecondaryStatic;
+      }
+    }
+  }
+}

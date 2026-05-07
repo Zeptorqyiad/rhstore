@@ -1,0 +1,33 @@
+:root {
+    /* Other/Social */
+    --Other-Social-In-Radial: radial-gradient(230.93% 230.93% at 102.01% 2.03%,
+            #F9ED32 0%, #EE2A7B 36%, #D22A8A 44%, #8B2AB2 60%, #1B2AF0 83%, #002AFF 88%);
+    --Other-Social-Wt: #48C95F;
+    --Other-Social-Tg: #27A6E5;
+    --Other-Social-Vk: #07F;
+    --Other-Social-Ya: #FC3F1D;
+
+    /* Other/Status */
+    --Other-Status-Error-Dark: #CC2929;
+    --Other-Status-Error-Light: #FCC;
+    --Other-Status-Notice-Dark: #737300;
+    --Other-Status-Notice-Light: #F2F2AA;
+    --Other-Status-Succes-Dark: #0E8C0E;
+    --Other-Status-Succes-Light: #C3E5C3;
+
+    --Other-Header: #2B2B2BD8;
+
+    /* Other/Calc */
+    --blue-light: #6bb5ff;
+    --blue-light-bg: #F5F9FF;
+    --blue-light-border: #BFD9FF;
+    --blue-svg-l: #E5EEFF;
+    --stock-bg: #D2F2D8;
+    --Gray-Lighter-White: #f5f5f5;
+    --policy-hover: #4DA0FF;
+    --policy-active: #005FCC;
+}
+
+$defaultTransition: 0.10s;
+$hd-width: 1499px;
+$tablet-width: 991px;

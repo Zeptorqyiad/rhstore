@@ -1,0 +1,1 @@
+<?php App\Layout\Pages\PasswordRestore\Layout::draw(); ?>

@@ -1,0 +1,14 @@
+@mixin TextTrunc($lineClamp: 2) {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @supports (-webkit-line-clamp: $lineClamp) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: initial;
+        display: -webkit-box;
+        -webkit-line-clamp: $lineClamp;
+        -webkit-box-orient: vertical;
+    }
+}

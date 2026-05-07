@@ -1,0 +1,302 @@
+.footer {
+    background: var(--Gray-Black);
+
+    &__container {
+        padding: vw(80px) 0 vw(100px);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        @include HD {
+            padding: vwh(80px) 0 vwh(100px);
+        }
+
+        @include Mobile {
+            grid-template-columns: 1fr;
+            padding: vwm(40px) 0 vwm(182px);
+        }
+    }
+
+    &__hidden {
+        @include Mobile {
+            display: none;
+        }
+    }
+
+    &__hidden:nth-child(1) {
+        .footer__items {
+            gap: vw(17px);
+
+            @include HD {
+                gap: vwh(17px);
+            }
+        }
+    }
+
+    &__hidden:nth-child(3) {
+        .footer__item-big {
+            margin-bottom: vw(17px);
+
+            @include HD {
+                margin-bottom: vwh(17px);
+            }
+        }
+
+        .footer__item-big:nth-child(3) {
+            margin: 0;
+        }
+    }
+
+    &__items {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    &__item {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+
+        &-link {
+            color: #fff;
+            -webkit-transition: all 0.2s ease;
+            -o-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: var(--red);
+                }
+            }
+
+            &:active {
+                -webkit-transition: all 0.1s ease;
+                -o-transition: all 0.1s ease;
+                transition: all 0.1s ease;
+                color: var(--red-dark);
+            }
+
+            &_profile {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__item-big p {
+        @include button-mb;
+        padding: vw(10px) 0;
+
+        @include HD {
+            padding: vwh(10px) 0;
+        }
+    }
+
+    &__item-big a {
+        @include button-mb;
+        padding: vw(10px) 0;
+
+        @include HD {
+            padding: vwh(10px) 0;
+        }
+    }
+
+    &__item-big span {
+        @include h4;
+        color: var(--Gray-White);
+    }
+
+    &__item-small {
+        @include button-s;
+        -webkit-font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        color: #ccc;
+        padding: vw(6px) 0;
+
+        @include HD {
+            padding: vwh(6px) 0;
+        }
+
+        a {
+            color: #ccc;
+        }
+    }
+
+    &__block {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    &__contacts {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        margin-bottom: vw(12px);
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__contact {
+        @include button-l;
+        -webkit-font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        color: #fff;
+        -webkit-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        padding: vw(10px) 0;
+
+        @include HD {
+            padding: vwh(10px) 0;
+        }
+
+        @include Mobile {
+            padding: vwm(10px) 0;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--red);
+            }
+        }
+
+        &:active {
+            -webkit-transition: all 0.1s ease;
+            -o-transition: all 0.1s ease;
+            transition: all 0.1s ease;
+            color: var(--red-dark);
+        }
+    }
+
+    &__social {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        margin-bottom: vw(20px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            margin-bottom: vwm(40px);
+        }
+    }
+
+    &__info {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+
+        @include Mobile {
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+        }
+    }
+
+    &__info-link {
+        @include t2;
+        -webkit-font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        margin-bottom: vw(12px);
+        color: #666;
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: #6bb5ff;
+            }
+        }
+
+        &:active {
+            -webkit-transition: all 0.1s ease;
+            -o-transition: all 0.1s ease;
+            transition: all 0.1s ease;
+            color: #2d7ccc;
+        }
+    }
+
+    &__info-copy {
+        @include t2;
+        -webkit-font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        margin-bottom: vw(12px);
+        color: #666;
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__info-text {
+        @include t2;
+        -webkit-font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        font-feature-settings: 'pnum' on, 'lnum' on, 'ss09' on, 'liga' off;
+        color: #666;
+        text-align: end;
+
+        @include Mobile {
+            text-align: start;
+        }
+    }
+}

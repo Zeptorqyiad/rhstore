@@ -1,0 +1,198 @@
+.modal-questions {
+    z-index: 9;
+
+    &__wrapper {
+        @include border-r;
+        padding: vw(40px);
+        background-color: #FFFFFF;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: vw(420px);
+        z-index: 9;
+        box-shadow: 0 0 vw(15px) 0 rgba(0, 0, 0, 0.10);
+
+        @include HD {
+            padding: vwh(40px);
+            width: vwh(420px);
+            box-shadow: 0 0 vwh(15px) 0 rgba(0, 0, 0, 0.10);
+        }
+
+        @include Mobile {
+            height: calc(100% - #{vwm(56px)});
+            top: auto;
+            bottom: -100%;
+            transition: bottom 0.2s ease;
+            border-radius: 0;
+            transform: translate(-50%, 0);
+            width: 100%;
+            max-width: 100%;
+            padding: 0 vwm(12px);
+            box-shadow: none;
+
+        }
+    }
+
+    &__mask {
+        z-index: 8;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+
+        @include Mobile {
+            background-color: transparent;
+        }
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: vw(14px);
+
+        @include HD {
+            margin-bottom: vwh(14px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(16px);
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__top-title {
+        color: #0D0D0D;
+
+        @include Mobile {
+            align-self: start;
+        }
+    }
+
+    &__close {
+        padding: vw(8px);
+        border-radius: vw(8px);
+        transition: background-color 0.2s ease;
+
+        @include HD {
+            padding: vwh(8px);
+            border-radius: vwh(8px);
+        }
+
+        @include Mobile {
+            padding: vwm(8px);
+            border-radius: vwm(8px);
+            align-self: end;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                transition: background-color 0.1s ease;
+                background-color: #F2F2F2;
+            }
+        }
+
+        &:active {
+            background-color: #CCC;
+        }
+
+        svg {
+            fill: #404040;
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+    }
+
+    &__text {
+        @include t2;
+        color: #666;
+        margin-bottom: vw(20px);
+
+        @include HD {
+            margin-bottom: vwh(20px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__inputs {
+        display: grid;
+        gap: vw(16px);
+
+        @include HD {
+            gap: vwh(16px);
+        }
+
+        @include Mobile {
+            gap: vwm(20px);
+        }
+    }
+
+    &__input {
+        input {
+            width: 100%;
+        }
+    }
+
+    &__checkbox {
+        margin-top: vw(24px);
+
+        @include HD {
+            margin-top: vw(24px);
+        }
+        @include Mobile {
+            margin-top: vw(16px);
+        }
+    }
+
+    &__button {
+        width: 100%;
+        justify-content: center;
+        padding: vw(10px) vw(24px);
+        @include border-r-m;
+        margin-top: vw(32px);
+
+        @include HD {
+            padding: vwh(10px) vwh(24px);
+            margin-top: vwh(32px);
+        }
+
+        @include Mobile {
+            padding: vwm(8px) vwm(24px);
+            margin-top: vwm(8px);
+        }
+
+        span {
+            @include button-m;
+
+            @include Mobile {
+                @include button-s;
+            }
+        }
+    }
+
+    &.open-modal {
+        .modal-questions__wrapper {
+            @include Mobile {
+                bottom: 0;
+            }
+        }
+    }
+}
+

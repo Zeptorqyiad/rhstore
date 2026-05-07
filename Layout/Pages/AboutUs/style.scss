@@ -1,0 +1,150 @@
+.about-us {
+  &__breadcrumbs {
+    margin-top: vw(12px);
+    margin-bottom: vw(32px);
+
+    @include HD {
+      margin-top: vwh(12px);
+      margin-bottom: vwh(32px);
+    }
+
+    @include Mobile {
+      margin-top: vwm(12px);
+      margin-bottom: vwm(12px);
+    }
+  }
+
+  &__a-banner {
+    margin-bottom: vw(120px);
+
+    @include HD {
+      margin-bottom: vwh(120px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(60px);
+    }
+  }
+
+  &__approach {
+    margin-bottom: vw(80px);
+
+    @include HD {
+      margin-bottom: vwh(80px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(60px);
+    }
+  }
+
+  &__advantages {
+    margin-bottom: vw(80px);
+
+    @include HD {
+      margin-bottom: vwh(80px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(60px);
+    }
+
+    .advantages__title {
+      @include Mobile {
+        margin-bottom: vwm(24px);
+      }
+    }
+
+    .advantages__container {
+      align-items: start;
+      row-gap: vw(17px);
+
+      @include HD {
+        row-gap: vwh(17px);
+      }
+
+      @include Mobile {
+        row-gap: vwm(12px);
+      }
+    }
+
+    .advantage-card:nth-child(1) {
+      @include Mobile {
+        order: 1;
+      }
+    }
+
+    .advantage-card:nth-child(2) {
+      @include Mobile {
+        order: 3;
+      }
+
+      .advantage-card__logo {
+        bottom: vw(80px);
+
+        @include HD {
+          bottom: vwh(80px);
+        }
+
+        @include Mobile {
+          bottom: vwm(160px);
+        }
+      }
+    }
+
+    .advantage-card:nth-child(3) {
+      @include Mobile {
+        order: 2;
+      }
+    }
+
+    .advantage-card:nth-child(4) {
+      margin-top: vw(23px);
+
+      @include HD {
+        margin-top: vwh(23px);
+      }
+
+      @include Mobile {
+        margin-top: 0;
+        order: 4;
+      }
+    }
+  }
+
+  &__manufacturer {
+    margin-bottom: vw(80px);
+
+    @include HD {
+      margin-bottom: vwh(80px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(60px);
+    }
+  }
+
+  &__slider {
+    margin-bottom: vw(120px);
+
+    @include HD {
+      margin-bottom: vwh(120px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(60px);
+    }
+  }
+
+  &__faq {
+    margin-bottom: vw(80px);
+
+    @include HD {
+      margin-bottom: vwh(80px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(60px);
+    }
+  }
+}

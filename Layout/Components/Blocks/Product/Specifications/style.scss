@@ -1,0 +1,35 @@
+.specifications {
+    &__table {
+        display: grid;
+    }
+
+    &__table-line {
+        display: grid;
+        align-items: center;
+        grid-template-columns: vw(130px) auto;
+        padding: vw(8px) 0 vw(6px);
+        border-bottom: max(#{vw(2px), 2px}) solid #F2F2F2;
+
+        @include HD {
+            grid-template-columns: vwh(130px) auto;
+            padding: vwh(8px) 0 vwh(6px);
+            border-bottom: max(#{vwh(2px), 2px}) solid #F2F2F2;
+        }
+
+        @include Mobile {
+            grid-template-columns: vwm(130px) auto;
+            padding: vwm(8px) 0 vwm(6px);
+            border-bottom: max(#{vwm(2px), 2px}) solid #F2F2F2;
+        }
+    }
+
+    &__table-title {
+        @include t3;
+        color: var(--Gray-Medium);
+    }
+
+    &__table-text {
+        @include t3;
+        color: var(--Gray-Dark);
+    }
+}

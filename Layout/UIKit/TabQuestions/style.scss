@@ -1,0 +1,71 @@
+.tab-questions {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  gap: vwt(20px);
+  padding: vwt(12px) 0;
+  background: $GrayWhite;
+
+  @media screen and (max-width: $mobile-width){
+    gap: vwm(20px);
+    padding: vwm(12px) 0;
+
+  }
+
+  &:active {
+    background-color: $Color2Lighter;
+  }
+
+
+  // .tab-questions__text
+  &__text {
+    @include T3_B;
+    color: $GrayDarker;
+    flex: 1 0 0;
+  }
+
+  // .tab-questions__icons
+  &__icons {
+    display: flex;
+    align-items: center;
+
+    gap: vwt(8px);
+
+    @media screen and (max-width: $hd-width){}
+    @media screen and (max-width: $tablet-width){}
+    @media screen and (max-width: $mobile-width){
+      gap: vwm(8px);
+    }
+  }
+
+  &__badge {
+    background-color: $Color2Darker;
+    color: $GrayWhite;
+  }
+
+  // .tab-questions__icon
+  &__icon {
+    flex-shrink: 0;
+    //transform: rotate(180deg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: vwt(20px);
+      height: vwt(20px);
+
+      @media screen and (max-width: $hd-width){}
+      @media screen and (max-width: $tablet-width){}
+      @media screen and (max-width: $mobile-width){
+        width: vwm(20px);
+        height: vwm(20px);
+      }
+
+      fill: none;
+      stroke: $GrayDarker;
+    }
+  }
+}

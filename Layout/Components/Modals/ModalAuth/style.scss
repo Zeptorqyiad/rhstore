@@ -1,0 +1,64 @@
+.modal-auth {
+    display: none;
+    z-index: 100;
+    translate: 0 25vh;
+    transition-property: overlay, display, opacity;
+    transition-behavior: allow-discrete;
+    @include transition-primary;
+
+
+
+    &__form {
+        .authorization-form__title {
+            margin-top: vw(6px);
+            margin-bottom: vw(20px);
+            justify-self: self-start;
+
+            @include HD {
+                margin-top: vwh(6px);
+                margin-bottom: vwh(20px);
+            }
+            @include Mobile {
+                margin-top: vwm(6px);
+                margin-bottom: vwm(20px);
+            }
+        }
+
+        .registration-form__title {
+            margin-bottom: vw(20px);
+            margin-top: vw(6px);
+            justify-self: self-start;
+
+            @include HD {
+                margin-top: vwh(6px);
+                margin-bottom: vwh(20px);
+            }
+            @include Mobile {
+                margin-top: vwm(6px);
+                margin-bottom: vwm(20px);
+            }
+        }
+
+        .authorization-form__first-link {
+            display: none;
+        }
+
+        .authorization-form__first-link_modal {
+            display: block;
+        }
+
+        .registration-form__first-link {
+            display: none;
+        }
+
+        .registration-form__first-link_modal {
+            display: block;
+        }
+    }
+}
+
+.modal-auth[open] {
+    @include Mobile {
+        display: none !important;
+    }
+}

@@ -1,0 +1,19 @@
+@import './scss/variables/var-main';
+@import './scss/variables/var-gradients';
+@import './scss/variables/var-text-icon';
+@import './scss/variables/var-buttons';
+@import './scss/variables/var-other';
+@import './scss/variables/var-tabs';
+
+@import "./scss/functions/func-media";
+@import "./scss/mixins/mixin_media";
+@import "./scss/mixins/mixin-typography";
+@import "./scss/mixins/mixin-text-trunc";
+@import "./scss/mixins/mixin-border-radius";
+@import "./scss/mixins/mixin_animation";
+@import "./scss/mixins/mixin_shadow";
+
+@import './scss/base/reset';
+@import './scss/base/fonts';
+@import './scss/base/common';
+@import './scss/base/ui';

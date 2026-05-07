@@ -1,0 +1,68 @@
+.password-restore {
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: vw(24px);
+        padding: vw(120px) 0;
+
+        @include HD {
+            gap: vwh(24px);
+            padding: vwh(120px) 0;
+        }
+        @include Mobile {
+            gap: vwm(24px);
+            padding: vwm(120px) 0;
+        }
+    }
+
+    &__title {
+        color: var(--Gray-Black);
+    }
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        gap: vw(16px);
+        margin: 0 auto;
+        width: vw(400px);
+
+        @include HD {
+            gap: vwh(16px);
+            width: vwh(400px);
+        }
+        @include Mobile {
+            max-width: 100%;
+            gap: vwm(16px);
+        }
+    }
+
+    &__input {
+        height: vw(48px);
+
+        @include HD {
+            height: vwh(48px);
+        }
+        @include Mobile {
+            height: vwm(48px);
+        }
+    }
+
+    &__submit {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: vw(48px);
+        @include button-m;
+        @include border-r-s;
+
+        @include HD {
+            height: vwh(48px);
+        }
+        @include Mobile {
+            height: vwm(48px);
+        }
+    }
+}

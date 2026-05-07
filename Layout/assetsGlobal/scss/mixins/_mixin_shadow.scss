@@ -1,0 +1,10 @@
+@mixin shadow-m {
+    box-shadow: 0 0 vw(14px) 0 #0000001a;
+
+    @include HD {
+        box-shadow: 0 0 vwh(14px) 0 #0000001a;
+    }
+    @include Mobile {
+        box-shadow: 0 0 vwm(14px) 0 #0000001a;
+    }
+}

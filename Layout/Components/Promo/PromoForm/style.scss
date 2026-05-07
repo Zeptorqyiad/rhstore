@@ -1,0 +1,169 @@
+.promo-form {
+    @include spacing(padding-block, 60px, 60px, 40px);
+    position: relative;
+
+    &__content {
+        @include spacing(padding-block-start, 60px, 60px, 40px);
+        @include spacing(padding-inline-start, 80px, 80px, 24px);
+        @include spacing(border-radius, 32px, 32px, 20px);
+        background: var(--Gray-Steel);
+        overflow: hidden;
+
+        @include Mobile {
+            padding-block: vwm(40px);
+            padding-inline: vwm(24px);
+        }
+
+        &-ls {
+            @include spacing(width, 620px, 580px);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 24px, 24px, 20px);
+            @include spacing(padding-bottom, 60px, 60px, 0);
+
+            @include Mobile {
+                width: 100%;
+                position: relative;
+                z-index: 3;
+            }
+        }
+
+        &-rs {
+            position: relative;
+            overflow: visible;
+
+            &--question {
+                position: absolute;
+                @include spacing(bottom, 5px);
+                @include spacing(right, 90px, 180px);
+                z-index: 3;
+                @include spacing(width, 428px, 280px);
+                @include spacing(height, 355px, 280px);
+                user-select: none;
+
+                @include Mobile {
+                    display: none;
+                }
+            }
+
+            &--warm {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 2;
+                user-select: none;
+
+                @include HD {
+                  width: vwh(600px);
+                }
+                @include Mobile {
+                  width: vwm(200px);
+                  transform: rotate(10deg);
+                  bottom: vwm(-50px);
+                  right: vwm(-90px);
+                }
+            }
+        }
+    }
+
+    &__title {
+        @include h2;
+        color: var(--Gray-Black);
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 12px);
+
+        @include Mobile {
+            flex-direction: column;
+        }
+
+        &--btn {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            @include spacing(gap, 8px);
+            justify-content: center;
+            flex: 1;
+            @include spacing(padding-block, 12px);
+            @include spacing(padding-inline, 16px);
+            color: var(--Gray-White);
+            @include t1b;
+            @include spacing(border-radius, 12px);
+
+            @include Mobile {
+                @include t2b;
+            }
+        }
+
+        & .social-network__item {
+            @include spacing(width, 58px);
+            @include spacing(height, 58px);
+            @include spacing(border-radius, 12px);
+
+            @include Mobile {
+                flex: 1;
+                width: 100%;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        & .social-network__telegram {
+            background: var(--Other-Social-Tg);
+            display: flex;
+            justify-content: center;
+        }
+        & .social-network__whatsapp {
+            background: var(--Other-Social-Wt);
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__text {
+        @include t2;
+        color: var(--Gray-Dark);
+    }
+
+    &__bubble {
+        position: absolute;
+        @include spacing(top, -40px, -40px, -10px);
+        @include spacing(right, 0, 0, 10px);
+        z-index: 3;
+        @include spacing(width, 280px, 280px, 86px);
+        @include spacing(height, 280px, 280px, 86px);
+        user-select: none;
+
+        @include Mobile {
+          transform: rotate(-10deg);
+        }
+    }
+
+    & .modal-feedback {
+        &__form {
+            display: flex;
+            flex-direction: column;
+        }
+        &__input {
+            @include spacing(margin-bottom, 24px);
+        }
+        &__button {
+            @include spacing(margin-top, 12px);
+            @include spacing(padding-block, 14px);
+            @include spacing(padding-inline, 34px);
+            background: var(--red);
+            @include spacing(border-radius, 12px);
+            box-shadow: vw(8px) vw(8px) vw(30px) 0 rgba(203, 0, 0, 0.25);
+            color: var(--Gray-White);
+            display: flex;
+            justify-content: center;
+            @include t1b;
+        }
+    }
+}

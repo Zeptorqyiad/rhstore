@@ -1,0 +1,40 @@
+.brands {
+  &__breadcrumbs {
+    margin-top: vw(12px);
+    margin-bottom: vw(32px);
+
+    @include HD {
+      margin-top: vwh(12px);
+      margin-bottom: vwh(32px);
+    }
+
+    @include Mobile {
+      margin-top: vwm(12px);
+      margin-bottom: vwm(32px);
+    }
+}
+
+  &__banner {
+    margin-bottom: vw(60px);
+
+    @include HD {
+      margin-bottom: vwh(60px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(40px);
+    }
+  }
+
+  &__cards {
+    margin-bottom: vw(120px);
+
+    @include HD {
+      margin-bottom: vwh(120px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(80px);
+    }
+  }
+}

@@ -1,0 +1,150 @@
+.tab-outline {
+
+    display: inline-flex;
+    align-items: center;
+    border: max(#{vw(2px)}, 2px) solid $GrayLighter;
+    border-radius: vw(16px);
+    padding: vw(7.5px) vw(10px);
+    gap: vw(8px);
+
+    position: relative;
+
+    cursor: pointer;
+
+    @media screen and (max-width: $hd-width) {
+        border-width: max(#{vwh(2px)}, 2px);
+        border-radius: vwh(16px);
+        padding: vwh(7.5px) vwh(10px);
+        gap: vwh(8px);
+
+    }
+    @media screen and (max-width: $tablet-width) {
+        border-width: max(#{vwt(2px)}, 2px);
+        border-radius: vwt(16px);
+        padding: vwt(7.5px) vwt(10px);
+        gap: vwt(8px);
+
+    }
+    @media screen and (max-width: $mobile-width) {
+        border-width: max(#{vwm(2px)}, 2px);
+        border-radius: vwm(16px);
+        padding: vwm(7.5px) vwm(10px);
+        gap: vwm(8px);
+
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            border-color: $Color2Light;
+
+            .tab-outline__icon_right svg {
+                stroke: $GrayDark;
+            }
+        }
+    }
+
+    &:active {
+        border-color: $Color2Lighter;
+        background: $Color2Lighter;
+    }
+
+    &_active {
+        background: $Color2Darker;
+        border-color: $Color2Darker;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: $GrayDarker;
+                border-color: $GrayDarker;
+
+                .tab-outline__icon_right {
+                    svg {
+                        stroke: $GrayWhite;
+                    }
+                }
+            }
+        }
+
+        &:active {
+            background: $GrayDark;
+            border-color: $GrayDark;
+
+            .tab-outline__icon_right {
+                svg {
+                    stroke: $GrayWhite;
+                }
+            }
+        }
+
+        .tab-outline__icon_right {
+            svg {
+                stroke: $GrayWhite;
+            }
+        }
+
+        .tab-outline__text {
+            color: $GrayWhite;
+        }
+    }
+
+    // .tab-outline__href
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    // .tab-outline__icon
+    &__icon {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: vw(20px);
+            height: vw(20px);
+
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(20px);
+                height: vwh(20px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(20px);
+                height: vwt(20px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+
+        // .tab-outline__icon_left
+        &_left {
+        }
+
+        // .tab-outline__icon_right
+        &_right {
+            margin-left: auto;
+            svg {
+                fill: none;
+                stroke: $GrayLight;
+                transform: rotate(180deg);
+                transition: transform 200ms;
+            }
+        }
+    }
+
+    // .tab-outline__text
+    &__text {
+        @include T4;
+        color: $GrayDark;
+        align-self: stretch;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

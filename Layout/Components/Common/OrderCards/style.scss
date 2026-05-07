@@ -1,0 +1,297 @@
+.order-cards {
+
+
+    &__list {
+        display: grid;
+        gap: vw(16px);
+
+        @include HD {
+            gap: vwh(16px);
+        }
+
+        @include Mobile {
+            gap: vwm(16px);
+        }
+    }
+
+    &__card {
+        @include border-r;
+        padding: vw(32px);
+        background-color: #FFFFFF;
+        display: grid;
+        grid-template-columns: auto 1fr 1fr;
+        border: max(#{vw(2px), 2px}) solid #F2F2F2;
+        grid-template-areas:
+    "number date sum"
+    "status . count"
+    "button link cancel";
+
+        @include HD {
+            padding: vwh(32px);
+            border: max(#{vwh(2px), 2px}) solid #F2F2F2;
+        }
+
+        @include Mobile {
+            padding: vwm(24px);
+            border: max(#{vwm(2px), 2px}) solid #F2F2F2;
+
+            grid-template-areas:
+      "number status"
+      "date date"
+      "link link"
+      "count count"
+      "sum sum"
+      "button button"
+      "cancel cancel";
+            grid-template-columns: auto auto;
+        }
+
+    }
+
+    &__number {
+        grid-area: number;
+        color: #0D0D0D;
+        margin-right: vw(12px);
+
+        @include HD {
+            margin-right: vwh(12px);
+        }
+
+        @include Mobile {
+            font-size: vwm(24px);
+            margin-right: 0;
+        }
+
+    }
+
+    &__date {
+        @include t3;
+        grid-area: date;
+        align-self: center;
+        color: #999999;
+    }
+
+    &__status {
+        @include t3;
+        justify-self: start;
+        margin-top: vw(8px);
+        margin-bottom: vw(24.5px);
+        grid-area: status;
+        padding: vw(5px) vw(12px);
+        color: #404040;
+        border-radius: vw(8px);
+        background-color: #F2F2F2;
+
+        @include HD {
+            margin-top: vwh(8px);
+            margin-bottom: vwh(24.5px);
+            padding: vwh(5px) vwh(12px);
+            border-radius: vwh(8px);
+        }
+
+        @include Mobile {
+            justify-self: end;
+            margin: 0;
+            padding: vwm(5px) vwm(12px);
+            border-radius: vwm(8px);
+        }
+
+    }
+
+    &__button {
+        align-self: center;
+        grid-area: button;
+        padding: vw(8px) vw(12px) vw(8px) vw(16px);
+        border-radius: vw(8px);
+        margin-right: vw(8px);
+
+        @include HD {
+            padding: vwh(8px) vwh(12px) vwh(8px) vwh(16px);
+            border-radius: vwh(8px);
+            margin-right: vwh(8px);
+        }
+
+        @include Mobile {
+            justify-content: center;
+            padding: vwm(8px) vwm(16px);
+            border-radius: vwm(8px);
+            margin-right: 0;
+            margin-bottom: vwm(8px);
+        }
+
+        span {
+            @include button-s;
+        }
+
+    }
+
+    &__sum {
+        @include t2b;
+        grid-area: sum;
+        justify-self: end;
+        color: #404040;
+
+        @include Mobile {
+            justify-self: stretch;
+            border-bottom: max(#{vwm(2px), 2px}) solid #F2F2F2;
+            padding-bottom: vwm(12px);
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__count {
+        @include t3;
+        color: #999999;
+        grid-area: count;
+        justify-self: end;
+
+        @include Mobile {
+            border-top: max(#{vwm(2px), 2px}) solid #F2F2F2;
+            padding-top: vwm(16px);
+            justify-self: stretch;
+            margin-bottom: vwm(4px);
+        }
+    }
+
+    &__cancel {
+        grid-area: cancel;
+        justify-self: end;
+        padding: vw(9.5px) vw(16px);
+        border-radius: vw(8px);
+        align-self: center;
+
+        @include HD {
+            padding: vwh(9.5px) vwh(16px);
+            border-radius: vwh(8px);
+        }
+
+        @include Mobile {
+            justify-content: center;
+            padding: vwm(9.5px) vwm(16px);
+            border-radius: vwm(8px);
+            justify-self: stretch;
+        }
+
+        span {
+            @include button-vs;
+        }
+    }
+
+    &__repeat {
+        grid-area: cancel;
+        justify-self: end;
+        padding: vw(8px) vw(16px) vw(8px) vw(12px);
+        border-radius: vw(8px);
+        align-self: center;
+        background-color: #FF3838;
+        color: #FFFFFF;
+        display: flex;
+        gap: vw(8px);
+        align-items: center;
+        transition: background-color 0.2s ease;
+
+        @include HD {
+            padding: vwh(8px) vwh(16px) vwh(8px) vwh(12px);
+            border-radius: vwh(8px);
+            gap: vwh(8px);
+        }
+
+        @include Mobile {
+            justify-content: center;
+            padding: vwm(8px) vwm(16px);
+            gap: vwm(8px);
+            border-radius: vwm(8px);
+            justify-self: stretch;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: #FF5E5E;
+            }
+        }
+
+        &:active {
+            transition: background-color 0.1s ease;
+            background-color: #D93030;
+        }
+
+        span {
+            @include button-s;
+        }
+
+        svg {
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+    }
+
+    &__link {
+        @include button-vs;
+        grid-area: link;
+        align-self: center;
+        padding: vw(9.5px) vw(12px);
+        color: #999999;
+        transition: color 0.2s ease;
+
+        @include HD {
+            padding: vwh(9.5px) vwh(12px);
+        }
+
+        @include Mobile {
+            padding: vwm(9.5px) 0;
+            margin-bottom: vwm(12px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: #FF3838;
+            }
+        }
+
+        &:active {
+            transition: color 0.1s ease;
+            color: #D93030;
+        }
+
+    }
+
+    &__status_gray, &__status_new {
+        background-color: #F2F2F2;
+        color: #404040;
+    }
+
+    &__status_orange, &__status_pay {
+        background-color: #FF8038;
+        color: #FFFFFF;
+    }
+
+    &__status_blue, &__status_accepted {
+        background-color: #389BFF;
+        color: #FFFFFF;
+    }
+
+    &__status_second-blue, &__status_sent, &__status_delivered {
+        background-color: #2D7CCC;
+        color: #FFFFFF;
+    }
+
+    &__status_green, &__status_finished {
+        background-color: #49CC60;
+        color: #FFFFFF;
+    }
+
+    &__status_second-gray, &__status_canceled {
+        background-color: #CCCCCC;
+        color: #FFFFFF;
+    }
+}

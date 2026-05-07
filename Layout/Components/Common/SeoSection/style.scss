@@ -1,0 +1,40 @@
+.seo-section {
+    background-color: var(--Gray-Lighter);
+
+    &__container {
+        padding: vw(60px) 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: vw(140px);
+
+        @include HD {
+            padding: vwh(60px) 0;
+            gap: vwh(80px);
+        }
+
+        @include Mobile {
+            padding: vwm(40px) 0;
+            grid-template-columns: 1fr;
+            gap: vwm(40px);
+        }
+    }
+
+    &__column-title {
+        margin-bottom: vw(12px);
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__column-text {
+        @include t3;
+        color: #666;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-feature-settings: 'ss09' on;
+    }
+}

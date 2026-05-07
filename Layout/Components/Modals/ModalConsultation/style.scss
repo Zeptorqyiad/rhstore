@@ -1,0 +1,283 @@
+.modal-consultation {
+    &__form {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: vw(512px);
+        z-index: 9;
+
+        @include HD {
+            width: vwh(512px);
+
+        }
+
+        @include Mobile {
+            overflow: auto;
+            height: calc(100% - #{vwm(56px)});
+            transition: bottom 0.4s ease;
+            top: auto;
+            bottom: -100%;
+            border-radius: 0;
+            transform: translate(-50%, 0);
+            width: 100%;
+            max-width: 100%;
+            display: grid;
+            align-items: end;
+            padding-bottom: vwm(62px);
+        }
+    }
+
+    &__content {
+        @include border-r;
+        position: relative;
+        padding: vw(56px);
+        background-color: #FFFFFF;
+        box-shadow: 0 0 vw(15px) 0 rgba(0, 0, 0, 0.10);
+
+        @include HD {
+            padding: vwh(56px);
+            box-shadow: 0 0 vwh(15px) 0 rgba(0, 0, 0, 0.10);
+        }
+
+        @include Mobile {
+            border-radius: vwm(16px) vwm(16px) 0 0;
+            display: grid;
+            padding: vwm(64px) vwm(24px) vwm(12px);
+            box-shadow: none;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        padding: vw(12px);
+        border-radius: vw(8px);
+        transition: background-color 0.2s ease;
+        top: vw(10px);
+        right: vw(10px);
+
+        @include HD {
+            padding: vwh(12px);
+            border-radius: vwh(8px);
+            top: vwh(10px);
+            right: vwh(10px);
+        }
+
+        @include Mobile {
+            padding: vwm(12px);
+            border-radius: vwm(8px);
+            top: vwm(10px);
+            right: vwm(10px);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                transition: background-color 0.1s ease;
+                background-color: #F2F2F2;
+            }
+        }
+
+        &:active {
+            background-color: #CCC;
+        }
+
+        svg {
+            fill: #404040;
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+    }
+
+    &__mask {
+        z-index: 8;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+
+        @include Mobile {
+            top: auto;
+            transform: none;
+            bottom: 0;
+            left: 0;
+            height: calc(100% - #{vwm(56px)});
+        }
+    }
+
+    &__top-title {
+        color: #0D0D0D;
+        margin-bottom: vw(16px);
+
+        @include HD {
+            margin-bottom: vwh(16px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(16px);
+        }
+    }
+
+    &__text {
+        @include t2;
+        color: #666;
+        margin-bottom: vw(32px);
+
+        @include HD {
+            margin-bottom: vwh(32px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(32px);
+        }
+    }
+
+    &__inputs {
+        display: grid;
+        gap: vw(16px);
+        margin-bottom: vw(32px);
+
+        @include HD {
+            margin-bottom: vwh(32px);
+            gap: vwh(16px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(32px);
+            gap: vwm(16px);
+        }
+    }
+
+    &__input {
+        input {
+            width: 100%;
+            height: vw(44px);
+
+            @include HD {
+                height: vwh(44px);
+            }
+
+            @include Mobile {
+                height: vwm(44px);
+            }
+
+        }
+
+        .variant-text-field__label {
+            transform: translateY(42%-policy);
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        gap: vw(24px);
+
+        @include HD {
+            gap: vwh(24px);
+        }
+
+        @include Mobile {
+            gap: vwm(24px);
+        }
+    }
+
+    &__button {
+        width: 100%;
+        justify-content: center;
+        padding: vw(10.5px) vw(24px);
+        border-radius: vw(12px);
+
+        @include HD {
+            padding: vwh(10.5px) vwh(24px);
+            border-radius: vwh(12px);
+        }
+
+        @include Mobile {
+            padding: vwm(10.5px) vwm(24px);
+            border-radius: vwm(12px);
+        }
+
+        span {
+            @include button-m;
+        }
+    }
+
+    &__bottom-text {
+        @include t3l;
+        color: #404040;
+    }
+
+    &.open-modal {
+        .modal-consultation__form {
+            @include Mobile {
+                bottom: 0;
+            }
+        }
+    }
+
+    .checkbox-policy__custom-checkbox:checked ~ .checkbox-policy__checkmark {
+        background-color: var(--blue);
+        border-color: var(--blue);
+    }
+
+    .checkbox-policy__checkmark {
+        border: max(#{vw(2px), 2px}) solid var(--blue);
+
+        @include HD {
+            border: max(#{vwh(2px), 2px}) solid var(--blue);
+        }
+
+        @include Mobile {
+            border: max(#{vwm(2px), 2px}) solid var(--blue);
+        }
+    }
+
+    .underline {
+        @include transition-primary;
+        color: var(--blue);
+
+        @media (hover: hover) {
+            &:hover {
+                color: var(--blue-dark);
+            }
+        }
+
+        &:active {
+            color: var(--blue-light);
+        }
+    }
+
+
+    @media (hover: hover) and (pointer: fine) {
+        .checkbox-policy__custom-checkbox:checked:hover ~ .checkbox-policy__checkmark {
+            background-color: var(--blue-dark);
+            border-color: var(--blue-dark);
+        }
+
+        .checkbox-policy__custom-checkbox:hover ~ .checkbox-policy__checkmark svg {
+            path {
+                stroke: var(--blue)
+            }
+        }
+
+        .checkbox-policy__custom-checkbox:checked:hover ~ .checkbox-policy__checkmark svg {
+            path {
+                stroke: var(--Gray-White)
+            }
+        }
+    }
+}
+

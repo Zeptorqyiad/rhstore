@@ -1,0 +1,88 @@
+.ask-form {
+    @include border-r;
+    display: grid;
+    background: #FFF;
+    box-shadow: 0 0 vw(30px) 0 rgba(0, 0, 0, 0.04);
+    padding: vw(32px);
+
+    @include HD {
+        box-shadow: 0 0 vwh(30px) 0 rgba(0, 0, 0, 0.04);
+        padding: vwh(32px);
+    }
+
+    @include Mobile {
+        box-shadow: 0 0 vwm(30px) 0 rgba(0, 0, 0, 0.04);
+        padding: vwm(24px);
+    }
+
+    &__title {
+        color: #404040;
+        margin-bottom: vw(4px);
+
+        @include HD {
+            margin-bottom: vw(4px);
+        }
+
+        @include Mobile {
+            @include h4;
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__text {
+        @include t3l;
+        color: #666666;
+        margin-bottom: vw(20px);
+
+        @include HD {
+            margin-bottom: vwh(16px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__textarea {
+        margin-bottom: vw(12px);
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+
+        textarea {
+            field-sizing: content;
+            min-height: 5lh;
+            max-height: 40lh;
+            resize: none;
+        }
+    }
+
+    &__button {
+        justify-self: start;
+        padding: vw(10.5px) vw(24px);
+        border-radius: vw(12px);
+
+        @include HD {
+            padding: vwh(10.5px) vwh(24px);
+            border-radius: vwh(12px);
+        }
+
+        @include Mobile {
+            justify-self: stretch;
+            width: 100%;
+            justify-content: center;
+            padding: vwm(10.5px) vwm(24px);
+            border-radius: vwm(12px);
+        }
+
+        span {
+            @include button-m;
+        }
+    }
+}

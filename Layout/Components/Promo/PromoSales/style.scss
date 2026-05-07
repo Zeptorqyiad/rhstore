@@ -1,0 +1,80 @@
+.promo-sales {
+    @include spacing(padding-block, 60px, 60px, 40px);
+    display: flex;
+    flex-direction: column;
+    @include spacing(gap, 40px, 40px, 24px);
+
+    &__title {
+        @include h1;
+        color: var(--Gray-Black);
+        @include spacing(max-width, 700px, 700px);
+
+        @include Mobile {
+            max-width: unset;
+            width: 100%;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 20px, 20px, 12px);
+
+        @include Mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        flex: 1;
+        width: 100%;
+        @include spacing(border-radius, 32px, 32px, 20px);
+        @include spacing(padding, 40px, 40px, 24px);
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 24px, 24px, 12px);
+        position: relative;
+
+        @include Mobile {
+            height: vwm(280px);
+            flex: unset;
+            overflow: hidden;
+        }
+
+        &-red {
+            background: #FF5E5E;
+        }
+        &-blue {
+            background: #389BFF;
+        }
+
+        &--title {
+            color: var(--Gray-White);
+            @include h3;
+        }
+        &--text {
+            @include t2;
+            color: var(--Gray-White);
+            @include spacing(max-width, 400px, 360px, 200px);
+        }
+        &--image {
+            @include spacing(width, 260px);
+            @include spacing(height, 260px);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            @include Mobile {
+                @include spacing(width, 180px);
+                @include spacing(height, 180px);
+                right: vwm(-40px);
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

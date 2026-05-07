@@ -1,0 +1,61 @@
+.button-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: vw(60px);
+    right: vw(100px);
+    height: vw(48px);
+    width: vw(48px);
+    background: var(--Gray-White);
+    @include border-r-s;
+    @include transition-primary;
+    box-shadow: 0 0 vw(15px) 0 #0000001a;
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+    z-index: 4;
+
+    &_visible {
+        opacity: 1;
+        user-select: auto;
+        pointer-events: all;
+    }
+
+    @include HD {
+        bottom: vwh(45px);
+        right: vwh(45px);
+        height: vwh(48px);
+        width: vwh(48px);
+    }
+    @include Mobile {
+        display: none;
+        bottom: vwm(100px);
+        right: vwm(12px);
+        height: vwm(48px);
+        width: vwm(48px);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background: var(--Gray-Lighter);
+        }
+    }
+    &:active {
+        background: var(--Gray-Light);
+    }
+
+    &__icon {
+        width: vw(24px);
+        height: vw(24px);
+
+        @include HD {
+            width: vwh(24px);
+            height: vwh(24px);
+        }
+        @include Mobile {
+            width: vwm(24px);
+            height: vwm(24px);
+        }
+    }
+}

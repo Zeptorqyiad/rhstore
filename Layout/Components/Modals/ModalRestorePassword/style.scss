@@ -1,0 +1,104 @@
+.modal-restore-pass {
+    display: none;
+    z-index: 101;
+    translate: 0 25vh;
+    transition-property: overlay, display, opacity;
+    transition-behavior: allow-discrete;
+    @include transition-primary;
+
+    &__form {
+        background: var(--Gray-White);
+        padding: vw(32px);
+        display: flex;
+        flex-direction: column;
+        gap: vw(20px);
+        max-width: vw(420px);
+        @include border-r;
+
+        @include HD {
+            max-width: vwh(420px);
+            gap: vwh(20px);
+            padding: vwh(32px);
+        }
+        @include Mobile {
+            max-width: 100%;
+            gap: vwm(20px);
+            padding: vwm(16px);
+        }
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: vw(12px);
+
+        @include HD {
+            gap: vwh(12px);
+        }
+        @include Mobile {
+            gap: vwm(12px);
+        }
+    }
+
+    &__title {
+        @include h4;
+        margin-top: vw(4px);
+        color: var(--Gray-Black);
+
+        @include HD {
+            margin-top: vwh(4px);
+        }
+        @include Mobile {
+            margin-top: vwm(4px);
+        }
+    }
+
+    &__desc {
+        @include t3l;
+        color: var(--Gray-Medium);
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        gap: vw(16px);
+
+        @include HD {
+            gap: vwh(16px);
+        }
+
+        @include Mobile {
+            flex-direction: column;
+            gap: vwm(16px);
+        }
+    }
+
+    &__link {
+        display: flex;
+    }
+
+    &__submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: vw(48px);
+        padding: 0 vw(24px);
+        @include button-m;
+        @include border-r-m;
+
+        @include HD {
+            height: vwh(48px);
+            padding: 0 vwh(24px);
+        }
+        @include Mobile {
+            height: vwm(48px);
+            padding: 0 vwm(24px);
+        }
+    }
+}

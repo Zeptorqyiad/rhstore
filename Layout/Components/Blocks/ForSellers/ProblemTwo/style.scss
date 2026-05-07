@@ -1,0 +1,231 @@
+.problem-two {
+    &__badge {
+        margin-bottom: vw(12px);
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__title {
+        @include h1;
+        color: var(--Gray-Black);
+        margin-bottom: vw(40px);
+        max-width: vw(490px);
+
+        @include HD {
+            font-size: vwh(40px);
+            margin-bottom: vwh(40px);
+            max-width: vwh(490px);
+        }
+
+        @include Mobile {
+            font-size: vwm(24px);
+            margin-bottom: vwm(24px);
+            max-width: 85%;
+        }
+    }
+
+    &__container {
+        display: grid;
+        align-items: start;
+        grid-template-columns: repeat(3, 1fr);
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+
+        @include Mobile {
+            gap: vwm(12px);
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__first-column {
+        @include border-r;
+        height: vw(402px);
+        overflow: hidden;
+
+        @include HD {
+            height: vwh(402px);
+        }
+
+        @include Mobile {
+            height: vwm(340px);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__second-column, &__third-column {
+        @include border-r;
+        display: grid;
+        background-color: #F2F2F2;
+    }
+
+    &__column-top {
+        padding: vw(24px) vw(24px) vw(30px);
+
+        @include HD {
+            padding: vwh(24px) vwh(24px) vwh(30px);
+        }
+
+        @include Mobile {
+            padding: vwm(12px) vwm(12px) vwm(12px);
+        }
+
+        .problem-two__card-text {
+            @include t1;
+            color: #666;
+
+            @include Mobile {
+                @include t2;
+            }
+        }
+    }
+
+    &__column-bottom {
+        @include border-r;
+        background-color: #FF5E5E;
+        padding: vw(24px);
+
+        @include HD {
+            padding: vwh(24px);
+        }
+
+        @include Mobile {
+            padding: vwm(12px) vwm(12px) vwm(24px);
+        }
+
+        .problem-two__card-text {
+            @include t1;
+            color: #FFF;
+
+            @include Mobile {
+                @include t2;
+            }
+        }
+    }
+
+    &__card-badge, &__card-decision {
+        border-radius: vw(32px);
+        font-size: vw(20px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+        background-color: #FFFFFF;
+        display: inline-flex;
+        margin-bottom: vw(24px);
+
+        @include HD {
+            border-radius: vwh(32px);
+            font-size: vwh(20px);
+            margin-bottom: vwh(24px);
+        }
+
+        @include Mobile {
+            border-radius: vwm(8px);
+            font-size: vwm(12px);
+            line-height: 150%;
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__card-badge {
+        padding: vw(8px) vw(24px);
+        color: #000;
+
+        @include HD {
+            padding: vwh(8px) vwh(24px);
+        }
+
+        @include Mobile {
+            padding: vwm(4px) vwm(8px);
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__card-decision {
+        align-items: center;
+        padding: vw(8px) vw(24px) vw(8px) vw(12px);
+        color: #404040;
+        gap: vw(10px);
+
+        @include HD {
+            padding: vwh(8px) vwh(24px) vwh(8px) vwh(12px);
+            gap: vwh(10px);
+        }
+
+        @include Mobile {
+            padding: vwm(4px) vwm(8px);
+            gap: vwm(8px);
+        }
+
+        svg {
+            width: vw(24px);
+            height: vw(24px);
+            stroke: #0D0D0D;
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+    }
+
+    &__third-column {
+        .problem-two__column-bottom {
+            background-color: #389BFF;
+        }
+
+        .problem-two__column-bottom .problem-two__card-text {
+            margin-bottom: vw(24px);
+
+            @include HD {
+                margin-bottom: vwh(24px);
+            }
+
+            @include Mobile {
+                margin-bottom: vwm(24px);
+            }
+        }
+    }
+
+    &__button {
+        padding: vw(10px) vw(24px);
+        border-radius: vw(12px);
+
+        @include HD {
+            padding: vwh(10px) vwh(24px);
+            border-radius: vwh(12px);
+        }
+
+        @include Mobile {
+            justify-content: center;
+            padding: vwm(8px) vwm(16px);
+            border-radius: vwm(8px);
+        }
+
+        span {
+            @include button-m;
+
+            @include Mobile {
+                @include button-s;
+            }
+        }
+    }
+}

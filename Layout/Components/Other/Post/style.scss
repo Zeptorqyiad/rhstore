@@ -1,0 +1,145 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    padding: vw(40px) 0 vw(120px);
+
+    @include HD {
+        padding: vw(40px) 0 vwh(120px);
+    }
+    @include Mobile {
+        padding: 0 0 vwm(80px);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: vw(60px);
+
+        @include HD {
+            gap: vwh(60px);
+        }
+        @include Mobile {
+            gap: vwm(40px);
+        }
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__header {
+        max-width: vw(700px);
+
+        @include HD {
+            max-width: vwh(700px);
+        }
+        @include Mobile {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        @include h1;
+        color: var(--Text-Icon-Gray-Black);
+    }
+
+    &__description {
+        @include t2;
+        color: var(--Text-Icon-Gray-Dark);
+        margin-top: vw(24px);
+
+        @include HD {
+            margin-top: vwh(24px);
+        }
+        @include Mobile {
+            margin-top: vwm(24px);
+        }
+    }
+
+    &__meta {
+        display: flex;
+        gap: vw(12px);
+        padding-top: vw(24px);
+        color: var(--Text-Icon-Gray-Medium);
+        @include t-placeholder;
+
+        @include HD {
+            padding-top: vwh(24px);
+            gap: vwh(12px);
+        }
+        @include Mobile {
+            padding-top: vwm(16px);
+            gap: vwm(12px);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        @include spacing(height, 400px, 360px, 180px);
+        @include spacing(margin-top, 40px);
+        object-fit: cover;
+        background: var(--Gray-Lighter);
+        @include border-r;
+
+        &--desktop {
+            @include Mobile {
+                display: none !important;
+            }
+        }
+        &--mob {
+            display: none !important;
+
+            @include Mobile {
+                display: block !important;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        h1, h2, h3, h4, h5, h6 {
+            @include h2;
+            color: var(--Gray-Darker);
+            text-align: left;
+        }
+
+        p {
+            @include t2;
+            color: var(--Gray-Darker);
+            text-align: left;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: vw(360px);
+            @include border-r;
+
+            @include HD {
+                height: vwh(360px);
+            }
+            @include Mobile {
+                height: vwm(168px);
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        padding: vw(60px) 0 0;
+
+        @include HD {
+            padding: vwh(60px) 0 0;
+        }
+        @include Mobile {
+            justify-content: center;
+            padding: vwm(40px) 0 0;
+            margin: 0 auto;
+        }
+    }
+
+}

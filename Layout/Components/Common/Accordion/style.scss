@@ -1,0 +1,104 @@
+.accordion {
+    display: grid;
+    width: 100%;
+    grid-template-rows: min-content 0fr;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    padding: vw(20px) vw(32px);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.10);
+    @include transition-primary;
+    @include border-r-xm;
+
+    @include HD {
+        padding: vwh(20px) vwh(32px);
+    }
+
+    @include Mobile {
+        padding: vwm(20px) vwm(32px);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: none;
+            background-color: #F2F2F2;
+        }
+    }
+
+    &:active {
+        box-shadow: none;
+        background-color: #CCC;
+    }
+
+    &__question {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-self: stretch;
+        gap: vw(16px);
+
+        @include HD {
+            gap: vwh(16px);
+        }
+
+        @include Mobile {
+            gap: vwm(16px);
+        }
+    }
+
+    &__title {
+        @include t2b;
+        color: var(--Gray-Dark);
+    }
+
+    &__toggle {
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: transform 200ms;
+
+        svg {
+            stroke: var(--Gray-Dark);
+            fill: transparent;
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+    }
+
+    &__answer {
+        @include t2;
+        display: flex;
+        flex-direction: column;
+        color: var(--Gray-Dark);
+        overflow: hidden;
+
+        &-text {
+            margin-top: vw(20px);
+
+            @include HD {
+                margin-top: vwh(20px);
+            }
+            @include Mobile {
+                margin-top: vwm(20px);
+            }
+        }
+    }
+
+    &_active {
+        grid-template-rows: min-content 1fr;
+
+        .accordion__toggle {
+            transform: rotate(180deg);
+        }
+    }
+}

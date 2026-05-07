@@ -1,0 +1,72 @@
+.button-download {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    padding: 0 vw(12px);
+    height: vw(36px);
+    background-color: transparent;
+    gap: vw(10px);
+    width: fit-content;
+    @include border-r-s;
+    @include transition-primary;
+
+    @include HD {
+        height: vwh(36px);
+        padding: 0 vwh(12px);
+        gap: vwh(10px);
+    }
+
+    @include Mobile {
+        padding: 0 vwm(12px);
+        height: vwm(36px);
+        gap: vwm(10px);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: transparent;
+
+            span {
+                color: var(--red-lighter);
+            }
+            svg {
+                stroke: var(--red-lighter);
+            }
+        }
+    }
+
+    &:active {
+        background-color: var(--Gray-Lighter);
+
+        span {
+            color: var(--red-dark);
+        }
+        svg {
+            stroke: var(--red-dark);
+        }
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        width: vw(16px);
+        height: vw(16px);
+        @include transition-primary;
+
+        @include HD {
+            width: vwh(16px);
+            height: vwh(16px);
+        }
+
+        @include Mobile {
+            width: vwm(16px);
+            height: vwm(16px);
+        }
+    }
+
+    &-text {
+        @include button-s;
+        @include transition-primary;
+        color: var(--red);
+    }
+
+}

@@ -1,0 +1,95 @@
+.favorites {
+    display: inline-flex;
+    gap: vw(8px);
+
+    @include HD {
+        gap: vwh(8px);
+    }
+
+    @include Mobile {
+        gap: vwm(8px);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            svg {
+                fill: var(--Gray-Dark);
+            }
+
+            span {
+                color: var(--Gray-Dark);
+            }
+        }
+    }
+
+    path:first-child {
+        transition: all 0.1s linear;
+        fill: #FFFFFF;
+    }
+
+    svg {
+        width: vw(24px);
+        height: vw(24px);
+        fill: #999999;
+        transition: all 0.1s linear;
+
+        @include HD {
+            width: vwh(24px);
+            height: vwh(24px);
+        }
+
+        @include Mobile {
+            width: vwm(24px);
+            height: vwm(24px);
+        }
+    }
+
+    span {
+        @include button-s;
+        color: #999999;
+        transition: all 0.1s linear;
+    }
+
+
+    &_active {
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    fill: var(--red-dark);
+                }
+
+                path:first-child {
+                    fill: var(--red-dark);
+                }
+
+                span {
+                    color: var(--Gray-Dark);
+                }
+            }
+        }
+
+        svg {
+            fill: var(--red);
+            animation: favorites-pulse .2s linear;
+        }
+
+        path:first-child {
+            fill: var(--red);
+        }
+    }
+}
+
+@keyframes favorites-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    80% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

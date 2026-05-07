@@ -1,0 +1,89 @@
+.checkbox-list-mobile {
+  cursor: pointer;
+
+  &__checkboxes {
+    display: grid;
+    gap: vw(8px);
+
+    @include HD {
+      gap: vwh(8px);
+    }
+
+    @include Mobile {
+      gap: vwm(8px);
+    }
+  }
+
+  &__text {
+    @include t2b;
+    color: #0D0D0D;
+  }
+
+  &__text-field {
+    margin-bottom: vw(16px);
+
+    @include HD {
+      margin-bottom: vwh(16px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(16px);
+    }
+
+    label {
+      width: 100%;
+      flex: 1;
+    }
+
+    input {
+      padding: 0 vw(12px);
+      height: vw(36px);
+      width: 100%;
+
+      @include HD {
+        padding: 0 vwh(12px);
+        height: vwh(36px);
+      }
+
+      @include Mobile {
+        padding: 0 vwm(12px);
+        height: vwm(36px);
+      }
+    }
+  }
+
+  &__text-field.text-field {
+    display: flex;
+  }
+
+  &__check .checkbox__text{
+    @include t3;
+    color: #404040;
+  }
+
+  &__button {
+    @include t2;
+    color: #666;
+    margin-top: vw(8px);
+    transition: color 0.2s ease;
+
+    @include HD {
+      margin-top: vwh(8px);
+    }
+
+    @include Mobile {
+      margin-top: vwm(8px);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #389CFF;
+      }
+    }
+
+    &:active {
+      color: #2D7CCC;
+      transition: color 0.1s ease;
+    }
+  }
+}

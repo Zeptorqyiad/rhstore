@@ -1,0 +1,38 @@
+.my-account-content {
+    &__title {
+        color: var(--Gray-Black);
+        margin-bottom: vw(40px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__email-card {
+        margin-bottom: vw(40px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(40px);
+        }
+    }
+
+    &__level {
+        margin-bottom: vw(40px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(32px);
+        }
+    }
+}

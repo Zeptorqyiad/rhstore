@@ -1,0 +1,111 @@
+.bread-crumbs {
+
+    &__back-button {
+        display: none;
+        flex-direction: row;
+        padding: vwm(8px) vwm(12px) vwm(8px) 0;
+        margin: vwm(10px) 0 0 vwm(12px);
+        color: var(--Gray-Black);
+        cursor: pointer;
+        user-select: none;
+        @include button-s;
+        @include transition-primary;
+
+        @include Mobile {
+            display: inline-flex;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--red);
+
+                svg {
+                    stroke: var(--red);
+                }
+            }
+        }
+
+        &:active {
+            color: var(--red-dark);
+
+            svg {
+                stroke: var(--red-dark);
+            }
+        }
+
+        svg {
+            width: vwm(16px);
+            height: vwm(24px);
+            stroke: var(--Gray-Black);
+            @include transition-primary;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include Mobile {
+            display: none;
+        }
+    }
+
+    &__item {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &__item svg {
+        margin: vw(10px) 0;
+        width: vw(24px);
+        height: vw(24px);
+
+        @include HD {
+            margin: vwh(10px) 0;
+            width: vwh(24px);
+            height: vwh(24px);
+        }
+
+        @include Mobile {
+            margin: vwm(8px) 0;
+            width: vwm(24px);
+            height: vwm(24px);
+        }
+    }
+
+    &__item a, &__item p {
+        display: inline-flex;
+        padding: vw(10px) 0;
+        color: #999;
+        font-size: vw(14px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-feature-settings: 'ss09' on;
+
+        @include HD {
+            font-size: vwh(14px);
+            padding: vwh(10px) 0;
+        }
+
+        @include Mobile {
+            font-size: vwm(14px);
+            padding: vwm(8px) 0;
+        }
+    }
+
+    &__item a {
+        @include transition-primary;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--red);
+            }
+        }
+
+        &:active {
+            color: var(--red-dark);
+        }
+    }
+}

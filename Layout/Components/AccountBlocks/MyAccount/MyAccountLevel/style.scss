@@ -1,0 +1,213 @@
+.my-account-level {
+    display: grid;
+    @include border-r;
+    background: #FFF;
+    box-shadow: 0 0 vw(30px) 0 rgba(0, 0, 0, 0.04);
+    padding: vw(24px);
+
+    @include HD {
+        box-shadow: 0 0 vwh(30px) 0 rgba(0, 0, 0, 0.04);
+        padding: vwh(24px);
+    }
+
+    @include Mobile {
+        box-shadow: 0 0 vwm(30px) 0 rgba(0, 0, 0, 0.04);
+        padding: vwm(20px) vwm(12px);
+    }
+
+    &__top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: vw(20px);
+        margin-bottom: vw(24px);
+
+        @include HD {
+            gap: vwh(20px);
+            margin-bottom: vwh(24px);
+        }
+
+        @include Mobile {
+            grid-template-columns: 1fr;
+            gap: vwm(12px);
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__top-card {
+        display: flex;
+        gap: vw(24px);
+        padding: vw(24px);
+        border-radius: 12px;
+        border: max(#{vw(1px), 1px}) solid #F2F2F2;
+
+        @include HD {
+            gap: vwh(24px);
+            padding: vwh(24px);
+            border-radius: vwh(12px);
+            border: max(#{vwh(1px), 1px}) solid #F2F2F2;
+        }
+
+        @include Mobile {
+            gap: vwm(24px);
+            padding: vwm(22px) vwm(24px);
+            border-radius: vwm(12px);
+            border: max(#{vwm(1px), 1px}) solid #F2F2F2;
+            background-color: #F7F7F7;
+        }
+    }
+
+    &__top-card-svg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: vw(8px);
+        background: #F2F2F2;
+        width: vw(44px);
+        height: vw(44px);
+
+        @include HD {
+            border-radius: vwh(8px);
+            width: vwh(44px);
+            height: vwh(44px);
+        }
+
+        @include Mobile {
+            border-radius: vwm(8px);
+            width: vwm(44px);
+            height: vwm(44px);
+        }
+
+        svg {
+            width: vw(24px);
+            height: vw(24px);
+
+            @include HD {
+                width: vwh(24px);
+                height: vwh(24px);
+            }
+
+            @include Mobile {
+                width: vwm(24px);
+                height: vwm(24px);
+            }
+        }
+    }
+
+    &__top-title-1, &__top-title-2 {
+        color: #27A6E5;
+    }
+
+    &__top-title-2 {
+        color: #666;
+    }
+
+    &__hint.sale-info {
+        .sale-info__text {
+            @include t-placeholder;
+            color: #999;
+        }
+
+        svg path {
+            fill: #999;
+        }
+
+        .sale-info__button {
+            @include Mobile {
+                background-color: #F7F7F7;
+            }
+        }
+    }
+
+    &__description {
+        @include t2;
+        color: #666;
+        margin-bottom: vw(12px);
+        display: flex;
+        flex-direction: column;
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__progress-bar {
+        width: 100%;
+        height: vw(40px);
+        border-radius: vw(8px);
+        background-color: #F2F2F2;
+        overflow: hidden;
+        margin-bottom: vw(12px);
+
+        @include HD {
+            height: vwh(40px);
+            border-radius: vwh(8px);
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            height: vwm(40px);
+            border-radius: vwm(8px);
+            margin-bottom: vwm(12px);
+        }
+    }
+
+    &__progress {
+        height: 100%;
+        width: vw(176px);
+        background: var(--gradients-orange_gradient, linear-gradient(51deg, #DE3500 -1.82%, #FF6838 51.1%, #FFCB66 106.27%));
+
+        @include HD {
+            width: vwh(176px);
+        }
+
+        @include Mobile {
+            width: vwm(176px);
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: end;
+        gap: vw(4px);
+
+        @include HD {
+            gap: vwh(4px);
+        }
+
+        @include Mobile {
+            gap: vwm(4px);
+            display: block;
+            max-width: vwm(250px);
+        }
+    }
+
+    &__bottom-text {
+        @include t3l;
+        color: #404040;
+    }
+
+    &__bottom-price {
+        @include t2b;
+        color: #FC3F1D;
+    }
+}
+
+.tc-green {
+    color: #48C95F !important;
+}
+
+.tc-blue {
+    color: #27A6E5 !important;
+}
+
+.tc-orange {
+    color: #FF8038 !important;
+}
+
+.tc-red {
+    color: #FC4141 !important;
+}

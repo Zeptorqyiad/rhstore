@@ -1,0 +1,147 @@
+.seller-banner {
+    &__container {
+        position: relative;
+        padding: vw(60px) vw(80px) vw(80px);
+        border-radius: vw(32px);
+        background: #F2F2F2 url('/assets/images/for-sellers/seller-banner/bg.png') no-repeat 100%/100%;
+        background-size: cover;
+
+        @include HD {
+            padding: vwh(60px) vwh(80px) vwh(80px);
+            border-radius: vwh(32px);
+        }
+
+        @include Mobile {
+            padding: vwm(40px) vwm(24px);
+            border-radius: vwm(20px);
+            background-image: url('/assets/images/for-sellers/seller-banner/bg-m.png');
+        }
+    }
+
+    &__title {
+        margin-bottom: vw(16px);
+        color: #389BFF;
+
+        @include HD {
+            margin-bottom: vwh(16px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(16px);
+        }
+    }
+
+    &__text {
+        @include t2;
+        color: #404040;
+        max-width: vw(440px);
+        margin-bottom: vw(40px);
+
+        @include HD {
+            max-width: vwh(440px);
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            max-width: 100%;
+            margin-bottom: vwm(40px);
+        }
+    }
+
+    &__button {
+        padding: vw(10px) vw(24px);
+        border-radius: vw(12px);
+
+        @include HD {
+            padding: vwh(10px) vwh(24px);
+            border-radius: vwh(12px);
+        }
+
+        @include Mobile {
+            width: 100%;
+            justify-content: center;
+            padding: vwm(10px) vwm(24px);
+            border-radius: vwm(12px);
+        }
+
+        span {
+            @include button-m;
+        }
+    }
+
+    &__parallax, &__dollar-1, &__dollar-2 {
+        position: absolute;
+        user-select: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__parallax {
+        height: vw(290px);
+        width: vw(289px);
+        right: vw(225px);
+        bottom: vw(20px);
+        filter: drop-shadow(vw(20px) vw(20px) vw(30px) rgba(0, 0, 0, 0.20));
+
+        @include HD {
+            height: vwh(290px);
+            width: vwh(289px);
+            right: vwh(225px);
+            bottom: vwh(20px);
+            filter: drop-shadow(vwh(20px) vwh(20px) vwh(30px) rgba(0, 0, 0, 0.20));
+        }
+
+        @include Mobile {
+            height: vwm(79px);
+            width: vwm(78px);
+            right: vwm(-4px);
+            top: vwm(-42px);
+            bottom: auto;
+            filter: drop-shadow(vwm(20px) vwm(20px) vwm(30px) rgba(0, 0, 0, 0.20));
+        }
+    }
+
+    &__dollar-1 {
+        bottom: vw(5px);
+        right: vw(494px);
+        height: vw(103px);
+        width: vw(87px);
+        filter: drop-shadow(0 vw(4px) vw(4px) rgba(0, 0, 0, 0.25)) blur(vw(.5px));
+
+        @include HD {
+            bottom: vwh(5px);
+            right: vwh(494px);
+            height: vwh(103px);
+            width: vwh(87px);
+            filter: drop-shadow(0 vwh(4px) vwh(4px) rgba(0, 0, 0, 0.25)) blur(vwh(.5px));
+        }
+
+        @include Mobile {
+            display: none;
+        }
+    }
+
+    &__dollar-2 {
+        height: vw(169px);
+        width: vw(131px);
+        top: vw(-63px);
+        right: vw(157px);
+        filter: drop-shadow(0 vw(4px) vw(4px) rgba(0, 0, 0, 0.25)) blur(vw(0.5px));
+
+        @include HD {
+            height: vwh(169px);
+            width: vwh(131px);
+            top: vwh(-63px);
+            right: vwh(157px);
+            filter: drop-shadow(0 vwh(4px) vwh(4px) rgba(0, 0, 0, 0.25)) blur(vwh(0.5px));
+        }
+
+        @include Mobile {
+            display: none;
+        }
+    }
+}

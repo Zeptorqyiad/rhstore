@@ -1,0 +1,467 @@
+.popup-checklist-form {
+
+  //ACTIVE STYLES
+  &--active {
+    width: 100vw;
+    height: 100vh;
+
+    .popup-checklist-form__mask {
+      opacity: 1;
+      z-index: 15;
+    }
+
+    .popup-checklist-form__inner {
+      opacity: 1;
+      user-select: auto;
+      pointer-events: all;
+    }
+
+    //.popup-checklist-form[data-index="5"] .popup-checklist-form__form-note {
+    //  display: block;
+    //}
+
+  }
+
+
+  &__mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    z-index: -1;
+
+    transition-property: background-color;
+    transition-duration: 200ms;
+
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &__inner {
+    //position: relative;
+    padding: vw(61px) vw(56px);
+
+    background-color: #fff;
+
+    position: fixed;
+
+    box-shadow: 0 0 vw(15px) rgba(0, 0, 0, 0.1);
+
+    border-radius: vw(16px);
+
+    width: vw(600px);
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    z-index: 100;
+
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+
+    transition-property: opacity;
+    transition-duration: 200ms;
+
+    @include HD {
+      padding: vwh(61px) vwh(56px);
+      box-shadow: 0px 0px vwh(15px) rgba(0, 0, 0, 0.1);
+      border-radius: vwh(16px);
+      width: vwh(600px);
+    }
+
+    @include Mobile {
+      $mobile-nav-height: 62px + 12px;
+
+      padding: vwm(64px) vwm(24px) vwm($mobile-nav-height) vwm(24px);
+      box-shadow: 0px 0px vwm(15px) rgba(0, 0, 0, 0.1);
+      border-radius: vwm(16px);
+      width: 100%;
+
+      z-index: 37;
+
+      top: unset;
+      left: unset;
+      transform: unset;
+
+      bottom: 0;
+
+      overflow-y: scroll;
+      height: 100%;
+    }
+  }
+
+  &__close {
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: vw(8px);
+    top: vw(8px);
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    width: vw(48px);
+    height: vw(48px);
+    border-radius: vw(8px);
+
+
+    transition: all 0.3s ease;
+    user-select: none;
+
+    svg {
+      width: 1.25vw;
+      height: 1.25vw;
+    }
+
+    &:hover {
+      background: var(--Gray-Steel);
+    }
+
+    &:active {
+      transition: all 0.1s ease;
+      background: var(--Gray-Light);
+    }
+
+    @include HD {
+      top: 0.59vw;
+      right: 0.59vw;
+      padding: 0.88vw;
+      width: 3.51vw;
+      height: 3.51vw;
+      border-radius: 0.59vw;
+
+      svg {
+        width: 1.76vw;
+        height: 1.76vw;
+      }
+    }
+
+    @include Mobile {
+      top: 1.60vw;
+      right: 3.20vw;
+      padding: 3.20vw;
+      width: 12.80vw;
+      height: 12.80vw;
+      border-radius: 2.13vw;
+
+      svg {
+        width: 6.40vw;
+        height: 6.40vw;
+      }
+
+      &:hover {
+        background: #fff;
+      }
+
+      &:active {
+        transition: all 0.1s ease;
+        background: var(--Gray-Light);
+      }
+    }
+  }
+
+  &__title {
+    @include h3;
+    color: var(--Gray-Black);
+    margin-bottom: vw(32px);
+
+    &--blue {
+      color: var(--blue);
+    }
+
+    @include HD {
+      margin-bottom: vwh(32px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(32px);
+    }
+  }
+
+  &__form {
+
+    &-fields {
+
+    }
+
+
+    &-label {
+      @include t2;
+      color: var(--Gray-Dark-Medium);
+
+      display: flex;
+      align-items: center;
+      gap: vw(12px);
+
+      &--gray {
+        color: var(--Gray-Dark-Medium);
+        display: contents;
+      }
+
+      &:not(:first-child) {
+        padding-top: vw(12px);
+      }
+
+      &:last-child {
+        border-bottom: unset;
+        padding-bottom: unset;
+      }
+
+      border-bottom: vw(2px) solid var(--Gray-Steel);
+      padding-bottom: vw(12px);
+
+      @include HD {
+        gap: vwh(12px);
+
+        border-bottom: vwh(2px) solid var(--Gray-Steel);
+        padding-bottom: vwh(12px);
+
+        &:not(:first-child) {
+          padding-top: vwh(12px);
+        }
+      }
+
+
+      @include Mobile {
+        gap: vwm(12px);
+
+        border-bottom: vwm(2px) solid var(--Gray-Steel);
+        padding-bottom: vwm(12px);
+
+        &:not(:first-child) {
+          padding-top: vwm(12px);
+        }
+      }
+    }
+
+
+    &-checkbox {
+      flex-shrink: 0;
+    }
+
+
+
+    &-note {
+      margin-top: vw(40px);
+      padding: vw(20px);
+      border-radius: vw(16px);
+      background-color: var(--Gray-Steel);
+
+      display: none;
+
+      @include HD {
+        padding: vwh(20px);
+        border-radius: vwh(16px);
+        margin-top: vwh(40px);
+      }
+
+
+      @include Mobile {
+        padding: vwm(20px);
+        border-radius: vwm(16px);
+        margin-top: vwm(40px);
+      }
+
+      &-description {
+        @include t2;
+        color: var(--Gray-Dark);
+        margin-bottom: vw(20px);
+
+        @include HD {
+          margin-bottom: vwh(20px);
+        }
+
+        @include Mobile {
+          margin-bottom: vwm(20px);
+        }
+
+      }
+
+      &-btn {
+        @include button-s;
+        padding: vw(8px) vw(16px);
+        border-radius: vw(8px);
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+        border: none;
+
+        &:hover {
+          background-color: var(--blue-light);
+        }
+
+        &:active {
+          background-color: var(--blue-dark);
+        }
+
+        transition-property: background-color;
+        transition-duration: 200ms;
+
+        background-color: var(--blue);
+
+        @include HD {
+          padding: vwh(8px) vwh(16px);
+          border-radius: vwh(8px);
+        }
+
+
+        @include Mobile {
+          padding: vwm(8px) vwm(16px);
+          border-radius: vwm(8px);
+          width: 100%;
+        }
+      }
+
+    }
+
+    &-bottom {
+      margin-top: vw(40px);
+
+      display: flex;
+      align-items: center;
+      gap: vw(24px);
+
+      @include HD {
+        margin-top: vwh(40px);
+        gap: vwh(24px);
+      }
+
+      @include Mobile {
+        margin-top: vwm(40px);
+        gap: vwm(24px);
+
+        flex-direction: column-reverse;
+      }
+    }
+
+
+    &-btn {
+      @include button_m;
+
+      color: #fff;
+
+      padding: vw(10px) vw(24px);
+      border-radius: vw(12px);
+      background-color: var(--Gray-Black);
+
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      @include HD {
+        padding: vwh(10px) vwh(24px);
+        border-radius: vwh(12px);
+      }
+
+
+      @include Mobile {
+        padding: vwm(10px) vwm(24px);
+        border-radius: vwm(12px);
+        width: 100%;
+      }
+
+    }
+
+
+    &-progress {
+
+    }
+
+    &-link {
+      color: var(--blue);
+      cursor: pointer;
+
+      display: contents;
+
+      transition-property: color;
+      transition-duration: 200ms;
+
+      &:hover {
+        color: var(--blue-light);
+      }
+
+      &:active {
+        color: var(--blue-dark);
+      }
+    }
+
+    .progress {
+      padding: 0 vw(12px);
+      display: flex;
+      align-items: center;
+      gap: vw(12px);
+      width: 100%;
+
+      @include HD {
+        padding: 0 vwh(12px);
+        gap: vwh(12px);
+      }
+
+
+      @include Mobile {
+        padding: 0 vwm(12px);
+        gap: vwm(12px);
+      }
+
+      &__value {
+        @include h3;
+        color: var(--Gray-Black);
+
+        &--start {}
+
+        &--end {}
+
+      }
+
+      &__bar {
+        height: vw(24px);
+        border-radius: vw(8px);
+        overflow: hidden;
+        width: 100%;
+
+        position: relative;
+
+        @include HD {
+          height: vwh(24px);
+          border-radius: vwh(8px);
+        }
+
+
+        @include Mobile {
+          height: vwm(24px);
+          border-radius: vwm(8px);
+        }
+
+        &-progress {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 2%;
+          background-color: var(--blue);
+
+          transition-property: width;
+          transition-duration: 200ms;
+        }
+
+        &-bg {
+          background-color: var(--Gray-Steel);
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+  }
+
+}

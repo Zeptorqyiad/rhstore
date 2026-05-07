@@ -1,0 +1,237 @@
+.order-type-card {
+    display: flex;
+    flex-direction: column;
+    gap: vw(20px);
+
+    @include HD {
+        gap: vwh(20px);
+    }
+    @include Mobile {
+        gap: vwm(20px);
+    }
+
+    &_pickup {
+
+    }
+
+    &_base {
+
+    }
+
+    &_courier {
+
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+        @include Mobile {
+            gap: vwm(20px);
+        }
+    }
+
+    &__radio-item {
+        display: flex;
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            @include HD {
+                gap: 0;
+            }
+            @include Mobile {
+                gap: vwm(4px);
+            }
+        }
+
+        &-type {
+            @include t2;
+            color: var(--Gray-Darker);
+        }
+
+        &-description {
+            @include t2;
+            color: var(--Gray-Medium);
+        }
+
+        &-price {
+            @include t2;
+            color: var(--Gray-Dark);
+            margin-top: vw(8px);
+
+            @include HD {
+                margin-top: vwh(8px);
+            }
+            @include Mobile {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__radio-button {
+        display: flex;
+        align-items: flex-start;
+        padding: vw(20px);
+        gap: vw(12px);
+        width: 100%;
+        background: var(--Gray-Lighter);
+        border: max(#{vw(2px), 2px}) solid transparent;
+        cursor: pointer;
+        @include border-r-xm;
+        @include transition-primary;
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        @include HD {
+            border-width: max(#{vwh(2px), 2px});
+            padding: vwh(20px);
+            gap: vwh(12px);
+        }
+        @include Mobile {
+            border-width: max(#{vwm(2px), 2px});
+            padding: vwm(16px);
+            gap: vwm(12px);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                border-color: var(--Gray-Medium);
+            }
+        }
+
+        &:active {
+            border-color: var(--Gray-Medium);
+            background: var(--Gray-Light);
+        }
+    }
+
+
+    &__radio-mark {
+        flex-shrink: 0;
+        height: vw(24px);
+        width: vw(24px);
+        background-color: transparent;
+        border: max(#{vw(2px), 2px}) solid var(--Gray-Medium);
+        border-radius: 50%;
+        position: relative;
+
+
+        @include HD {
+            height: vwh(24px);
+            width: vwh(24px);
+            border-width: max(#{vwh(2px), 2px});
+        }
+
+        @include Mobile {
+            height: vwm(24px);
+            width: vwm(24px);
+            border-width: max(#{vwm(2px), 2px});
+        }
+    }
+
+    &__radio-button input[type="radio"]:checked + &__radio-mark::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        background: transparent;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__radio-button input[type="radio"]:checked + &__radio-mark {
+        border-color: var(--red);
+        border-width: max(#{vw(6px), 2px});
+
+        @include HD {
+            border-width: max(#{vwh(6px), 2px});
+        }
+        @include Mobile {
+            border-width: max(#{vwm(6px), 2px});
+        }
+    }
+}
+
+.order-type-card {
+    &__map {
+        @include border-r-xm;
+        overflow: hidden;
+        height: vw(560px);
+        background: var(--Gray-Lighter);
+
+        @include HD {
+            height: vwh(560px);
+        }
+        @include Mobile {
+            height: vwm(342px);
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 2;
+            border: none;
+
+            .map-widget-layout-view__controls {
+                display: none !important;
+            }
+        }
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+        @include Mobile {
+            gap: vwm(20px);
+        }
+    }
+
+    &__dropdown {
+        height: vw(48px);
+
+        @include HD {
+            height: vwh(48px);
+        }
+        @include Mobile {
+            height: vwm(48px);
+        }
+
+        label {
+            height: 100%;
+        }
+    }
+
+    &__input-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+        @include Mobile {
+            grid-template-columns: 1fr;
+            gap: vwm(20px);
+        }
+    }
+}
+
+

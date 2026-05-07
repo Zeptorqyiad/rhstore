@@ -1,0 +1,316 @@
+.purchase-card {
+    padding: vw(32px);
+    border-radius: vw(32px);
+    box-shadow: 0 0 vw(15px) 0 #0000001A;
+
+    @include HD {
+        padding: vwh(32px);
+        border-radius: vwh(32px);
+        box-shadow: 0 0 vwh(15px) 0 #0000001A;
+    }
+
+    @include Mobile {
+        padding: vwm(24px);
+        border-radius: vwm(20px);
+        box-shadow: 0 0 vwm(15px) 0 #0000001A;
+    }
+
+    &__top-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: vw(12px);
+
+        @include HD {
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            align-items: flex-start;
+            margin-bottom: vwm(12px);
+        }
+    }
+
+
+    &__price {
+        display: flex;
+        gap: vw(12px);
+
+        @include HD {
+            gap: vwh(12px);
+        }
+        @include Mobile {
+            flex-direction: column;
+            gap: vwm(4px);
+        }
+    }
+
+    &__discounted-price {
+        @include h2;
+        color: var(--red);
+
+        @include Mobile {
+            line-height: 120%;
+        }
+    }
+
+    &__old-price {
+        @include t2;
+        color: var(--Gray-Medium);
+        text-decoration: line-through solid var(--Gray-Medium);
+        -webkit-text-decoration: line-through solid var(--Gray-Medium);
+        white-space: nowrap;
+    }
+
+    &__badge {
+        @include t3b;
+        padding: vw(4px) vw(8px);
+        border-radius: vw(8px);
+
+        @include HD {
+            padding: vwh(4px) vwh(8px);
+            border-radius: vwh(8px);
+        }
+
+        @include Mobile {
+            padding: vwm(4px) vwm(8px);
+            border-radius: vwm(8px);
+        }
+    }
+
+    &__badge_color-green {
+        background-color: #D2F2D8;
+        color: #379948;
+    }
+
+
+    &__badge_color-orange {
+        background-color: #FDD3C6;
+        color: #FF8038;
+    }
+
+    &__badge_color-red {
+        background-color: #FCD4D4;
+        color: #FC4141;
+    }
+
+    &__for-you {
+        display: flex;
+        align-items: center;
+        gap: vw(4px);
+        margin-bottom: vw(16px);
+
+        @include HD {
+            gap: vwh(4px);
+            margin-bottom: vwh(16px);
+        }
+
+        @include Mobile {
+            gap: vwm(4px);
+            margin-bottom: 0
+        }
+    }
+
+    &__for-you-text {
+        @include t3;
+        color: #666666;
+
+        @include Mobile {
+            font-weight: 700;
+        }
+    }
+
+    &__sale-info {
+        svg {
+            @include Mobile {
+                display: none;
+            }
+        }
+    }
+
+    &__sale-info-text {
+        display: none;
+
+        p {
+            @include t3;
+        }
+
+        @include Mobile {
+            display: block;
+        }
+    }
+
+    &__sale-info-text p {
+        @include t3;
+        color: #CCC;
+
+        @include Mobile {
+            max-width: vwm(200px);
+        }
+    }
+
+    &__line-box {
+        @include Mobile {
+            padding-bottom: vwm(10px);
+            border-bottom: max(#{vwm(2px), 2px}) solid var(--Gray-Steel);
+        }
+    }
+
+    &__line-box-2 {
+        @include Mobile {
+            margin-bottom: vwm(20px);
+        }
+    }
+
+
+    &__price-list {
+        padding: vw(12px) 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: max(#{vw(2px), 2px}) solid var(--Gray-Steel);
+
+        @include HD {
+            padding: vwh(12px) 0;
+            border-bottom: max(#{vwh(2px), 2px}) solid var(--Gray-Steel);
+        }
+
+        @include Mobile {
+            padding: vwm(12px) 0 0;
+            border-bottom: none;
+        }
+    }
+
+    &__price-list-box {
+        display: flex;
+        align-items: center;
+        gap: vw(4px);
+
+        @include HD {
+            gap: vwh(4px);
+        }
+
+        @include Mobile {
+            gap: vwm(4px);
+        }
+    }
+
+    &__price-list-text {
+        @include t3;
+        color: #999999;
+    }
+
+    &__price-list-price {
+        @include t3b;
+        color: #666666;
+    }
+
+    &__price-list-2 {
+        padding: vw(12px) 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+        @include HD {
+            padding: vwh(12px) 0;
+        }
+
+        @include Mobile {
+            padding: vwm(12px) 0 0;
+        }
+    }
+
+    &__button-savings {
+        width: 100%;
+        justify-content: center;
+        padding: vw(10px) vw(16px);
+        border-radius: vw(8px);
+        margin-bottom: vw(12px);
+
+        @include HD {
+            padding: vwh(10px) vwh(16px);
+            border-radius: vwh(8px);
+            margin-bottom: vwh(12px);
+        }
+
+        @include Mobile {
+            padding: vwm(10px) vwm(16px);
+            border-radius: vwm(8px);
+            margin-bottom: vwm(12px);
+        }
+
+        span {
+            @include button-vs;
+            color: #404040;
+        }
+    }
+
+    &__buttons-bottom {
+        display: grid;
+        grid-template-columns: auto vw(236px);
+        align-items: center;
+        gap: vw(8px);
+        margin-bottom: vw(8px);
+
+        @include HD {
+            grid-template-columns: auto vwh(188px);
+            gap: vwh(8px);
+            margin-bottom: vwh(8px);
+        }
+
+        @include Mobile {
+            grid-template-columns: vwm(144px) 1fr;
+            gap: vwm(8px);
+            margin-bottom: vwm(8px);
+        }
+    }
+
+    &__button-cart {
+        width: 100%;
+        justify-content: center;
+        padding: vw(12px) vw(24px);
+        border-radius: vw(12px);
+
+        @include HD {
+            padding: vwh(10.5px) vwh(24px);
+            border-radius: vwh(12px);
+        }
+
+        @include Mobile {
+            padding: vwm(9.5px) vwm(16px);
+            border-radius: vwm(8px);
+        }
+
+        span {
+            @include button-m;
+            color: #FFF;
+
+            @include Mobile {
+                font-size: vwm(14px);
+                font-style: normal;
+                font-weight: 600;
+                line-height: 150%
+            }
+        }
+    }
+
+    &__button-cart--active.button-primary {
+        background-color: #389bff;
+    }
+
+    &__button-cart--active.button-primary:hover {
+        background-color: #6BB5FF;
+    }
+
+    &__button-cart--active.button-primary:active {
+        background-color: #2D7CCC;
+    }
+
+    &__add-info {
+        display: flex;
+        justify-content: center;
+        @include t3l;
+        color: #999;
+    }
+}

@@ -1,0 +1,90 @@
+.tab-header {
+  display: inline-flex;
+  align-items: center;
+
+  gap: vw(8px);
+  padding: vw(9.5px) 0;
+
+  cursor: pointer;
+
+  text-decoration: none;
+  -webkit-text-decoration: none;
+
+  @media screen and (max-width: $hd-width) {
+    gap: vwh(8px);
+    padding: vwh(9.5px) 0;
+  }
+  @media screen and (max-width: $tablet-width) {
+    gap: vwt(8px);
+    padding: vwt(9.5px) 0;
+  }
+  @media screen and (max-width: $mobile-width) {
+    gap: vwm(8px);
+    padding: vwm(9.5px) 0;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    svg {
+      width: vw(16px);
+      height: vw(16px);
+
+      stroke: $GrayMedium;
+      fill: none;
+
+      @media screen and (max-width: $hd-width) {
+        width: vwh(16px);
+        height: vwh(16px);
+      }
+      @media screen and (max-width: $tablet-width) {
+        width: vwt(16px);
+        height: vwt(16px);
+      }
+      @media screen and (max-width: $mobile-width) {
+        width: vwm(16px);
+        height: vwm(16px);
+      }
+
+      transition: fill $defaultTransition, stroke $defaultTransition, transform $defaultTransition;
+    }
+  }
+
+  &__icon_left {
+  }
+
+  &__icon_right {
+  }
+
+  &__text {
+    @include T4_B;
+    color: $GrayMedium;
+
+    transition: color $defaultTransition;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .tab-header__text {
+        color: $GrayDarker;
+      }
+
+      .tab-header__icon svg {
+        stroke: $GrayDarker;
+      }
+    }
+  }
+
+  &:active {
+    .tab-header__text {
+      color: $GrayBlack;
+    }
+
+    .tab-header__icon svg {
+      stroke: $GrayBlack;
+    }
+  }
+}

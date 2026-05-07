@@ -1,0 +1,441 @@
+.buy-block {
+    display: flex;
+    align-items: center;
+    gap: vw(16px);
+
+    &_size-smaller {
+        .buy-block__price-current {
+            display: inline;
+        }
+    }
+
+
+    // .buy-block_size-page
+    &_size-page {
+
+        .buy-block__btn-add {
+            width: 100%;
+        }
+
+        .buy-block__quantity {
+            width: 100%;
+            gap: vw(4px);
+
+            @media screen and (max-width: $hd-width) {
+                gap: vwh(4px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                gap: vwt(4px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                gap: vwm(4px);
+            }
+        }
+
+        .buy-block__quantity-value {
+            flex: 1 0 0;
+        }
+    }
+
+    // .buy-block_size-page.buy-block_active
+    &_size-page.buy-block_active {
+        [data-action='add-to-cart'] {
+            display: none;
+        }
+
+        .buy-block__quantity {
+            display: flex;
+        }
+    }
+
+    // .buy-block_size-big.buy-block_active
+    &_size-big.buy-block_active {
+        [data-action='add-to-cart'], .buy-block__price {
+            display: none;
+        }
+
+        .buy-block__quantity {
+            display: flex;
+            gap: vw(4px);
+
+            @media screen and (max-width: $hd-width) {
+                gap: vwh(4px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                gap: vwt(4px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                gap: vwm(4px);
+            }
+        }
+
+
+    }
+
+    // .buy-block_size-tapbar
+    &_size-tapbar {
+        gap: vwt(8px);
+
+        @media screen and (max-width: $mobile-width) {
+            gap: vwm(8px);
+        }
+
+        .buy-block__btn-add {
+            flex: 1 0 0;
+        }
+
+        .buy-block__btn-minus.btn, .buy-block__btn-plus.btn {
+            padding: vwt(12px);
+
+            @media screen and (max-width: $mobile-width) {
+                padding: vwm(12px);
+            }
+
+            svg {
+                width: vwt(16px);
+                height: vwt(16px);
+
+                @media screen and (max-width: $mobile-width) {
+                    width: vwm(16px);
+                    height: vwm(16px);
+                }
+            }
+        }
+
+        .buy-block__quantity {
+            width: 100%;
+            gap: vwt(4px);
+
+            @media screen and (max-width: $mobile-width) {
+                gap: vwm(4px);
+            }
+
+
+            .btn svg {
+                stroke: $GrayDarker;
+            }
+        }
+
+        .buy-block__quantity-block {
+            flex: 1 0 0;
+
+            svg {
+                fill: transparent;
+                stroke: $GrayDarker;
+            }
+        }
+
+        .buy-block__quantity .btn__text {
+            @media screen and (max-width: $tablet-width) {
+                @include T4_B;
+            }
+        }
+    }
+
+    &_size-tapbar.buy-block_active {
+        .buy-block__price-old {
+            display: none;
+        }
+
+        .buy-block__btn-add {
+            display: none;
+        }
+
+        .buy-block__quantity {
+            display: flex;
+        }
+    }
+
+
+    // .buy-block_size-small
+    &_size-small {
+        gap: vw(12px);
+
+        @media screen and (max-width: $hd-width) {
+            gap: vwh(12px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            gap: vwt(12px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            gap: vwm(12px);
+        }
+
+        .buy-block__btn-add.btn {
+            padding: vw(9.5px) vw(20px) vw(9.5px) vw(16px);
+            gap: vw(6px);
+
+            @media screen and (max-width: $hd-width) {
+                padding: vwh(9.5px) vwh(20px) vwh(9.5px) vwh(16px);
+                gap: vwh(6px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                padding: vwt(9.5px) vwt(20px) vwt(9.5px) vwt(16px);
+                gap: vwt(6px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                padding: vwm(9.5px) vwm(20px) vwm(9.5px) vwm(16px);
+                gap: vwm(6px);
+            }
+        }
+
+        .buy-block__btn-add.btn svg {
+            width: vw(16px);
+            height: vw(16px);
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(16px);
+                height: vwh(16px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(16px);
+                height: vwt(16px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(16px);
+                height: vwm(16px);
+            }
+        }
+
+        .buy-block__btn-add .btn__text {
+            @include T4_B;
+        }
+
+        .buy-block__price-old {
+            @include T4_B;
+        }
+
+        .buy-block__quantity-block.btn {
+            padding: vw(9.5px) vw(20px);
+
+            @media screen and (max-width: $hd-width) {
+                padding: vwh(9.5px) vwh(20px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                padding: vwt(9.5px) vwt(20px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                padding: vwm(9.5px) vwm(20px);
+            }
+        }
+
+        .buy-block__btn-minus.btn, .buy-block__btn-plus.btn {
+            padding: vw(12px);
+
+            @media screen and (max-width: $hd-width) {
+                padding: vwh(12px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                padding: vwt(12px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                padding: vwm(12px);
+            }
+        }
+
+        .buy-block__quantity-block .btn__text {
+            @include T4_B;
+        }
+
+        .buy-block__quantity {
+            gap: vw(4px);
+
+            @media screen and (max-width: $hd-width) {
+                gap: vwh(4px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                gap: vwt(4px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                gap: vwm(4px);
+            }
+        }
+
+        .buy-block__btn-minus.btn svg , .buy-block__btn-plus.btn svg {
+            width: vw(16px);
+            height: vw(16px);
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(16px);
+                height: vwh(16px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(16px);
+                height: vwt(16px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(16px);
+                height: vwm(16px);
+            }
+        }
+    }
+
+    &_size-small.buy-block_active {
+        .buy-block__btn-add, .buy-block__price{
+            display: none;
+        }
+
+        .buy-block__quantity {
+            display: flex;
+        }
+    }
+
+    // .buy-block__quantity-value
+    &__quantity-value {
+        pointer-events: none;
+
+        svg {
+            fill: none;
+            stroke: $GrayDarker;
+        }
+    }
+
+    // .buy-block__price
+    &__price {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: vw(8px);
+
+        @media screen and (max-width: $hd-width) {
+            gap: vwh(8px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            gap: vwt(8px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            gap: vwm(8px);
+        }
+    }
+
+    .btn__text_cart {
+        display: none;
+    }
+
+    // .buy-block__price-current
+    &__price-current {
+        @include T4_B;
+        color: $GrayBlack;
+        display: none;
+    }
+
+    // .buy-block__price-old
+    &__price-old {
+        color: $GrayLight;
+        text-align: center;
+        font-family: 'CoFo Sans', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        text-decoration-line: line-through;
+
+        font-size: vw(16px);
+
+        @media screen and (max-width: $hd-width) {
+            font-size: vwh(16px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            font-size: vwt(14px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            font-size: vwm(14px);
+        }
+    }
+
+    // .buy-block__quantity
+    &__quantity {
+        //display: flex;
+        align-items: flex-start;
+        gap: vw(8px);
+
+        display: none;
+    }
+
+    &__quantity {
+        .btn__text {
+            @include T3_B;
+
+            &_accent {
+                color: $GrayMedium;
+            }
+        }
+    }
+
+    // .buy-block__quantity-block
+    &__quantity-block .btn__text {
+        display: inline;
+    }
+
+    // .buy-block__quantity-value
+    &__quantity-value, &__quantity-postfix, &__quantity-price {
+        display: inline-flex;
+    }
+
+    &__btn-stock.btn {
+        @media screen and (max-width: $hd-width) {
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(9.5px) vwt(20px);
+            gap: vwt(8px);
+
+            .btn__text {
+                @include T4_B;
+            }
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(9.5px) vwm(20px);
+            gap: vwm(8px);
+
+        }
+    }
+
+    // .buy-block__btn-add
+    &__btn-add.btn {
+        // width: 100%;
+
+        svg {
+            fill: none;
+            stroke: $GrayWhite;
+        }
+    }
+
+    &__btn-minus {
+    }
+
+    &__btn-plus {
+    }
+
+    &__btn-minus.btn, &__btn-plus.btn {
+        padding: vw(14px);
+
+        @media screen and (max-width: $hd-width) {
+            padding: vwh(14px);
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: vwt(14px);
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: vwm(14px);
+        }
+
+        svg {
+            width: vw(20px);
+            height: vw(20px);
+            fill: transparent;
+            stroke: $GrayDarker;
+
+            @media screen and (max-width: $hd-width) {
+                width: vwh(20px);
+                height: vwh(20px);
+            }
+            @media screen and (max-width: $tablet-width) {
+                width: vwt(20px);
+                height: vwt(20px);
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: vwm(20px);
+                height: vwm(20px);
+            }
+        }
+    }
+}

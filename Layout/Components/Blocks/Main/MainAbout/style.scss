@@ -1,0 +1,365 @@
+.main-about {
+  &__container {
+    display: grid;
+    grid-template-areas:
+    "about brands"
+    "sell sell";
+    grid-template-columns: 1fr 1fr;
+    gap: vw(20px);
+
+    @include HD {
+      gap: vwh(20px);
+    }
+
+    @include Mobile {
+      grid-template-areas:
+    "about"
+    "brands"
+    "sell";
+      grid-template-columns: 1fr;
+      gap: vwm(12px);
+    }
+  }
+
+  &__card {
+    position: relative;
+    border-radius: vw(32px);
+    padding: vw(40px);
+    overflow: hidden;
+
+
+    @include HD {
+      border-radius: vwh(32px);
+      padding: vwh(40px);
+    }
+
+    @include Mobile {
+      border-radius: vwm(20px);
+      padding: vwm(40px) vwm(24px);
+    }
+  }
+
+  &__button {
+    padding: vw(8px) vw(16px);
+    border-radius: vw(8px);
+
+    @include HD {
+      padding: vwh(8px) vwh(16px);
+      border-radius: vwh(8px);
+    }
+
+    @include Mobile {
+      padding: vwm(8px) vwm(16px);
+      border-radius: vwm(8px);
+    }
+
+    span {
+      @include button-s;
+    }
+  }
+
+  &__button-link {
+    display: inline-block;
+  }
+
+  &__card-about {
+    background: #FF5E5E;
+    grid-area: about;
+
+    @media (any-hover: hover) {
+      &:hover {
+        .main-about__img {
+          right: 0;
+
+          @include Mobile {
+            right: vwm(-92px);
+          }
+        }
+      }
+    }
+
+    .main-about__title {
+      color: #FFFFFF;
+    }
+
+    .main-about__text {
+      color: #FFFFFF;
+      max-width: vw(280px);
+
+      @include HD {
+        max-width: vwh(280px);
+      }
+
+      @include Mobile {
+        max-width: vwm(220px);
+      }
+    }
+
+    .main-about__img {
+      right: vw(-119px);
+      bottom: 0;
+      width: vw(337px);
+      height: vw(247px);
+      opacity: 0.95;
+
+      @include HD {
+        right: vwh(-119px);
+        width: vwh(337px);
+        height: vwh(247px);
+      }
+
+      @include Mobile {
+        right: vwm(-92px);
+        width: vwm(262px);
+        height: vwm(192px);
+      }
+    }
+  }
+
+  &__card-brands {
+    grid-area: brands;
+    background: #F2F2F2;
+
+    @media (any-hover: hover) {
+      &:hover {
+        .main-about__img {
+          bottom: vw(-100px);
+
+          @include HD {
+            bottom: vwh(-100px);
+          }
+
+          @include Mobile {
+            bottom: 0;
+          }
+        }
+      }
+    }
+
+    .main-about__title {
+      color: #0D0D0D;
+    }
+
+    .main-about__text {
+      max-width: vw(280px);
+
+      @include HD {
+        max-width: vwh(280px);
+      }
+
+      @include Mobile {
+        max-width: vwm(220px);
+      }
+    }
+
+    .main-about__img {
+      right: vw(20px);
+      bottom: vw(-140px);
+      width: vw(312px);
+      height: vw(345px);
+
+      @include HD {
+        right: vwh(20px);
+        bottom: vwh(-140px);
+        width: vwh(312px);
+        height: vwh(345px);
+      }
+
+      @include Mobile {
+        right: 0;
+        bottom: 0;
+        width: vwm(219px);
+        height: vwm(242px);
+      }
+    }
+
+    .main-about__img img:first-child {
+      @include Mobile {
+        display: none;
+      }
+    }
+
+    .main-about__img img:last-child {
+      display: none;
+
+      @include Mobile {
+        display: block;
+      }
+    }
+  }
+
+  &__card-sell {
+    grid-area: sell;
+    background: #F2F2F2;
+
+    @include Mobile {
+      background: #F2F2F2 no-repeat url("/assets/images/main/main-about/ozon_m.jpg") center / cover;
+      padding-bottom: vwm(296px);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        .main-about__img-ozon {
+          bottom: vw(100px);
+
+          @include HD {
+            bottom: vwh(100px);
+          }
+
+          @include Mobile {
+            bottom: vwm(100px);
+          }
+        }
+      }
+    }
+
+    .main-about__title {
+      color: #0D0D0D;
+      max-width: vw(440px);
+
+      @include HD {
+        max-width: vwh(440px);
+      }
+
+      @include Mobile {
+        max-width: 100%;
+      }
+    }
+
+    .main-about__text {
+      max-width: vw(440px);
+
+      @include HD {
+        max-width: vwh(440px);
+      }
+
+      @include Mobile {
+        max-width: 100%;
+      }
+    }
+
+    .main-about__img-box {
+      top: vw(175px);
+      right: vw(25px);
+      width: vw(840px);
+      height: vw(465px);
+
+      @include HD {
+        right: vwh(25px);
+        top: vwh(175px);
+        width: vwh(840px);
+        height: vwh(465px);
+      }
+
+      @include Mobile {
+        display: none;
+      }
+    }
+
+    .main-about__img-mask {
+      top: vw(175px);
+      right: vw(25px);
+      width: vw(840px);
+      height: vw(465px);
+      z-index: 3;
+
+      @include HD {
+        right: vwh(25px);
+        top: vwh(175px);
+        width: vwh(840px);
+        height: vwh(465px);
+      }
+
+      @include Mobile {
+        display: none;
+      }
+    }
+
+    .main-about__img-ozon {
+      bottom: vw(-205px);
+      right: vw(180px);
+      height: vw(200px);
+      width: vw(490px);
+      z-index: 2;
+
+      @include HD {
+        bottom: vwh(-205px);
+        right: vwh(180px);
+        height: vwh(200px);
+        width: vwh(490px);
+      }
+
+      @include Mobile {
+        bottom: vwm(-205px);
+        right: vwm(180px);
+        height: vwm(200px);
+        width: vwm(490px);
+        display: none;
+      }
+    }
+
+    .main-about__img-m-ozon {
+      display: none;
+
+      @include Mobile {
+        display: block;
+      }
+    }
+
+    .main-about__button {
+      @include Mobile {
+        width: 100%;
+        justify-content: center;
+        padding: vwm(10.5px) vwm(16px);
+      }
+    }
+
+    .main-about__button-link {
+      @include Mobile {
+        display: block;
+      }
+    }
+  }
+
+
+  &__title {
+    margin-bottom: vw(24px);
+
+    @include HD {
+      margin-bottom: vwh(24px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(12px);
+    }
+  }
+
+  &__text {
+    @include t2;
+    margin-bottom: vw(60px);
+
+    @include HD {
+      margin-bottom: vwh(60px);
+    }
+
+    @include Mobile {
+      margin-bottom: vwm(40px);
+    }
+  }
+
+
+  &__img, &__img-box, &__img-mask, &__img-ozon {
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      object-position: bottom;
+    }
+  }
+}

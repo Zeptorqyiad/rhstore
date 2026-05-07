@@ -1,0 +1,135 @@
+.brands-on-ozon {
+    &__title {
+        @include h1;
+        color: #0D0D0D;
+        margin-bottom: vw(40px);
+
+        @include HD {
+            font-size: vwh(40px);
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            display: none;
+        }
+    }
+
+    &__card {
+        padding: vw(40px);
+        border-radius: vw(32px);
+        background-color: #F7F7F7;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: vw(20px);
+
+        @include HD {
+            padding: vwh(40px);
+            border-radius: vwh(32px);
+            gap: vwh(20px);
+        }
+
+        @include Mobile {
+            padding: vwm(24px);
+            border-radius: vwm(20px);
+            grid-template-columns: 1fr;
+            gap: vwm(40px);
+        }
+    }
+
+    &__card-column {
+        display: grid;
+        align-content: center;
+        justify-items: start;
+
+    }
+
+    &__card-title {
+        @include h2;
+        color: #0D0D0D;
+        margin-bottom: vw(24px);
+
+        @include HD {
+            margin-bottom: vwh(24px);
+        }
+
+        @include Mobile {
+            font-size: vwm(24px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            margin-bottom: vwm(24px);
+        }
+    }
+
+    &__card-text {
+        @include t2;
+        color: #404040;
+        margin-bottom: vw(40px);
+
+        @include HD {
+            margin-bottom: vwh(40px);
+        }
+
+        @include Mobile {
+            margin-bottom: vwm(40px);
+        }
+    }
+
+    &__button-link {
+        display: inline-block;
+    }
+
+    &__button {
+        padding: vw(10px) vw(24px);
+        border-radius: vw(12px);
+
+        @include HD {
+            padding: vwh(10px) vwh(24px);
+            border-radius: vwh(12px);
+        }
+
+        @include Mobile {
+            justify-content: center;
+            padding: vwm(10px) vwm(24px);
+            border-radius: vwm(12px);
+        }
+
+        span {
+            @include button-m;
+        }
+    }
+
+    &__card-image {
+        width: vw(780px);
+        height: vw(420px);
+        border-radius: vw(16px);
+        overflow: hidden;
+
+        @include HD {
+            width: vwh(636px);
+            height: vwh(420px);
+            border-radius: vwh(16px);
+        }
+
+        @include Mobile {
+            width: auto;
+            height: vwm(350px);
+            border-radius: vwm(16px);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 0 0;
+
+            @include HD {
+                object-position: vwh(-20px) 0;
+            }
+
+            @include Mobile {
+                object-position: vwm(-15px) 0;
+            }
+        }
+    }
+}

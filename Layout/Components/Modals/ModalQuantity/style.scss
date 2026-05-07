@@ -1,0 +1,67 @@
+.modal-quantity {
+    position: absolute;
+    left: vw(480px);
+    display: flex;
+    height: vw(64px);
+    align-items: center;
+    justify-content: center;
+    background: var(--Gray-White);
+    padding: vw(12px) vw(12px) vw(12px) vw(16px);
+    gap: vw(12px);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.10);
+    z-index: 6;
+    visibility: hidden;
+    opacity: 0;
+    @include border-r-xm;
+    @include transition-primary;
+
+    &_active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    @include HD {
+        height: vwh(64px);
+        left: vwh(260px);
+        padding: vwh(12px) vwh(12px) vwh(12px) vwh(16px);
+        gap: vwh(12px);
+    }
+    @include Mobile {
+        display: none;
+    }
+
+    &__text {
+        @include t3;
+        color: var(--Gray-Dark);
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 15ch;
+        text-overflow: ellipsis;
+    }
+
+    &__button {
+        display: inline-flex;
+        background: var(--Gray-Black);
+        color: var(--Gray-White);
+        padding: vw(8px) vw(16px);
+        @include t2;
+        @include border-r-s;
+        @include transition-primary;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: var(--Gray-Dark);
+            }
+        }
+
+        &:active {
+            background: var(--Gray-Darker);
+        }
+
+        &_disabled {
+            background: var(--Gray-Medium);
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+}

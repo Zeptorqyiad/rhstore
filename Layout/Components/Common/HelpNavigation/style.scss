@@ -1,0 +1,53 @@
+.help-navigation {
+  @include Mobile {
+    overflow: hidden;
+  }
+
+  &__container {
+    display: flex;
+    gap: vw(40px);
+
+    @include HD {
+      gap: vwh(40px);
+    }
+
+    @include Mobile {
+      gap: vwm(24px);
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      margin-right: vwm(-12px);
+      padding-right: vwm(24px);
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__link {
+    @include h3;
+    color: #999;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #666666;
+      }
+    }
+
+    &:active {
+      transition: color 0.1s ease;
+      color: #404040;
+    }
+  }
+
+  &__list_active {
+    .help-navigation__link {
+      color: #0D0D0D;
+    }
+  }
+}

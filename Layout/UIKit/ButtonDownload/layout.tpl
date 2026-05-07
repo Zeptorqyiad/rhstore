@@ -1,0 +1,7 @@
+<a href="<?= $data['link']?>" class="button-download <?= $data['class_name'] ?? '' ?>" draggable="false">
+    <svg class="button-download__icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF3838" viewBox="0 0 16 16">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10v.8c0 1.12 0 1.68-.218 2.108a2 2 0 0 1-.874.874C12.48 14 11.92 14 10.8 14H5.2c-1.12 0-1.68 0-2.108-.218a2 2 0 0 1-.874-.874C2 12.48 2 11.92 2 10.8V10m9.333-3.333L8 10m0 0L4.667 6.667M8 10V2"/>
+    </svg>
+
+    <span class="button-download-text">Скачать</span>
+</a>

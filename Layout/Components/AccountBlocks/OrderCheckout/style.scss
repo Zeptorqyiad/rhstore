@@ -1,0 +1,423 @@
+.order-checkout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: vw(44px);
+    padding-bottom: vw(160px);
+
+    @include HD {
+        gap: vwh(44px);
+        padding-bottom: vwh(160px);
+    }
+    @include Mobile {
+        gap: vwm(44px);
+        padding-bottom: vwm(88px);
+        background: var(--Gray-White);
+    }
+
+    &__heading {
+        color: var(--Gray-Black);
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: vw(140px);
+
+        @include HD {
+            gap: vwh(128px);
+        }
+        @include Mobile {
+            flex-direction: column;
+            gap: vwm(24px);
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+        @include Mobile {
+            gap: vwm(20px);
+        }
+    }
+
+    &__payment {
+        display: flex;
+        flex-direction: column;
+        background: var(--Gray-White);
+        padding: vw(32px);
+        gap: vw(20px);
+        @include border-r;
+
+        @include HD {
+            padding: vwh(32px);
+            gap: vwh(20px);
+        }
+        @include Mobile {
+            padding: 0;
+            gap: vwm(20px);
+            border-radius: unset;
+        }
+    }
+
+    &__title {
+        color: var(--Gray-Black);
+        @include h4;
+    }
+
+    &__subtitle {
+        color: var(--Gray-Dark-Medium);
+        @include t3;
+    }
+
+    &__text-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: vw(8px);
+
+        @include HD {
+            gap: vwh(8px);
+        }
+        @include Mobile {
+            gap: vwm(8px);
+        }
+    }
+
+    &__card-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        height: vw(40px);
+        padding: 0 vw(16px);
+        background: var(--Gray-Lighter);
+        @include border-r-s;
+        @include button-vs;
+        @include transition-primary;
+
+        @include HD {
+            height: vwh(40px);
+            padding: 0 vwh(16px);
+        }
+
+        @include Mobile {
+            height: vwm(40px);
+            padding: 0 vwm(16px);
+        }
+
+        span {
+            color: var(--Gray-Black);
+            @include transition-primary;
+        }
+
+        svg {
+            @include transition-primary;
+            stroke: var(--Gray-Black);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: var(--Gray-Lighter);
+
+                span {
+                    color: var(--red);
+                }
+
+                svg {
+                    stroke: var(--red);
+                }
+            }
+        }
+
+        &:active {
+            background: var(--Gray-Light);
+
+            span {
+                color: var(--red-dark);
+            }
+
+            svg {
+                stroke: var(--red-dark);
+            }
+        }
+    }
+
+    &__input-row {
+        display: flex;
+        flex-direction: row;
+        gap: vw(20px);
+        width: 100%;
+
+        @include HD {
+            gap: vwh(20px);
+        }
+        @include Mobile {
+            flex-direction: column;
+            gap: vwm(16px);
+        }
+    }
+
+    &__input {
+        display: flex;
+        width: 100%;
+    }
+
+    &__delivery {
+        display: flex;
+        flex-direction: column;
+        background: var(--Gray-White);
+        padding: vw(32px);
+        gap: vw(20px);
+        @include border-r;
+
+        @include HD {
+            padding: vwh(32px);
+            gap: vwh(20px);
+        }
+        @include Mobile {
+            padding: 0;
+            gap: vwm(20px);
+            border-radius: unset;
+        }
+    }
+
+    &__cart {
+        display: flex;
+        flex-direction: column;
+        background: var(--Gray-White);
+        padding: vw(32px);
+        gap: vw(20px);
+        @include border-r;
+
+        @include HD {
+            padding: vwh(32px);
+            gap: vwh(20px);
+        }
+        @include Mobile {
+            padding: 0;
+            gap: vwm(20px);
+            border-radius: unset;
+        }
+    }
+
+    &__cards-wrapper {
+        width: 100%;
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: vw(12px);
+
+        @include HD {
+            gap: vwh(12px);
+        }
+        @include Mobile {
+            display: none;
+            gap: vwm(12px);
+        }
+    }
+
+    &__card {
+        padding-bottom: vw(12px);
+        border-bottom: max(#{vw(2px), 2px}) solid var(--Gray-Lighter);
+
+        @include HD {
+            padding-bottom: vwh(12px);
+            border-width: max(#{vwh(2px), 2px});
+        }
+        @include Mobile {
+            padding-bottom: vwm(12px);
+            border-width: max(#{vwm(2px), 2px});
+        }
+
+    }
+
+    &__catalog-card {
+        width: 100%;
+
+        .catalog-card__prices {
+            grid-template-columns: none;
+        }
+
+        .catalog-card__price {
+            align-items: center;
+        }
+
+        .catalog-card__discounted-price {
+            align-self: end;
+        }
+
+        .quantity-input__button-minus {
+            display: none;
+        }
+
+        .quantity-input__button-plus {
+            display: none;
+        }
+
+        .add-button {
+            display: none;
+        }
+
+        .catalog-card__controls {
+            width: fit-content;
+        }
+
+        .quantity-input {
+            width: vw(72px);
+
+            @include HD {
+                width: vwh(72px);
+            }
+            @include Mobile {
+                width: vwm(72px);
+            }
+        }
+
+        .quantity-input__label {
+            pointer-events: none;
+            user-select: none;
+
+            input {
+                background: var(--Gray-Lighter);
+            }
+        }
+
+        .quantity-input__amount {
+            white-space: nowrap;
+            left: vw(-10px);
+
+            @include HD {
+                left: vwh(-10px);
+            }
+            @include Mobile {
+                left: vwm(-10px);
+            }
+        }
+    }
+
+    &__mobile-cards {
+        display: none;
+        flex-direction: column;
+        gap: vw(16px);
+
+        @include HD {
+            gap: vwh(16px);
+        }
+        @include Mobile {
+            display: flex;
+            gap: vwm(16px);
+        }
+    }
+
+    &__product-card {
+
+        .quantity-input__button-minus {
+            display: none;
+        }
+
+        .quantity-input__button-plus {
+            display: none;
+        }
+
+        .add-button {
+            display: none;
+        }
+
+        .quantity-input__label {
+            pointer-events: none;
+            user-select: none;
+
+            input {
+                background: var(--Gray-Lighter);
+            }
+        }
+
+        .product-card__result {
+            display: none;
+        }
+    }
+
+    &__contacts {
+        background: var(--Gray-White);
+        width: 100%;
+        height: 100%;
+        @include spacing(padding, 32px, 32px, 0);
+        @include border-r(32px);
+
+        @include Mobile {
+            padding-block: vwm(20px);
+        }
+
+        &-top {
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 4px);
+            justify-content: flex-start;
+            @include spacing(margin-bottom, 24px);
+
+            &--title {
+                @include h4;
+                color: var(--Gray-Black);
+
+                @include Mobile {
+                    @include h2;
+                }
+            }
+            &--text {
+                @include t3;
+                color: var(--Gray-Medium);
+            }
+        }
+        &-inputs {
+            @include spacing(padding-bottom, 20px);
+
+            &--top {
+                display: flex;
+                flex-direction: row;
+                @include spacing(gap, 20px);
+
+                @include Mobile {
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+                & .variant-text-field {
+                    flex: 1;
+                }
+            }
+            &--label {
+                @include spacing(margin-top, 20px);
+                @include spacing(margin-bottom, 8px);
+                display: block;
+                color: var(--Gray-Medium);
+                @include t3;
+            }
+            &--bottom {
+                display: flex;
+                flex-direction: row;
+                @include spacing(gap, 20px);
+
+                @include Mobile {
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+                & .variant-text-field {
+                    flex: 1;
+                }
+                & .dropdown-form {
+                    flex: 1;
+                }
+            }
+        }
+        &-bottom {}
+    }
+}
